@@ -1,5 +1,5 @@
 package Exersice.LessonInterface;
 
 public interface VerticalTakeoff {
-public void verticalTakeoff();
+ void vzlet();
 }
