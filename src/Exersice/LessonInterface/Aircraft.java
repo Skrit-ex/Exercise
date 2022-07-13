@@ -1,4 +1,5 @@
 package Exersice.LessonInterface;
 
-public class Aircraft {
+public abstract class Aircraft extends FlyingObject{
+
 }

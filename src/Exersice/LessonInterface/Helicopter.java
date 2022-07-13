@@ -1,4 +1,4 @@
 package Exersice.LessonInterface;
 
-public class Helicopter {
+public class Helicopter extends FlyingObject{
 }
