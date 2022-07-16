@@ -1,4 +1,4 @@
-package Exersice.LessonInterface;
+package Exersice.Interface;
 
 public interface VerticalTakeoff {
  void vzlet();

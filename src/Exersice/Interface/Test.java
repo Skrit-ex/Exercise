@@ -1,4 +1,4 @@
-package Exersice.LessonInterface;
+package Exersice.Interface;
 
 public class Test {
     public void foo(VerticalTakeoff verticalTakeoff){
