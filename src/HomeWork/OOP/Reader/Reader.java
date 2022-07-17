@@ -17,18 +17,21 @@ public class Reader {
         for(String book: books){
             System.out.println(book);
         }
+        System.out.println();
     }
     public void takeBook(Book ... books){
         System.out.println(this.fio + " took this books");
         for(Book book:books){
             System.out.println(book.name + " avtor " + book.avtor);
         }
+        System.out.println();
     }
     public void returnBook(Book ... books){
         System.out.println(this.fio + " return this book: ");
         for(Book book: books){
             System.out.println(book.name);
         }
+        System.out.println();
 
     }
     public String getInfo(){
