@@ -12,8 +12,6 @@ public class ReaderDemo {
         Book[] books = {book1, book2, book3};
         Reader[] readers = {reader1, reader2, reader3};
 
-        //printReaders(readers);
-        //printBooks(books);
 
         reader1.takeBook(5);
         reader2.takeBook("The Last", "After you");

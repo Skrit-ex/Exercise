@@ -8,8 +8,12 @@ public class PrintAbleDemo {
         Magazine magazine1 = new Magazine("List");
 
         Printable [] printables = {book,book1,magazine,magazine1};
-        for( Printable printable: printables){
-            printable.print();
+      //  for( Printable printable: printables){
+            //printable.print();
+
+            Book.printBooks(printables);
+        System.out.println(" ");
+            Magazine.printMagazine(printables);
         }
     }
-}
+

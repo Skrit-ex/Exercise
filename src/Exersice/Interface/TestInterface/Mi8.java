@@ -1,4 +1,4 @@
-package Exersice.Interface;
+package Exersice.Interface.TestInterface;
 
 public class Mi8 extends Helicopter implements VerticalTakeoff{
     @Override

@@ -1,4 +1,4 @@
-package Exersice.Interface;
+package Exersice.Interface.TestInterface;
 
 public class Main {
     public static void main(String[] args) {

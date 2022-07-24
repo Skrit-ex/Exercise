@@ -1,4 +1,4 @@
-package Exersice.Interface;
+package Exersice.Interface.TestInterface;
 
 public class Boing extends Aircraft implements VerticalTakeoff{
 
@@ -10,6 +10,7 @@ public class Boing extends Aircraft implements VerticalTakeoff{
 
     @Override
     public void vzlet() {
+        System.out.println("vzlet");
 
     }
 }
