@@ -2,8 +2,8 @@ package HomeWork.EnumSize;
 
 public class Pants extends Clothes implements ManClothing,WomanClothing{
 
-    public Pants(int sizeCloth, double price, String color) {
-        super(sizeCloth, price, color);
+    public Pants(int euroSize, int price, String color) {
+        super(euroSize, price, color);
     }
 
     @Override
