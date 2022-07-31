@@ -1,4 +1,4 @@
-package Exersice.String.Insert;
+package Exersice.String.Builder.Insert;
 
 public class InsertDemo {
     public static void main(String[] args) {

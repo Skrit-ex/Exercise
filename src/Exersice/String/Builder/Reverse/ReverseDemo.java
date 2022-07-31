@@ -1,4 +1,4 @@
-package Exersice.String.Reverse;
+package Exersice.String.Builder.Reverse;
 
 public class ReverseDemo {
     public static void main(String[] args) {

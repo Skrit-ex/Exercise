@@ -4,7 +4,7 @@ public class InsertExersice {
     public static void main(String[] args) {
         StringBuilder stringBuilder1 = createSomeString(3,56);
         System.out.println(stringBuilder1);
-        modifySomeString(stringBuilder1);
+        modifySomeString(stringBuilder1, "+", "плюс");
         System.out.println(stringBuilder1);
 
     }
@@ -15,11 +15,14 @@ public class InsertExersice {
         result.append(b).append(" / ").append(a).append(" = ").append(b/a).append("\n");
         return result ;
     }
-    private static StringBuilder modifySomeString(StringBuilder stringBuilder){
+    private static StringBuilder modifySomeString(StringBuilder stringBuilder,  String oldString, String newString){
+
         int pos;                                                     //int pos = stringBuilder.indexOf("=");
         while (( pos = stringBuilder.indexOf("=")) != -1) {          // -1 признак того, что "=" в данной строке уже нет
             stringBuilder.deleteCharAt(pos);
             stringBuilder.insert(pos,"равно");  // ctrl+ alt+T
+
+            //stringBuilder.replace(pos, pos+1, "равно");        второй вариант
         }
         return stringBuilder;
 
