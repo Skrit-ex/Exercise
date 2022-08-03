@@ -5,12 +5,12 @@ public class BilderDemo {
         StringBuilder stroka = new StringBuilder("Javac");
         System.out.println("string.length = " + stroka.length());
 
-        System.out.println("*setCharAt имеет возможность менять символы в строке");
+        System.out.println("*setCharAt РёРјРµРµС‚ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РјРµРЅСЏС‚СЊ СЃРёРјРІРѕР»С‹ РІ СЃС‚СЂРѕРєРµ");
         stroka.setCharAt(1,'i');
-        System.out.println("* setLength ограничивает длину строки");
+        System.out.println("* setLength РѕРіСЂР°РЅРёС‡РёРІР°РµС‚ РґР»РёРЅСѓ СЃС‚СЂРѕРєРё");
         stroka.setLength(2);
         System.out.println(stroka);
-        System.out.println(" Метод append используется для конкатенации строк");
+        System.out.println(" РњРµС‚РѕРґ append РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РєРѕРЅРєР°С‚РµРЅР°С†РёРё СЃС‚СЂРѕРє");
         stroka =stroka.append("+").append("differnt").append("=").append("this");
         System.out.println(stroka);
     }

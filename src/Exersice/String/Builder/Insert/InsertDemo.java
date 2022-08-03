@@ -4,7 +4,7 @@ public class InsertDemo {
     public static void main(String[] args) {
         StringBuilder stringBuilder = new StringBuilder("I like");
 
-        stringBuilder.insert(2, " java");
+        stringBuilder.insert(1, " java");
         System.out.println(stringBuilder);
     }
 }

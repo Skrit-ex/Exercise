@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class RegexExersice {
     public static void main(String[] args) {
-        String sr = "Versions : Java 5, Java  6, Java 7, Java 8.";
+        String sr = "Versions : Java 5, Java  6, Java 7, Java 8, Java   12";
         String pat = "Java\\s+\\d(1,2)";
         Pattern pattern = Pattern.compile(pat);
         Matcher matcher = pattern.matcher(sr);
