@@ -18,9 +18,9 @@ import java.util.Formatter;
 
 public class HomeWork5 {
     public static void main(String[] args) {
-        System.out.println(modif1("Valera", "5","Математике"));
-        System.out.println(modif1("Ivan", "4","Physic"));
-        System.out.println(modif1("Сидорова", "3","Программированию"));
+        System.out.println(modif1("Valera", "5", "Математике"));
+        System.out.println(modif1("Ivan", "4", "Physic"));
+        System.out.println(modif1("Сидорова", "3", "Программированию"));
 
         System.out.println();
 
@@ -31,10 +31,10 @@ public class HomeWork5 {
         result.append("Студент ").append(name).append(" получил ").append(grade).append(" по ").append(predmet).append("\n");
 */
 
-        //форматирование
-public static Formatter modif1(String name, String grade, String predmet){
+    //форматирование
+    public static Formatter modif1(String name, String grade, String predmet) {
         Formatter result = new Formatter();
-        result.format("Cтудент %-15s получил %-3s по %-10s",name,grade,predmet);
+        result.format("Cтудент %-15s получил %-3s по %-10s", name, grade, predmet);
         return result;
     }
 }
