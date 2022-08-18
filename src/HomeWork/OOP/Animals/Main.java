@@ -9,7 +9,8 @@ public class Main {
         animals [2] = new Horse("grass", "field");
 
         for( Animal animal: animals){
-            doctor.treatAnimal(animal);
+            System.out.println(" на приём идёт " + animal );
+            //doctor.treatAnimal(animal);
         }
     }
 

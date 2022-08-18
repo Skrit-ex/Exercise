@@ -50,8 +50,8 @@ public class Dog extends Animal {
     @Override
     public String toString() {
         return "Dog{" +
-                "food='" + food + '\'' +
-                ", location='" + location + '\'' +
-                '}';
+                "Питание= ' " +  food + '\''
+                + ", Место обитания =' " + location + '\''
+                + '}';
     }
 }
