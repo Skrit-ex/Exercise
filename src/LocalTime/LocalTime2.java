@@ -14,6 +14,7 @@ public class LocalTime2 {
        // System.out.println("Секунды " + second);
 
 
+
         System.out.println(" Текущее время : " + time + minute + second);
     }
 }
