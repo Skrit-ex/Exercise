@@ -9,6 +9,15 @@
     <file url="file://$PROJECT_DIR$/src/Exersice/String/Formatter/FormatterExersice.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/UserPassword/UserPaassword.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/UserPassword/UserPasswordDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/FemaleClothes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MainDemo.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MaleClothes.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Pants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Shirt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Sizes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Tie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Tovar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Watch.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/HomeWork/OOP/Animals/Animal.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/HomeWork/OOP/Animals/Cat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/HomeWork/OOP/Animals/Doctor.java" charset="UTF-8" />
@@ -23,6 +32,13 @@
     <file url="file://$PROJECT_DIR$/src/HomeWork/String/RegexExersice.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/HomeWork/String/StrinHomeWork.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/HomeWork/String/StringExersice1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalDate/LocalDate1.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/LocalDate/LocalDate2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalDate/LocalDate3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalTime/LocalTime1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalTime/LocalTime2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalTime/LocalTime3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/LocalTime/LocalTimeEditWith.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Locale/LocaleDemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Locale/ResourceBundleDemo.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
