@@ -2,6 +2,6 @@ package ExersiceTest;
 
 public interface MaleClothes {
     default void dressMale(){
-        System.out.println("Одеваем мужчину");
+        System.out.println("РћРґРµРІР°РµРј РјСѓР¶С‡РёРЅСѓ");
     }
 }

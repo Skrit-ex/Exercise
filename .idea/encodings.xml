@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/BufferReader/Buffer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/String/Builder/BilderDemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/String/Builder/StringAppend/StringAppend.java" charset="UTF-8" />
@@ -9,9 +9,10 @@
     <file url="file://$PROJECT_DIR$/src/Exersice/String/Formatter/FormatterExersice.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/UserPassword/UserPaassword.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Exersice/UserPassword/UserPasswordDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/DressMarket.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceTest/FemaleClothes.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MainDemo.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MaleClothes.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MainDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MaleClothes.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceTest/Pants.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceTest/Shirt.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceTest/Sizes.java" charset="UTF-8" />
@@ -41,6 +42,5 @@
     <file url="file://$PROJECT_DIR$/src/LocalTime/LocalTimeEditWith.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Locale/LocaleDemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Locale/ResourceBundleDemo.java" charset="UTF-8" />
-    <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

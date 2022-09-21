@@ -2,7 +2,7 @@ package ExersiceTest;
 
 public class DressMarket {
     public void dressMale(Tovar[] tovars){
-        System.out.println("мужская одежда в наличии : ");
+        System.out.println("РјСѓР¶СЃРєР°СЏ РѕРґРµР¶РґР° РІ РЅР°Р»РёС‡РёРё : ");
         for (Tovar tovar : tovars){
             if( tovar instanceof MaleClothes){
                 System.out.println(tovar);
@@ -10,7 +10,7 @@ public class DressMarket {
         }
     }
     public void dressFemale(Tovar[] tovars){
-        System.out.println("Женская одежда : ");
+        System.out.println("Р–РµРЅСЃРєР°СЏ РѕРґРµР¶РґР° : ");
         for ( Tovar tovar: tovars){
             if(tovar instanceof FemaleClothes){
                 System.out.println(tovar);
