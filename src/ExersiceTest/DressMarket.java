@@ -11,9 +11,13 @@ public class DressMarket {
     }
     public void dressFemale(Tovar[] tovars){
         System.out.println("Женская одежда : ");
+        int i=1;
         for ( Tovar tovar: tovars){
-            if(tovar instanceof FemaleClothes){
-                System.out.println(tovar);
+            if(tovar instanceof FemaleClothes) {
+                System.out.print(i+". ");
+                    System.out.println(tovar);
+                    i++;
+
             }
         }
     }
