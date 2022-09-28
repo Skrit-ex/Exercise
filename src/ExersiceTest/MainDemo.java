@@ -64,60 +64,8 @@ public class MainDemo {
         dressMarket.dressFemale(tovars);
 
         katal = tov.readLine();
-        switch (katal) {
-            case "1":
-                System.out.println("Товар Штаны (чёрного цвета) добавлен в корзину");
-                break;
-            case "2":
-                System.out.println("Товар Штаны (желтого цвета) добавлен в корзину");
-                break;
-            case "3":
-                System.out.println("Товар Майка (белого цвета) добавлен в корзину");
-                break;
-            case "4":
-                System.out.println("Товар Майка (черного цвета) добавлен в корзину");
-                break;
-            case "5":
-                System.out.println("Товар Галстук (розового цвета) добавлен в корзину");
-                break;
-            case "6":
-                System.out.println("Товар Галстук (чёрного цвета) добавлен в корзину");
-                break;
-            case "7":
-                System.out.println("Товар Часы (белого цвета) добавлен в корзину");
-                break;
-            case "8":
-                System.out.println("Товар Часы (серого цвета) добавлен в корзину");
-                break;
-        }
-        System.out.println("Товары в корзине : ");
-        if (katal.equals("1")){
-            System.out.println("Штаны размер = M, цена = 40 $, цвет = Black");
-        }
-        if (katal.equals("2")) {
-            System.out.println("Штаны размер = S, цена = 40 $, цвет = Yellow");
-        }
-        if (katal.equals("3")) {
-            System.out.println("Рубашка размер = M, цена = 55 $, цвет = White");
-        }
-        if (katal.equals("4")) {
-            System.out.println("Рубашка размер = XL, цена = 55 $, цвет = Black");
-        }
-        if (katal.equals("5")) {
-            System.out.println("Галстук цена = 58 $, цвет = Rose");
-        }
-        if (katal.equals("6")) {
-            System.out.println("Галстук{ цена = 60 $, цвет = Black");
-        }
-        if (katal.equals("7")) {
-            System.out.println("Часы цена = 70 $, цвет = White");
-        }
-        if (katal.equals("8")) {
-            System.out.println("Часы цена = 120 $, цвет = Grey");
-        }
-        else {
-            System.out.println("выбран не верный номер номер товара");
-        }
+       Basket basket1 = new Basket();
+        basket1.backTovar(katal);
 
         System.out.println("Желате добавить дополнительные товары в корзину? ");
         System.out.println("1. да     2. нет");
@@ -128,5 +76,16 @@ public class MainDemo {
                 break;
             }
         }
+
+
+        System.out.println("Желаете просмотреть товары добавленные в корзину");
+        bask= basket.readLine();
+        while( ! (bask.equals("1")) ) {
+            if (bask.equals("2")) {
+                System.out.println("Прекращение работы программы ");
+                break;
+            }
+        }
+        basket1.backTovar(katal);
     }
 }
