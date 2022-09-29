@@ -1,8 +1,7 @@
 package ExersiceTest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.Scanner;
 
 public class MainDemo {
     public static void main(String[] args) throws IOException {
@@ -19,15 +18,19 @@ public class MainDemo {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(System.in));
-        String xwer;
+        BufferedReader korzina1 = new BufferedReader(new FileReader("G:/Catalog.txt"));
+        Scanner scanner = new Scanner(System.in);
+        String korzinaTovarov;
+        String dobavTovar;
+        String beginProgramm;
         String katalog;
         String katal;
         String bask;
         DressMarket dressMarket = new DressMarket();
         System.out.println(" Вы желаете просмотреть каталог одежды? ");
         System.out.println("Введите : да/нет");
-        while (!((xwer = buf.readLine()).equals("да"))) {
-            System.out.println(xwer);
+        while (!((beginProgramm = buf.readLine()).equals("да"))) {
+            System.out.println(beginProgramm);
             System.out.println("прекращение работы программы ");
             buf.close();
         }
@@ -59,33 +62,29 @@ public class MainDemo {
         System.out.println("Input Password ");
         user.setPassword(password.readLine());
 
-        System.out.println("Выберете номера товаров, которые желаете добавить в корзину: ");
-        System.out.print("Мужская/");
-        dressMarket.dressFemale(tovars);
+        System.out.println("Желаете добавит товары в корзину? ");
+        while (((dobavTovar = scanner.nextLine()).equals("да"))) {
 
-        katal = tov.readLine();
-       Basket basket1 = new Basket();
-        basket1.backTovar(katal);
+            System.out.println("Выберете номера товаров, которые желаете добавить в корзину: ");
+            System.out.print("Мужская/");
+            dressMarket.dressFemale(tovars);
 
-        System.out.println("Желате добавить дополнительные товары в корзину? ");
-        System.out.println("1. да     2. нет");
-        bask = basket.readLine();
-        while( ! (bask.equals("1")) ) {
-            if (bask.equals("2")) {
-                System.out.println("Прекращение работы программы ");
-                break;
-            }
+            Basket basket1 = new Basket();
+            katal = tov.readLine();
+            basket1.backTovar(katal);
+
+            System.out.println("Желате добавить дополнительные товары в корзину? ");
+            System.out.println("да / нет");
         }
-
-
-        System.out.println("Желаете просмотреть товары добавленные в корзину");
-        bask= basket.readLine();
-        while( ! (bask.equals("1")) ) {
-            if (bask.equals("2")) {
-                System.out.println("Прекращение работы программы ");
-                break;
-            }
+        System.out.println("Желаете просмотреть корзину с товарами? ");
+        System.out.println("да / нет");
+        String korzina = scanner.nextLine();
+        if (korzina.equals("да")){
+            korzinaTovarov=korzina1.readLine();
+            System.out.println(korzinaTovarov);
         }
-        basket1.backTovar(katal);
+        else {
+            System.out.println(" Завершение программы");
+        }
     }
 }
