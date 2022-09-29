@@ -1,9 +1,12 @@
 package ExersiceTest;
 
-public class Basket {
-    public  void backTovar(String katal){
-        System.out.println("Товары в корзине");
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
+public class Basket {
+    public  void backTovar(String katal) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog.txt"));
         String mes = switch (katal) {
             case "1" -> "Товар Штаны (чёрного цвета) добавлен в корзину";
             case "2" -> "Товар Штаны (желтого цвета) добавлен в корзину";
@@ -16,5 +19,7 @@ public class Basket {
             default -> "Неизвестный товар : " + katal;
         };
         System.out.println(mes);
+        writer.write(mes);
+        writer.close();
     }
 }
