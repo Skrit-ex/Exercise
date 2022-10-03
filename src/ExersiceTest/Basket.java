@@ -1,11 +1,13 @@
 package ExersiceTest;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Basket {
     public  void backTovar(String katal) throws IOException {
+        File file = new File("G:/Catalog.txt");
         BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog.txt"));
         String mes = switch (katal) {
             case "1" -> "Товар Штаны (чёрного цвета) добавлен в корзину";
@@ -20,6 +22,6 @@ public class Basket {
         };
         System.out.println(mes);
         writer.write(mes);
-        writer.close();
+    writer.close();
     }
 }

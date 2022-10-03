@@ -18,6 +18,7 @@ public class MainDemo {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(System.in));
+        File file = new File("G:/Catalog.txt");
         BufferedReader korzina1 = new BufferedReader(new FileReader("G:/Catalog.txt"));
         Scanner scanner = new Scanner(System.in);
         String korzinaTovarov;
@@ -82,6 +83,7 @@ public class MainDemo {
         if (korzina.equals("да")){
             korzinaTovarov=korzina1.readLine();
             System.out.println(korzinaTovarov);
+            korzina1.close();
         }
         else {
             System.out.println(" Завершение программы");
