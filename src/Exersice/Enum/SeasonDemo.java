@@ -3,7 +3,7 @@ package Exersice.Enum;
 public class SeasonDemo {
     public static void main(String[] args) {
         Season season = Season.SUMMER;
-        Season season1 = Season.valueOf("WINTER"); // методпроверяет и выводит "string значения" из списка перечесления enum
+        Season season1 = Season.valueOf("WINTER"); // метод проверяет и выводит "string значения" из списка перечисления enum
         System.out.println(season1);
         print(season);
         PrintValue();
