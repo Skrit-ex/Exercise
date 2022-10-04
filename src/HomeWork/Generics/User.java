@@ -39,7 +39,7 @@ public class User {
             //создать экземпляр класса Query и вызвать метод printToLog() используя конструкцию user.new Query()
             User.Query query = user.new Query();
             query.printToLog();
-
+            System.out.println();
             User.Query query1 = new User("Idawd", "dawdaw").new Query();
             query1.printToLog();
             //создать экземпляр класса Query и вызвать метод printToLog() используя конструкцию new User().new Query();
