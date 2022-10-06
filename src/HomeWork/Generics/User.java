@@ -36,6 +36,7 @@ public class User {
             // создать экземпляр класса User и вызвать метод createQuery()
             User user = new User("Skraw", "dawdfa");
             user.createQuery();
+            System.out.println();
             //создать экземпляр класса Query и вызвать метод printToLog() используя конструкцию user.new Query()
             User.Query query = user.new Query();
             query.printToLog();
