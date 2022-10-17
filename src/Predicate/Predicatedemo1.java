@@ -13,10 +13,14 @@ public class Predicatedemo1 {
 //        };
 
         // используя лямбда выражения
-         Predicate<String> predicate = s -> s!= null;
+        Predicate<String> predicate = s -> s != null;
+        Predicate<String> predicate1 = s -> s.isEmpty();
 
         System.out.println(predicate.test("12"));
         System.out.println(predicate.test(null));
         System.out.println(predicate.test(""));
+        System.out.println(predicate1.test("dawd"));
+        System.out.println(predicate1.test("da"));
+        System.out.println(predicate1.test(""));
     }
 }
