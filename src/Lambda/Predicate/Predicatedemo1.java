@@ -1,6 +1,8 @@
-package Predicate;
+package Lambda.Predicate;
 
 import java.util.function.Predicate;
+//info
+// Predicate     Принимает на вход значение, проверяет состояние и возвращает boolean значение в качестве результата.
 
 public class Predicatedemo1 {
     public static void main(String[] args) {

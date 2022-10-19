@@ -48,4 +48,13 @@ public class Phone {
     public void receiveCall(String name, String number){
         System.out.println("Calling " + name + " with number " + getNumber());
     }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "number='" + number + '\'' +
+                ", model='" + model + '\'' +
+                ", weight='" + weight + '\'' +
+                '}';
+    }
 }
