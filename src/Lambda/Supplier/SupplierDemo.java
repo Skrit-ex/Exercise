@@ -4,7 +4,6 @@ package Lambda.Supplier;
 /*Интерфейс Supplier используется тогда, когда на вход не передаются значения, но необходимо вернуть результат.
  */
 
-
 import java.util.function.Supplier;
 
 public class SupplierDemo {
