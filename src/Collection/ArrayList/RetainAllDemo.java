@@ -19,7 +19,6 @@ public class RetainAllDemo {
 
         System.out.println("Размер array до удаления: "
                 + array.size());
-
         array.retainAll(array1);
         System.out.println(array);
         System.out.println("Размер array после удаления: "
