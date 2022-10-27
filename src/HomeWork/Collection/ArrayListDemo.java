@@ -19,5 +19,6 @@ public class ArrayListDemo {
             System.out.println(phone.getNumber());
         }
         phones.forEach(p -> System.out.println(p.getNumber()) ); //cокращённый метод через consumer
+
     }
 }
