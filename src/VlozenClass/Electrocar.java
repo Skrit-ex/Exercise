@@ -9,6 +9,13 @@ public class Electrocar {
             System.out.println("Starting motor ...");
         }
     }
+    // статический вложеный класс
+    public static class Battery{
+        public void charge(){
+            System.out.println("Battery is charging");
+
+        }
+    }
     public Electrocar(int id){
         this.id =id;
     }
