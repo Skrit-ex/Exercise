@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class ExceptionDemo2 {
     public static void main(String[] args) {
         try {
-            readFile();}
+            readFile();
+        }
         catch (FileNotFoundException e){
             System.out.println("Обработка исключения в методе main" +
                     "File not found");
