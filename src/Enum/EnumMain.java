@@ -5,6 +5,7 @@ public class EnumMain {
     public static void main(String[] args) {
         Animal animal = Animal.CAT;
 
+
         switch (animal) {
             case CAT:
                 System.out.println("It's a cat");
@@ -17,6 +18,16 @@ public class EnumMain {
                 break;
             default:
                 System.out.println("It's not a animal");
+        }
+        Season season = Season.SUMMER;
+        System.out.println(season.getTranslation());
+        switch (season) {
+            case WINTER:
+                System.out.println("It's cold outside");
+                break;
+            case SUMMER:
+                System.out.println("It's warm outside");
+                break;
         }
     }
 }
