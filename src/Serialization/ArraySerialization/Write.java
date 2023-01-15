@@ -13,7 +13,7 @@ public class Write {
                 new Person(164, "Nej")};
 
         try{
-        FileOutputStream fos = new FileOutputStream("people.bin");
+            FileOutputStream fos = new FileOutputStream("people.bin");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeInt(people.length);
@@ -21,10 +21,10 @@ public class Write {
             for(Person person: people){
                 oos.writeObject(person);
             }
-
-    }
+    oos.close();
+        }
         catch (IOException e){
-            System.out.println("file not found or other error");
+            e.printStackTrace();
         }
 }
 }
