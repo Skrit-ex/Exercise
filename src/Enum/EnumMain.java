@@ -21,7 +21,8 @@ public class EnumMain {
         }
         Season season = Season.SUMMER;
         System.out.println(season.getTranslation());
-        switch (season) {
+        switch
+        (season) {
             case WINTER:
                 System.out.println("It's cold outside");
                 break;
