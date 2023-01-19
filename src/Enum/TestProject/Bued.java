@@ -15,7 +15,8 @@ public class Bued {
 //        Car car6 = Car.SEAT;
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         for(Car car: cars){
-            System.out.println(car);
+            System.out.println(car.name() + ": Speed " + car.getSpeed()+" Type "+car.getType()+" Consumption "
+                    +car.getConsumption());
         }
     }
 }

@@ -14,8 +14,15 @@ public enum Car {
         this.type = type;
         this.consumption = consumption;
     }
-    public String getCar(){
-        return getCar();
+    public int getSpeed() {
+        return speed;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public double getConsumption() {
+        return consumption;
     }
 }
