@@ -6,11 +6,12 @@ public class MainCalc {
         GetInt getInter = new GetInt();
         GetOperations getOperation = new GetOperations();
         Calculte calculte = new Calculte();
+        ConsolPrint consolPrint = new ConsolPrint();
 
         int num1 = getInter.getInt();
         int num2 = getInter.getInt();
         char operation = getOperation.getChar();
         int result =calculte.calcul(num1,num2,operation);
-
+        consolPrint.printInt(result);
     }
 }

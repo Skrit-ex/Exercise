@@ -7,9 +7,9 @@ public class GetOperations {
 
 
     public char getChar() {
+        System.out.println(" Input operation : +, -, *, / ");
         char operation;
         if (scanner.hasNextLine()) {
-            System.out.println(" Input operation : +, -, *, / ");
             operation = scanner.nextLine().charAt(0);
         } else {
             System.out.println(" Error input, try again");
