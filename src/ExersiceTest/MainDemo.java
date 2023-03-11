@@ -1,5 +1,7 @@
 package ExersiceTest;
 
+import ExersiceTest.Model.ConsolPrinter;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -15,43 +17,38 @@ public class MainDemo {
                 new Watch("70", "White"),
                 new Watch("120", "Grey")
         };
-
+        ConsolPrinter consolPrinter = new ConsolPrinter();
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(System.in));
-        File file = new File("G:/Catalog.txt");
-        BufferedReader korzina1 = new BufferedReader(new FileReader("G:/Catalog.txt"));
+        File file = new File("G://Java//BufferedWriter//Catalog1.txt");  //if don't find, delete and create new file
+        BufferedReader korzina1 = new BufferedReader(new FileReader("G://Java//BufferedWriter//Catalog1.txt"));
         Scanner scanner = new Scanner(System.in);
-        String korzinaTovarov;
-        String dobavTovar;
-        String beginProgramm;
-        String katalog;
-        String katal;
-        String bask;
+        String korzinaTovarov, dobavTovar, beginProgramm, katalog, katal, bask;
         DressMarket dressMarket = new DressMarket();
-        System.out.println(" Вы желаете просмотреть каталог одежды? ");
-        System.out.println("Введите : да/нет");
-        while (!((beginProgramm = buf.readLine()).equals("да"))) {
+        consolPrinter.print(" Can you look catalog clothes ? ");
+        consolPrinter.print("Enter yes/no ");
+        while (!((beginProgramm = buf.readLine()).equals("yes"))) {
             System.out.println(beginProgramm);
-            System.out.println("прекращение работы программы ");
+            consolPrinter.print("Termination of the program ");
             buf.close();
         }
-        System.out.println("Вы желаете просмотреть 1. Мужской каталог одежды или " +
-                "2. Женский каталог одежды");
-        System.out.println("Введите номер каталога: ");
+        consolPrinter.print("Can you look : 1. Man's catalog or " +
+                "2. Woman's catalog clothes");
+        consolPrinter.print("Enter number of catalog: ");
         katalog = buf1.readLine();
         while (!((katalog.equals("1")) || (katalog.equals("2")))) {
-            System.out.println(" Вы ввели неверный номер каталога, попробуйте ещё раз");
+            consolPrinter.print("You introduced an error, try again ");
             katalog = buf1.readLine();
         }
         if (katalog.equals("1")) {
-            System.out.println("Мужской каталог одежды ");
+            consolPrinter.print("Man's clothing catalog  ");
             dressMarket.dressMale(tovars);
         }
         if (katalog.equals("2")) {
-            System.out.println("Женский каталог одежды ");
+            System.out.println("Women's clothing catalog ");
             dressMarket.dressFemale(tovars);
         }
-        System.out.println(" Чтобы добавить товары в корзину, необходимо войти в аккаунт: ");
+        consolPrinter.print(" If you wish add clothes in box, should sing in account ");
 
         BufferedReader users = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader password = new BufferedReader(new InputStreamReader(System.in));
@@ -80,12 +77,11 @@ public class MainDemo {
         System.out.println("Желаете просмотреть корзину с товарами? ");
         System.out.println("да / нет");
         String korzina = scanner.nextLine();
-        if (korzina.equals("да")){
-            korzinaTovarov=korzina1.readLine();
+        if (korzina.equals("да")) {
+            korzinaTovarov = korzina1.readLine();
             System.out.println(korzinaTovarov);
             korzina1.close();
-        }
-        else {
+        } else {
             System.out.println(" Завершение программы");
         }
     }
