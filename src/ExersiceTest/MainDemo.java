@@ -1,6 +1,7 @@
 package ExersiceTest;
 
 import ExersiceTest.Model.ConsolPrinter;
+import ExersiceTest.Model.User;
 
 import java.io.*;
 import java.util.Scanner;
@@ -17,6 +18,7 @@ public class MainDemo {
                 new Watch("70", "White"),
                 new Watch("120", "Grey")
         };
+        User user = new User();
         ConsolPrinter consolPrinter = new ConsolPrinter();
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader buf1 = new BufferedReader(new InputStreamReader(System.in));
@@ -49,16 +51,10 @@ public class MainDemo {
             dressMarket.dressFemale(tovars);
         }
         consolPrinter.print(" If you wish add clothes in box, should sing in account ");
-
-        BufferedReader users = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader password = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader basket = new BufferedReader(new InputStreamReader(System.in));
+        user.singInLogin();
+        user.singInPassword();
         BufferedReader tov = new BufferedReader(new InputStreamReader(System.in));
-        User user = new User();
-        System.out.println("Input Login : ");
-        user.setLogin(users.readLine());
-        System.out.println("Input Password ");
-        user.setPassword(password.readLine());
+
 
         System.out.println("Желаете добавит товары в корзину? ");
         while (((dobavTovar = scanner.nextLine()).equals("да"))) {
