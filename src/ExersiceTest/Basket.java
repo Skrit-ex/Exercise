@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class Basket {
     public  void backTovar(String katal) throws IOException {
-        File file = new File("G:/Catalog.txt");
-        BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog.txt"));
+        File file = new File("G:/Catalog2.txt");
+        BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog2.txt"));
         String mes = switch (katal) {
             case "1" -> "Товар Штаны (чёрного цвета) добавлен в корзину";
             case "2" -> "Товар Штаны (желтого цвета) добавлен в корзину";

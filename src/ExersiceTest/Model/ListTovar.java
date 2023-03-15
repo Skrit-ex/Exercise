@@ -30,11 +30,9 @@ public class ListTovar {
             katalog = listresult.readLine();
         }
         if (katalog.equals("1")) {
-            consolPrinter.print("Man's clothing catalog  ");
             dressMarket.dressMale(tovars);
         }
         if (katalog.equals("2")) {
-            System.out.println("Women's clothing catalog ");
             dressMarket.dressFemale(tovars);
         }
         return katalog;

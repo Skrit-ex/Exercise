@@ -12,9 +12,11 @@ public class MainDemo {
     public static void main(String[] args) throws IOException {
         User user = new User();
         AddTovar addTovar = new AddTovar();
+        Basket basket = new Basket();
         ListTovar listTovar = new ListTovar();
         ConsolPrinter consolPrinter = new ConsolPrinter();
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in));
         File file = new File("G://Java//BufferedWriter//Catalog1.txt");  //if don't find, delete and create new file
         BufferedReader korzina1 = new BufferedReader(new FileReader("G://Java//BufferedWriter//Catalog1.txt"));
         Scanner scanner = new Scanner(System.in);
@@ -34,17 +36,18 @@ public class MainDemo {
         user.singInLogin();
         user.singInPassword();
 
-        addTovar.newTovar();
         consolPrinter.print("List of the catalog ");
         listTovar.list();
+        addTovar.newTovar();
+        katal = numberKatalog.readLine();
+        basket.backTovar(katal);
 
         System.out.println("Желаете просмотреть корзину с товарами? ");
         System.out.println("да / нет");
         String korzina = scanner.nextLine();
         if (korzina.equals("да")) {
-            korzinaTovarov = korzina1.readLine();
-            System.out.println(korzinaTovarov);
-            korzina1.close();
+            BufferedReader kor = new BufferedReader(new FileReader("G:/Catalog2.txt"));
+
         } else {
             System.out.println(" Завершение программы");
         }
