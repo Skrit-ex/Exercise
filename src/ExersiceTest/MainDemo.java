@@ -27,8 +27,6 @@ public class MainDemo {
             consolPrinter.print("Termination of the program ");
             buf.close();
         }
-        consolPrinter.print("Can you look : 1. Man's catalog or " +
-                "2. Woman's catalog clothes");
         consolPrinter.print("Enter number of catalog: ");
         listTovar.list();
 
@@ -38,7 +36,7 @@ public class MainDemo {
 
         addTovar.newTovar();
         consolPrinter.print("List of the catalog ");
-        dressMarket.dressMale(tovars);
+        listTovar.list();
 
         System.out.println("Желаете просмотреть корзину с товарами? ");
         System.out.println("да / нет");

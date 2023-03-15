@@ -23,8 +23,7 @@ public class ListTovar {
                 new Watch("70", "White"),
                 new Watch("120", "Grey")
         };
-    }
-        public void numberCatakog(String katalog) throws IOException {
+        consolPrinter.print(" 1. Man's catalog or  2. Woman's catalog clothes");
         katalog = listresult.readLine();
         while (!((katalog.equals("1")) || (katalog.equals("2")))) {
             consolPrinter.print("You introduced an error, try again ");
