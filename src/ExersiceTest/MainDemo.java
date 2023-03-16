@@ -18,7 +18,7 @@ public class MainDemo {
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in));
         File file = new File("G://Java//BufferedWriter//Catalog1.txt");  //if don't find, delete and create new file
-        BufferedReader korzina1 = new BufferedReader(new FileReader("G://Java//BufferedWriter//Catalog1.txt"));
+        BufferedReader korzina1 = new BufferedReader(new FileReader("G://Catalog2.txt"));
         Scanner scanner = new Scanner(System.in);
         String korzinaTovarov, beginProgramm, katal, bask;
         DressMarket dressMarket = new DressMarket();
@@ -46,7 +46,8 @@ public class MainDemo {
         System.out.println("да / нет");
         String korzina = scanner.nextLine();
         if (korzina.equals("да")) {
-            BufferedReader kor = new BufferedReader(new FileReader("G:/Catalog2.txt"));
+            String skr = korzina1.readLine();
+            System.out.println(skr);
 
         } else {
             System.out.println(" Завершение программы");
