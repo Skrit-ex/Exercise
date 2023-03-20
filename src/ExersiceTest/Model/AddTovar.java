@@ -15,15 +15,15 @@ public class AddTovar {
         try {
             System.out.println("You will add items to your shopping box : yes/no");
             result = tov.readLine();
-            if (result.isEmpty()) {
+            while (result.isEmpty()) {
                 System.out.println(" Field is empty, try enter again");
                 result = newTovar();
-            } else {
+            }
                if ((result).equals("yes")) {
             consolPrinter.print("Выберете номера товаров, которые желаете добавить в корзину: ");
 
                 }
-            }
+
         } catch (IOException e) {
             System.out.println("Error introduced, try again");
         }
