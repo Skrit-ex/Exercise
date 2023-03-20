@@ -11,16 +11,13 @@ import java.util.Scanner;
 public class MainDemo {
     public static void main(String[] args) throws IOException {
         User user = new User();
-        AddTovar addTovar = new AddTovar();
-        Basket basket = new Basket();
         ListTovar listTovar = new ListTovar();
         ConsolPrinter consolPrinter = new ConsolPrinter();
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in));
         File file = new File("G://Java//BufferedWriter//Catalog1.txt");  //if don't find, delete and create new file
         BufferedReader korzina1 = new BufferedReader(new FileReader("G://Catalog2.txt"));
         Scanner scanner = new Scanner(System.in);
-        String korzinaTovarov, beginProgramm, katal, bask;
+        String beginProgramm;
         DressMarket dressMarket = new DressMarket();
         consolPrinter.print(" Can you look catalog clothes ? ");
         consolPrinter.print("Enter yes/no ");
@@ -36,11 +33,7 @@ public class MainDemo {
         user.singInLogin();
         user.singInPassword();
 
-        consolPrinter.print("List of the catalog ");
-        listTovar.list();
-        addTovar.newTovar();
-        katal = numberKatalog.readLine();
-        basket.backTovar(katal);
+
 
         System.out.println("Желаете просмотреть корзину с товарами? ");
         System.out.println("да / нет");
@@ -52,5 +45,17 @@ public class MainDemo {
         } else {
             System.out.println(" Завершение программы");
         }
+    }
+    public static void mainDemo() throws IOException {
+        ConsolPrinter consolPrinter = new ConsolPrinter();
+        ListTovar listTovar = new ListTovar();
+        AddTovar addTovar = new AddTovar();
+        BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in));
+        Basket basket = new Basket();
+        consolPrinter.print("List of the catalog ");
+        listTovar.list();
+        addTovar.newTovar();
+        String katal = numberKatalog.readLine();
+        basket.backTovar(katal);
     }
 }
