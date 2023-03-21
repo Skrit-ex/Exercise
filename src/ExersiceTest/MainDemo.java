@@ -33,11 +33,16 @@ public class MainDemo {
         user.singInLogin();
         user.singInPassword();
 
+        mainDemo();
 
 
         System.out.println("Would you like view a shopping box? ");
         System.out.println("yes / no");
         String korzina = scanner.nextLine();
+        while (korzina.isEmpty()){
+            consolPrinter.print("Input error, field is empty, try again");
+            korzina = scanner.nextLine();
+        }
         if (korzina.equals("yes")) {
             String skr = korzina1.readLine();
             System.out.println(skr);
@@ -49,25 +54,27 @@ public class MainDemo {
     public static void mainDemo() throws IOException {
         ConsolPrinter consolPrinter = new ConsolPrinter();
         ListTovar listTovar = new ListTovar();
-        AddTovar addTovar = new AddTovar();
+        //AddTovar addTovar = new AddTovar();
         BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in)), add = new BufferedReader(new InputStreamReader(System.in));
         Basket basket = new Basket();
         consolPrinter.print("List of the catalog ");
         listTovar.list();
-        addTovar.newTovar();
+        //addTovar.newTovar();
         String katal = numberKatalog.readLine();
         basket.backTovar(katal);
         consolPrinter.print("Would you like to add items to your shopping box? ");
+        consolPrinter.print("yes/no");
         String newTovar = add.readLine();
         while (newTovar.isEmpty()){
             consolPrinter.print("Input error,field is empty, try again ");
             newTovar = add.readLine();
         }
+        while (!(newTovar.equals("yes") || newTovar.equals("no"))){
+            consolPrinter.print("Input error, try again");
+            newTovar = add.readLine();
+        }
         if (newTovar.equals("yes")){
             mainDemo();
-        }
-        numberKatalog.close();
-        add.close();
-
+        }return;
     }
 }
