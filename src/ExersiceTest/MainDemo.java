@@ -7,7 +7,6 @@ import ExersiceTest.Model.User;
 
 import java.io.*;
 import java.util.Scanner;
-
 public class MainDemo {
     public static void main(String[] args) throws IOException {
         User user = new User();
@@ -19,6 +18,7 @@ public class MainDemo {
         Scanner scanner = new Scanner(System.in);
         String beginProgramm;
         DressMarket dressMarket = new DressMarket();
+        consolPrinter.print(" Welcome to online clothing store");
         consolPrinter.print(" Can you look catalog clothes ? ");
         consolPrinter.print("Enter yes/no ");
         while (!((beginProgramm = buf.readLine()).equals("yes"))) {
@@ -54,12 +54,12 @@ public class MainDemo {
     public static void mainDemo() throws IOException {
         ConsolPrinter consolPrinter = new ConsolPrinter();
         ListTovar listTovar = new ListTovar();
-        //AddTovar addTovar = new AddTovar();
+        AddTovar addTovar = new AddTovar();
         BufferedReader numberKatalog = new BufferedReader(new InputStreamReader(System.in)), add = new BufferedReader(new InputStreamReader(System.in));
         Basket basket = new Basket();
         consolPrinter.print("List of the catalog ");
         listTovar.list();
-        //addTovar.newTovar();
+        addTovar.newTovar();
         String katal = numberKatalog.readLine();
         basket.backTovar(katal);
         consolPrinter.print("Would you like to add items to your shopping box? ");
@@ -75,6 +75,7 @@ public class MainDemo {
         }
         if (newTovar.equals("yes")){
             mainDemo();
-        }return;
+        }
+        return;
     }
 }

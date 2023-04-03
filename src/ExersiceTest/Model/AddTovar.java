@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 
 public class AddTovar {
     String result;
-    String katal;
     BufferedReader tov = new BufferedReader(new InputStreamReader(System.in));
     ConsolPrinter consolPrinter = new ConsolPrinter();
 
