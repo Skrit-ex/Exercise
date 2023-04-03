@@ -12,14 +12,14 @@ public class AddTovar {
 
     public String newTovar() {
         try {
-            System.out.println("You will add items to your shopping box : yes/no");
+            System.out.println("Would you like to add item to your shopping box? : yes/no");
             result = tov.readLine();
             while (result.isEmpty()) {
                 System.out.println(" Field is empty, try enter again");
                 result = newTovar();
             }
                if ((result).equals("yes")) {
-            consolPrinter.print("Выберете номера товаров, которые желаете добавить в корзину: ");
+            consolPrinter.print("Input number goods ");
 
                 }
 
