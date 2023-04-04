@@ -8,7 +8,7 @@ public class Basket {
     public  void backTovar(String katal) throws IOException {
         File file = new File("G:/Catalog2.txt");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog2.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("G:/Catalog2.txt", true));
         String mes = switch (katal) {
             case "1" -> "Товар Штаны (чёрного цвета) добавлен в корзину";
             case "2" -> "Товар Штаны (желтого цвета) добавлен в корзину";
@@ -22,13 +22,7 @@ public class Basket {
         };
         System.out.println(mes);
         writer.write(mes);
-        System.out.println(" would you like add goods? (yes/no) ");
-        String result = bufferedReader.readLine();
-        if(result.equals("yes")){
-            System.out.println("Input number goods " );
-            String katal = bufferedReader.readLine();
-            return backTovar(String katal);
-        }
+        writer.newLine();
     writer.close();
     }
 }
