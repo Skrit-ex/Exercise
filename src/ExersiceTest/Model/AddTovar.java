@@ -1,6 +1,9 @@
 package ExersiceTest.Model;
 
 
+import ExersiceTest.DressMarket;
+import ExersiceTest.Tovar;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,6 +12,7 @@ public class AddTovar {
     String result;
     BufferedReader tov = new BufferedReader(new InputStreamReader(System.in));
     ConsolPrinter consolPrinter = new ConsolPrinter();
+    DressMarket dressMarket = new DressMarket();
 
     public String newTovar() {
         try {
@@ -19,6 +23,7 @@ public class AddTovar {
                 result = newTovar();
             }
                if ((result).equals("yes")) {
+
             consolPrinter.print("Input number goods ");
 
                 }
