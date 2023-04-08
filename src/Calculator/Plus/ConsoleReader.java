@@ -8,7 +8,7 @@ public class ConsoleReader implements Reader{
 
 
     public String readString() {
-        return null;
+        return scanner.next();
     }
 
     public double readDouble() {

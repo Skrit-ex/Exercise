@@ -14,6 +14,5 @@ public class Operation {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
-        this.result = result;
     }
 }
