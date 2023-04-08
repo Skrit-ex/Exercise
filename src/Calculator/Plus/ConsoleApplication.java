@@ -21,7 +21,10 @@ public class ConsoleApplication implements Application {
                 String type = reader.readString();
                 Operation op = new Operation( num1, num2, type);
                 Operation result = calculator.calculate(op);
-                writer.write("Result = " + result);
+                storage.save(result);
+                writer.write("Result = " + result.result);
+                writer.write("Would you like to look last operation? ");
+                Operation[] all = storage.findAll();
             }
     }
 }

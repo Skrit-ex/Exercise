@@ -7,4 +7,9 @@ public class InMemoryOperationStorage implements OperationStorage {
     public void save(Operation operation) {
 
     }
+
+    @Override
+    public Operation[] findAll() {
+        return operations;
+    }
 }
