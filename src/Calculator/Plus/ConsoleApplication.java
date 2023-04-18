@@ -1,6 +1,5 @@
 package Calculator.Plus;
 
-import java.util.Arrays;
 
 public class ConsoleApplication implements Application {
 
@@ -12,17 +11,19 @@ public class ConsoleApplication implements Application {
 
     Writer writer = new ConsoleWriter();
 
+
+
     @Override
     public void run() {
         boolean continueCalculator = true;
-            while (continueCalculator){
+            while (continueCalculator) {
                 writer.write("Enter num1");
                 double num1 = reader.readDouble();
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
                 writer.write("Enter operation type -> (sum/min/mul/div)");
                 String type = reader.readString();
-                Operation op = new Operation( num1, num2, type);
+                Operation op = new Operation(num1, num2, type);
                 Operation result = calculator.calculate(op);
                 storage.save(result);
                 writer.write("Result = " + result.result);
@@ -32,23 +33,30 @@ public class ConsoleApplication implements Application {
                 writer.write("Would you like continue calculations?  yes/no");
                 String answer = reader.readString();
                 switch (answer) {
-                    case "yes":{
+                    case "yes": {
                         writer.write("Continue ");
                         break;
                     }
-                    case "no":{
+                    case "no": {
                         writer.write(" ");
                         continueCalculator = false;
                         break;
+                    }
+                    default:
+                        writer.write("You inputted error, program stops working ");
+                        continueCalculator = false;
                 }
-                default:
-                    writer.write("You inputted error, program stops working ");
-                    continueCalculator = false;
-                }
+            }
 
                 writer.write("Would you like to look last operation? ");
 
                 Operation[] all = storage.findAll();
+                writer.write("Want to see the library? yes/no");
+                String answer = reader.readString();
+                switch (answer){
+                    case "yes":{
+
+                    }
             }
     }
 }
