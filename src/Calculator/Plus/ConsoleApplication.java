@@ -38,7 +38,7 @@ public class ConsoleApplication implements Application {
                         break;
                     }
                     case "no": {
-                        writer.write(" ");
+                        writer.write("Program stops working ");
                         continueCalculator = false;
                         break;
                     }
@@ -47,8 +47,6 @@ public class ConsoleApplication implements Application {
                         continueCalculator = false;
                 }
             }
-
-                writer.write("Would you like to look last operation? ");
 
                 Operation[] all = storage.findAll();
                 writer.write("Want to see the library? yes/no");
