@@ -2,10 +2,11 @@ package Calculator.Plus;
 
 
 public class InMemoryOperationStorage implements OperationStorage {
-    private int index = 0;
 
+    private int index = 0;
     Operation[] operations = new Operation[10];
-    private int countOperations = 0;
+
+    public int countOperations = 0;
 
     public void save(Operation operation) {
         if (index == operations.length - 1) {
@@ -24,6 +25,7 @@ public class InMemoryOperationStorage implements OperationStorage {
     }
 
     public int getCountOperations() {
-        return this.countOperations;
+        return countOperations;
     }
+
 }

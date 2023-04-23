@@ -53,7 +53,7 @@ public class ConsoleApplication implements Application {
                 String answer = reader.readString();
                 switch (answer){
                     case "yes":{
-
+                        int countOperations ;
                     }
             }
     }
