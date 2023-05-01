@@ -20,6 +20,7 @@ public class Main {
         Operations operations = new Operations(num1,num2, type);
 
         Operations result = calculator.calculate(operations);
+        writer.print("your result = " + operations.getResult());
         }
 
 
