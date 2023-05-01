@@ -1,6 +1,5 @@
 package TeachMeSkills.OOP.Encapsulation;
 
-import Calculator.Plus.Operation;
 
 public class Main {
 
@@ -20,7 +19,7 @@ public class Main {
         Operations operations = new Operations(num1,num2, type);
 
         Operations result = calculator.calculate(operations);
-        writer.print("your result = " + operations.getResult());
+        writer.print("your result = " + result.getResult());
         }
 
 
