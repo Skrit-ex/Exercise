@@ -3,7 +3,7 @@ package TeachMeSkills.OOP.Encapsulation;
 import java.util.Scanner;
 
 public class ConsoleReader {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public String readString(){
         return scanner.nextLine();

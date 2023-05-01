@@ -3,7 +3,7 @@ package TeachMeSkills.OOP.Encapsulation;
 
 public class ConsoleWriter {
 
-    public void writer(String message){
+    public void print(String message){
         System.out.println(message);
     }
 }
