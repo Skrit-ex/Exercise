@@ -6,7 +6,7 @@ public class InMemoryOperationStorage implements OperationStorage {
     private int index = 0;
     Operation[] operations = new Operation[10];
 
-    public int countOperations = 0;
+    private int countOperations = 0;
 
     public void save(Operation operation) {
         if (index == operations.length - 1) {
@@ -20,12 +20,11 @@ public class InMemoryOperationStorage implements OperationStorage {
     }
 
     @Override
-    public Operation[] findAll() {
+    public Operation[] findAll(){
         return operations;
     }
 
     public int getCountOperations() {
         return countOperations;
     }
-
 }

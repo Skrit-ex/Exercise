@@ -3,13 +3,13 @@ package Calculator.Plus;
 
 public class ConsoleApplication implements Application {
 
-    OperationStorage storage = new InMemoryOperationStorage();
-
     Calculator calculator = new Calculator();
 
     Reader reader = new ConsoleReader();
 
     Writer writer = new ConsoleWriter();
+
+    InMemoryOperationStorage storage = new InMemoryOperationStorage();
 
 
 
@@ -53,8 +53,21 @@ public class ConsoleApplication implements Application {
                 String answer = reader.readString();
                 switch (answer){
                     case "yes":{
-                        int countOperations ;
-                    }
+                        int countOperations = storage.getCountOperations();
+                        if(countOperations < 10){
+                            for(int i=0; i< countOperations; i++) {
+                                writer.write(all[i].num1 + " " + all[i].type + " " + all[i].num2 + " = " + all[i].result);
+                            }
+                            }else{
+                            for(Operation operation: all){
+                                    writer.write(operation.num1 + " " + operation.type + " " + operation.num2 + " " + operation.result);
+
+                            }
+                        }
+                   break;
+                    } case "no":
+                        writer.write("stop program");
+                        break;
             }
     }
 }
