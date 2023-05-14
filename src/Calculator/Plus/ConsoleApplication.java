@@ -33,18 +33,15 @@ public class ConsoleApplication implements Application {
                 writer.write("Would you like continue calculations?  yes/no");
                 String answer = reader.readString();
                 switch (answer) {
-                    case "yes": {
-                        writer.write("Continue ");
-                        break;
-                    }
-                    case "no": {
+                    case "yes" -> writer.write("Continue ");
+                    case "no" -> {
                         writer.write("Program stops working ");
                         continueCalculator = false;
-                        break;
                     }
-                    default:
+                    default -> {
                         writer.write("You inputted error, program stops working ");
                         continueCalculator = false;
+                    }
                 }
             }
 
@@ -52,7 +49,7 @@ public class ConsoleApplication implements Application {
                 writer.write("Want to see the library? yes/no");
                 String answer = reader.readString();
                 switch (answer){
-                    case "yes":{
+                    case "yes" -> {
                         int countOperations = storage.getCountOperations();
                         if(countOperations < 10){
                             for(int i=0; i< countOperations; i++) {
@@ -64,10 +61,8 @@ public class ConsoleApplication implements Application {
 
                             }
                         }
-                   break;
-                    } case "no":
+                    } case "no"->
                         writer.write("stop program");
-                        break;
             }
     }
 }
