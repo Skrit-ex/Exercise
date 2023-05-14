@@ -22,7 +22,7 @@ public class ConsoleApplication implements Application {
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
                 writer.write("Enter operation type -> (sum/min/mul/div)");
-                String type = reader.readString();
+                Operat type = Operat.valueOf(reader.readString());
                 Operation op = new Operation(num1, num2, type);
                 Operation result = calculator.calculate(op);
                 storage.save(result);

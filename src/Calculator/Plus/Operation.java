@@ -6,6 +6,8 @@ public class Operation {
 
     double num2;
 
+    Operat type;
+
     double result;
 
     public Operation(double num1, double num2, Operat type) {

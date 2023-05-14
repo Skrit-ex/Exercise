@@ -1,22 +1,27 @@
 package Calculator.Plus;
 
+
 public class Calculator {
 
     Operation calculate(Operation operation) {
         switch (operation.type) {
-            case "sum":
+            case SUM -> {
                 operation.result = operation.num1 + operation.num2;
                 return operation;
-            case "min":
-                 operation.result = operation.num1 - operation.num2;
+            }
+            case SUB -> {
+                operation.result = operation.num1 - operation.num2;
                 return operation;
-            case "mul":
+            }
+            case MUL -> {
                 operation.result = operation.num1 * operation.num2;
                 return operation;
-            case "div":
+            }
+            case DIV -> {
                 operation.result = operation.num1 / operation.num2;
                 return operation;
+            }
+            default -> throw new IllegalStateException("Inputted error, try again");
         }
-        return operation;
     }
 }
