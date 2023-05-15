@@ -11,8 +11,6 @@ public class ConsoleApplication implements Application {
 
     InMemoryOperationStorage storage = new InMemoryOperationStorage();
 
-
-
     @Override
     public void run() {
         boolean continueCalculator = true;
@@ -21,14 +19,13 @@ public class ConsoleApplication implements Application {
                 double num1 = reader.readDouble();
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
-                writer.write("Enter operation type -> (sum/min/mul/div)");
+                writer.write("Enter operation type -> (SUM/MIN/MUL/DIV)");
                 Operat type = Operat.valueOf(reader.readString());
                 Operation op = new Operation(num1, num2, type);
                 Operation result = calculator.calculate(op);
                 storage.save(result);
                 writer.write("Result = " + result.result);
                 writer.write(" ");
-
 
                 writer.write("Would you like continue calculations?  yes/no");
                 String answer = reader.readString();
@@ -44,7 +41,6 @@ public class ConsoleApplication implements Application {
                     }
                 }
             }
-
                 Operation[] all = storage.findAll();
                 writer.write("Want to see the library? yes/no");
                 String answer = reader.readString();
@@ -58,7 +54,6 @@ public class ConsoleApplication implements Application {
                             }else{
                             for(Operation operation: all){
                                     writer.write(operation.num1 + " " + operation.type + " " + operation.num2 + " " + operation.result);
-
                             }
                         }
                     } case "no"->
