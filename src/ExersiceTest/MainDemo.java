@@ -19,9 +19,9 @@ public class MainDemo {
         Scanner scanner = new Scanner(System.in);
         String beginProgramm;
         DressMarket dressMarket = new DressMarket();
-        consolPrinter.print(" Welcome to online clothing store");
+        consolPrinter.print(" Welcome to online clothing store" +'\n');
         consolPrinter.print(" Can you look catalog clothes ? ");
-        consolPrinter.print("Enter yes/no ");
+        consolPrinter.print(" Enter yes/no ");
         while (!((beginProgramm = buf.readLine()).equals("yes"))) {
             System.out.println(beginProgramm);
             consolPrinter.print("Termination of the program ");
@@ -30,7 +30,7 @@ public class MainDemo {
         consolPrinter.print("Enter number of catalog: ");
         listTovar.list();
 
-        consolPrinter.print(" If you wish add clothes in box, should sing in account " + '\n');
+        consolPrinter.print('\n' + " If you wish add clothes in box, should sing in account " + '\n');
         user.singInLogin();
         user.singInPassword();
 
