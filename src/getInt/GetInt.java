@@ -13,7 +13,8 @@ public class GetInt {
             num = scanner.nextInt();
         }else{
             System.out.println(" Error, try again ");
-            getInt();
+            scanner.next();
+            num = getInt();
         }
         return num;
     }
