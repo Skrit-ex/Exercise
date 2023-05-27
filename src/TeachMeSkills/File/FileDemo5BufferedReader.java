@@ -14,8 +14,9 @@ public class FileDemo5BufferedReader {
 
         String line;
 
-        while (( line = bufferedReader.readLine()) != null){
+        while (( line = bufferedReader.readLine()) != null){ // создовая перенную и проверяя через цикл while до последней строки
             System.out.println(line);
         }
+        bufferedReader.close();
     }
 }
