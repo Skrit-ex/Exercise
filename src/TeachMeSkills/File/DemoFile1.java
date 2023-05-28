@@ -11,17 +11,16 @@ public class DemoFile1 {
 
         InputStream fis = new FileInputStream(file);
 
-        byte [] i = new byte[(int) file.length()];
-        int read = fis.read(i);
-        System.out.println(Arrays.toString(i));
-        System.out.print(read);
+//        byte [] i = new byte[(int) file.length()];
+//        int read = fis.read(i);
+//        System.out.println(Arrays.toString(i));
+//        System.out.print(read);
 
 
-
-        while (true){
+        while (true) {
             int o = fis.read();
-            if( o == -1) break;
-            System.out.println((char) o);
+            if (o == -1) break;
+            System.out.print((char) o);
         }
         fis.close();
     }
