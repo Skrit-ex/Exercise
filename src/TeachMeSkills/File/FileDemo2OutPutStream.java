@@ -13,6 +13,8 @@ public class FileDemo2OutPutStream {
         OutputStream outputStream = new FileOutputStream(file);
 
         byte [ ] arr = new byte[]{72, 101, 108, 108, 111};
+        outputStream.write(arr);
+        outputStream.write(10);
 
         outputStream.write(72);
         outputStream.write(101);
