@@ -16,14 +16,26 @@ public class FileOperationStorage {
 
     public Operation[] findAll() throws IOException {
         File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv");
-        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader( new FileReader(file));
+        String line;
 
-        char [] arr = new char[(int) file.length()];
+        Operation [] arr = new Operation[3];
+        while ((line = bufferedReader.readLine()) != null){
+            System.out.println(convertOperation(line));
+            //Operation operation = convertOperation(line);
 
-        fileReader.read(arr);
-        System.out.print(arr);
-        fileReader.close();
-        return null;
+        }
+
+        return arr;
+    }
+
+    private Operation convertOperation(String operation){    // конвертация
+        String[] st = operation.split(",");
+        double num1 = Double.parseDouble(st[0]);
+        double num2 = Double.parseDouble(st[1]);
+        double result = Double.parseDouble(st[2]);
+        Operation operation1 = new Operation(num1,num2,result,st[3]);
+        return operation1;
     }
 }
 
