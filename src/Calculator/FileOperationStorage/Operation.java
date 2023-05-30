@@ -10,7 +10,6 @@ public class Operation {
     public double getNum1() {
         return num1;
     }
-
     public void setNum1(double num1) {
         this.num1 = num1;
     }
