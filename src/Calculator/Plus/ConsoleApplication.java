@@ -1,7 +1,7 @@
 package Calculator.Plus;
 
 
-import java.util.Locale;
+import TeachMeSkills.Exception.OperationNotFoundException;
 
 public class ConsoleApplication implements Application {
 
@@ -20,10 +20,18 @@ public class ConsoleApplication implements Application {
             while (continueCalculator) {
                 writer.write("Enter num1");
                 double num1 = reader.readDouble();
+
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
+
                 writer.write("Enter operation type -> (sum/min/mul/div)");
-                Operat type = Operat.valueOf(reader.readString().toUpperCase());
+                OperationType type;
+                try {
+                    type = reader.readOperationType();
+                }catch (OperationNotFoundException e){
+                    writer.write("Operation not found");
+                    continue;
+                }
                 double resul = 0;
                 Operation op = new Operation(num1, num2, type, resul);
                 Operation result = calculator.calculate(op);

@@ -6,11 +6,11 @@ public class Operation {
 
     private double num2;
 
-    private Operat type;
+    private OperationType type;
 
     private double result;
 
-    public Operation(double num1, double num2, Operat type,double result) {
+    public Operation(double num1, double num2, OperationType type, double result) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
@@ -34,11 +34,11 @@ public class Operation {
         this.num2 = num2;
     }
 
-    public Operat getType() {
+    public OperationType getType() {
         return type;
     }
 
-    public void setType(Operat type) {
+    public void setType(OperationType type) {
         this.type = type;
     }
 

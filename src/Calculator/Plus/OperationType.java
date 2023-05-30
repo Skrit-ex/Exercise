@@ -1,5 +1,5 @@
 package Calculator.Plus;
 
-public enum Operat {
+public enum OperationType {
     SUM, DIV, MUL, SUB;
 }

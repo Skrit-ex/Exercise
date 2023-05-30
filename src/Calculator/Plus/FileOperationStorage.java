@@ -25,13 +25,10 @@ public class FileOperationStorage implements OperationStorage{
             BufferedReader bufferedReader = new BufferedReader
                     (new FileReader("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv"));
 
-
             String line;
             while ((line = bufferedReader.readLine()) != null){
                 System.out.println(convertOperation(line));
             }
-
-
         }catch (IOException e){
             System.out.println("file not found");
         }
@@ -43,8 +40,8 @@ public class FileOperationStorage implements OperationStorage{
         double num1 = Double.parseDouble(arr[0]);
         double num2 = Double.parseDouble(arr[1]);
         double result = Double.parseDouble(arr[2]);
-        Operat operat = Operat.valueOf((arr[3]));
-        Operation operation1 = new Operation(num1,num2,operat,result);
+        OperationType operationType = OperationType.valueOf((arr[3]));
+        Operation operation1 = new Operation(num1,num2,operationType,result);
         return operation1;
     }
 }
