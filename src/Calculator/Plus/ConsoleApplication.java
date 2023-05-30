@@ -3,13 +3,14 @@ package Calculator.Plus;
 
 public class ConsoleApplication implements Application {
 
-    Calculator calculator = new Calculator();
+    private final Calculator calculator = new Calculator();
 
-    Reader reader = new ConsoleReader();
+    private final Reader reader = new ConsoleReader();
 
-    Writer writer = new ConsoleWriter();
+    private final Writer writer = new ConsoleWriter();
 
     InMemoryOperationStorage storage = new InMemoryOperationStorage();
+   // OperationStorage fileStorage = new FileOperationStorage();
 
     @Override
     public void run() {
@@ -21,10 +22,11 @@ public class ConsoleApplication implements Application {
                 double num2 = reader.readDouble();
                 writer.write("Enter operation type -> (SUM/MIN/MUL/DIV)");
                 Operat type = Operat.valueOf(reader.readString());
-                Operation op = new Operation(num1, num2, type);
+                double resul = 0;
+                Operation op = new Operation(num1, num2, type, resul);
                 Operation result = calculator.calculate(op);
                 storage.save(result);
-                writer.write("Result = " + result.result);
+                writer.write("Result = " + result.getResult());
                 writer.write(" ");
 
                 writer.write("Would you like continue calculations?  yes/no");
@@ -49,11 +51,13 @@ public class ConsoleApplication implements Application {
                         int countOperations = storage.getCountOperations();
                         if(countOperations < 10){
                             for(int i=0; i< countOperations; i++) {
-                                writer.write(all[i].num1 + " " + all[i].type + " " + all[i].num2 + " = " + all[i].result);
+                                writer.write(all[i].getNum1() + " " + all[i].getType() + " " + all[i].getNum2() + " = "
+                                        + all[i].getResult());
                             }
                             }else{
                             for(Operation operation: all){
-                                    writer.write(operation.num1 + " " + operation.type + " " + operation.num2 + " " + operation.result);
+                                    writer.write(operation.getNum1() + " " + operation.getType() + " " +
+                                            operation.getNum2() + " " + operation.getResult());
                             }
                         }
                     } case "no"->
