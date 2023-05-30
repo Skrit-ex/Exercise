@@ -1,6 +1,8 @@
 package Calculator.Plus;
 
 
+import java.util.Locale;
+
 public class ConsoleApplication implements Application {
 
     private final Calculator calculator = new Calculator();
@@ -20,8 +22,8 @@ public class ConsoleApplication implements Application {
                 double num1 = reader.readDouble();
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
-                writer.write("Enter operation type -> (SUM/MIN/MUL/DIV)");
-                Operat type = Operat.valueOf(reader.readString());
+                writer.write("Enter operation type -> (sum/min/mul/div)");
+                Operat type = Operat.valueOf(reader.readString().toUpperCase());
                 double resul = 0;
                 Operation op = new Operation(num1, num2, type, resul);
                 Operation result = calculator.calculate(op);
