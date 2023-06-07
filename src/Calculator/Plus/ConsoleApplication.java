@@ -3,6 +3,8 @@ package Calculator.Plus;
 
 import TeachMeSkills.Exception.OperationNotFoundException;
 
+import java.util.List;
+
 public class ConsoleApplication implements Application {
 
     private final Calculator calculator = new Calculator();
@@ -48,29 +50,27 @@ public class ConsoleApplication implements Application {
                         continueCalculator = false;
                     }
                     default -> {
-                        writer.write("You inputted error, program stops working ");
+                        writer.writeError("You inputted error, program stops working ");
                         continueCalculator = false;
                     }
                 }
             }
-                Operation[] all = storage.findAll();
+                List<Operation> all = storage.findAll();
                 writer.write("Want to see the library? yes/no");
                 String answer = reader.readString();
                 switch (answer){
                     case "yes" -> {
-                        int countOperations = storage.getCountOperations();
-                        if(countOperations < 10){
-                            for(int i=0; i< countOperations; i++) {
-                                writer.write(all[i].getNum1() + " " + all[i].getType() + " " + all[i].getNum2() + " = "
-                                        + all[i].getResult());
+                        List<Operation> operations = storage.findAll();
+                        for(Operation operation: operations){
+                            writer.write("Num1: " + operation.getNum1() + " " + operation.getType() +  " Num2: " +
+                                    operation.getNum2() + " = " + operation.getResult() );
                             }
-                            }else{
                             for(Operation operation: all){
                                     writer.write(operation.getNum1() + " " + operation.getType() + " " +
                                             operation.getNum2() + " " + operation.getResult());
                             }
                         }
-                    } case "no"->
+                     case "no"->
                         writer.write("stop program");
             }
     }

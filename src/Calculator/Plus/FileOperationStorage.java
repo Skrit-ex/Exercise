@@ -1,8 +1,11 @@
 package Calculator.Plus;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileOperationStorage implements OperationStorage{
+    Writer writer = new ConsoleWriter();
     @Override
     public void save(Operation operation) {
         File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv");
@@ -14,25 +17,24 @@ public class FileOperationStorage implements OperationStorage{
             fileOutputStream.write(10);
             fileOutputStream.close();
         }catch (IOException e){
-            System.out.println("File not found");
+            writer.writeError("File not found");
         }
     }
 
     @Override
-    public Operation[] findAll() {
-        Operation [] arr = new Operation[4];
+    public List<Operation> findAll() {
         try {
             BufferedReader bufferedReader = new BufferedReader
                     (new FileReader("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv"));
 
             String line;
             while ((line = bufferedReader.readLine()) != null){
-                System.out.println(convertOperation(line));
+                writer.writeError("" + convertOperation(line));
             }
         }catch (IOException e){
-            System.out.println("file not found");
+            writer.writeError("File not found");
         }
-        return arr;
+        return new ArrayList<>();
     }
 
     private Operation convertOperation(String operation){

@@ -1,27 +1,23 @@
 package Calculator.Plus;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InMemoryOperationStorage implements OperationStorage {
 
-    private int index = 0;
-    Operation[] operations = new Operation[10];
+    private final int index = 0;
+    private final List<Operation> operations = new ArrayList<>();
 
-     private int countOperations = 0;
+     private final int countOperations = 0;
 
     public void save(Operation operation) {
-        if (index == operations.length - 1) {
-            index = 0;
-            operations[index] = operation;
-        } else {
-            operations[index] = operation;
-            index++;
-        }
-        countOperations++;
+       operations.add(operation);
     }
 
     @Override
-    public Operation[] findAll(){
-        return operations;
+    public List<Operation> findAll() {
+        return new ArrayList<>(operations);
     }
 
     public int getCountOperations() {
