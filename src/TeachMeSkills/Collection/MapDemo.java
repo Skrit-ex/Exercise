@@ -19,7 +19,7 @@ public class MapDemo {
         System.out.println(a);
 
         for (Map.Entry<String, String> mapp : map.entrySet()) {
-            System.out.println(mapp);
+            System.out.println(mapp.getKey());
         }
     }
 }
