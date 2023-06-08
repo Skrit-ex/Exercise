@@ -3,8 +3,7 @@ package TeachMeSkills.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
-import java.util.SimpleTimeZone;
+
 
 public class DateDemo {
 
