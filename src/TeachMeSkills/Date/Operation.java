@@ -1,7 +1,6 @@
 package TeachMeSkills.Date;
 
 import java.time.LocalTime;
-import java.util.Date;
 
 public class Operation {
 
@@ -13,7 +12,7 @@ public class Operation {
 
     private  String type;
 
-    private Date createAt;
+    private LocalTime createAt;
 
     public Operation(double num1, double num2, String type) {
         this.num1 = num1;
@@ -21,7 +20,7 @@ public class Operation {
         this.type = type;
     }
 
-    public Date getCreateAt() {
+    public LocalTime getCreateAt() {
         return createAt;
     }
 
