@@ -2,7 +2,7 @@ package TeachMeSkills.LambdaExersice.Calculator;
 
 import java.time.LocalDate;
 
-public class Operation {
+public class Operation implements Comparable<Operation>{
 
     private double num1;
     private double num2;
@@ -54,5 +54,26 @@ public class Operation {
 
     public double getNum1() {
         return num1;
+    }
+
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "num1=" + num1 +
+                ", num2=" + num2 +
+                ", result=" + result +
+                ", type=" + type +
+                ", time=" + time +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Operation o) {
+        if(this.getNum1() > o.getNum1()){
+            return 1;
+        }else if (this.getNum1() < o.getNum1()){
+            return -1;
+        }
+        return 0;
     }
 }

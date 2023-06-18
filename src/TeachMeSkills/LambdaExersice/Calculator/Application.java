@@ -6,7 +6,6 @@ import TeachMeSkills.LambdaExersice.Calculator.Storage.OperationStorage;
 
 import java.util.Locale;
 
-import static TestProject.Calculator.OperationType.valueOf;
 
 public class Application {
 
@@ -37,7 +36,7 @@ public class Application {
                 writer.write(" Enter num2 ");
                 double num2 = reader.readDouble();
                 writer.write(" Select operation sum/sub/mul/div ");
-                OperationType type = valueOf(reader.readString().toUpperCase(Locale.ROOT));
+                OperationType type = OperationType.valueOf(reader.readString().toUpperCase(Locale.ROOT));
                 Operation operation = new Operation(num1, num2, type);
                 Calculator calculator = (operation1) -> {
                     switch (operation.getType()) {
