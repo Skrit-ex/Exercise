@@ -1,27 +1,29 @@
 package Calculator.Plus;
 
 
-public class Calculator {
+import java.time.LocalDateTime;
+import java.util.Optional;
 
-    Operation calculate(Operation operation) {
+public class Calculator {
+    public Optional<Operation> calculate(Operation operation) {
         switch (operation.getType()) {
             case SUM -> {
-                operation.setResult( operation.getNum1() + operation.getNum2());
-                return operation;
+                operation.setTime(LocalDateTime.now());
+                return Optional.ofNullable(operation.setResult(operation.getNum1() + operation.getNum2()));
             }
             case SUB -> {
-                operation.setResult( operation.getNum1() - operation.getNum2());
-                return operation;
+                operation.setTime(LocalDateTime.now());
+                return Optional.ofNullable(operation.setResult(operation.getNum1() - operation.getNum2()));
             }
             case MUL -> {
-                operation.setResult( operation.getNum1() * operation.getNum2());
-                return operation;
+                operation.setTime(LocalDateTime.now());
+                return Optional.ofNullable(operation.setResult(operation.getNum1() * operation.getNum2()));
             }
             case DIV -> {
-                operation.setResult( operation.getNum1() / operation.getNum2());
-                return operation;
+                operation.setTime(LocalDateTime.now());
+                return Optional.ofNullable(operation.setResult(operation.getNum1() / operation.getNum2()));
             }
-            default -> throw new IllegalStateException("Inputted error, try again");
         }
+        return Optional.empty();
     }
 }

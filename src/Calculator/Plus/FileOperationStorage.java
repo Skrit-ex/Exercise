@@ -3,11 +3,13 @@ package Calculator.Plus;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FileOperationStorage implements OperationStorage{
     Writer writer = new ConsoleWriter();
     @Override
-    public void save(Operation operation) {
+    public void save(Operation operation) throws IOException{
         File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv");
         try {
             String result = String.format("%s,%s,%s,%s", operation.getNum1(), operation.getNum2(), operation.getType(),
@@ -26,11 +28,14 @@ public class FileOperationStorage implements OperationStorage{
         try {
             BufferedReader bufferedReader = new BufferedReader
                     (new FileReader("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv"));
-
+            List<Operation> operationList = new ArrayList<>();
             String line;
             while ((line = bufferedReader.readLine()) != null){
-                writer.writeError("" + convertOperation(line));
+                writer.write("" + convertOperation(line));
             }
+//            Stream<Operation> stream = operationList.stream();
+//            operationList = stream.sorted().collect(Collectors.toList());
+//            return operationList;
         }catch (IOException e){
             writer.writeError("File not found");
         }

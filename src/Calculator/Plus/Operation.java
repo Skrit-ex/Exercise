@@ -1,5 +1,7 @@
 package Calculator.Plus;
 
+import java.time.LocalDateTime;
+
 public class Operation {
 
     private double num1;
@@ -10,12 +12,26 @@ public class Operation {
 
     private double result;
 
+    private LocalDateTime time;
+
+    public Operation(double num1, double num2, OperationType type) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.type = type;
+    }
+
     public Operation(double num1, double num2, OperationType type, double result) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
+    }
 
+    public LocalDateTime getTime() {
+        return time;
+    }
 
+    public void setTime(LocalDateTime time) {
+        this.time = time;
     }
 
     public double getNum1() {
@@ -46,8 +62,9 @@ public class Operation {
         return result;
     }
 
-    public void setResult(double result) {
+    public Operation setResult(double result) {
         this.result = result;
+        return this;
     }
 
 }
