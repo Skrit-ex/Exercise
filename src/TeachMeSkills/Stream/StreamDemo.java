@@ -1,7 +1,6 @@
 package TeachMeSkills.Stream;
 
 
-import TeachMeSkills.Enum.Oper;
 import TeachMeSkills.LambdaExersice.Calculator.Operation;
 import TeachMeSkills.LambdaExersice.Calculator.OperationType;
 
