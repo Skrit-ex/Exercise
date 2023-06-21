@@ -1,5 +1,6 @@
 package Calculator.Plus;
 
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ConsoleWriter implements Writer {
         for (Operation operation : storage) {
             if (operation != null) {
                 write(operation.getNum1() + " " + operation.getType() + " " + operation.getNum2() + " = "
-                        + operation.getResult() + " " + operation.getTime().format(dateTimeFormatter));
+                        + operation.getResult() + "  Date: " + operation.getTime().format(dateTimeFormatter));
             }
         }
     }

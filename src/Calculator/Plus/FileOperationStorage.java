@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class FileOperationStorage implements OperationStorage{
     Writer writer = new ConsoleWriter();
     @Override
-    public void save(Operation operation) throws IOException{
+    public void save(Operation operation){
         File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv");
         try {
             String result = String.format("%s,%s,%s,%s", operation.getNum1(), operation.getNum2(), operation.getType(),
@@ -28,7 +28,7 @@ public class FileOperationStorage implements OperationStorage{
         try {
             BufferedReader bufferedReader = new BufferedReader
                     (new FileReader("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv"));
-            List<Operation> operationList = new ArrayList<>();
+           // List<Operation> operationList = new ArrayList<>();
             String line;
             while ((line = bufferedReader.readLine()) != null){
                 writer.write("" + convertOperation(line));
@@ -37,7 +37,7 @@ public class FileOperationStorage implements OperationStorage{
 //            operationList = stream.sorted().collect(Collectors.toList());
 //            return operationList;
         }catch (IOException e){
-            writer.writeError("File not found");
+            writer.writeError("File not found*");
         }
         return new ArrayList<>();
     }

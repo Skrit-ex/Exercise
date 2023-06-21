@@ -1,6 +1,7 @@
 package Calculator.Plus;
 
 
+import Calculator.Plus.ShowLibrary.Library;
 import TeachMeSkills.Enum.Oper;
 import TeachMeSkills.Exception.OperationNotFoundException;
 import java.util.List;
@@ -14,6 +15,7 @@ public class ConsoleApplication implements Application {
     private final ConsoleWriter consoleWriter = new ConsoleWriter();
     private final Writer writer = new ConsoleWriter();
     InMemoryOperationStorage storage = new InMemoryOperationStorage();
+    Library library = new Library();
    // OperationStorage fileStorage = new FileOperationStorage();
     @Override
     public void run() {
@@ -34,6 +36,7 @@ public class ConsoleApplication implements Application {
                 Operation op = new Operation(num1, num2, type);
                 Optional<Operation> result = calculator.calculate(op);
                 storage.save(result.get());
+                writer.write("Your result = " + op.getResult());
 
                 writer.write("Would you like continue calculations?  yes/no");
                 String answer = reader.readString();
@@ -49,31 +52,20 @@ public class ConsoleApplication implements Application {
                     }
                 }
             }
-                List<Operation> all = storage.findAll();
-                writer.write("Want to see the library? yes/no");
-                String answer = reader.readString();
-                switch (answer){
-                    case "yes" -> {
-                        consoleWriter.writeOperationStorage(all);
-                        writer.write(" ");
-//                        List<Operation> operations = storage.findAll();
-//                        for(Operation operation: operations) {
-//                            writer.write("Num1: " + operation.getNum1() + " " + operation.getType() + " Num2: " +
-//                                    operation.getNum2() + " = " + operation.getResult());
+            List<Operation> all = storage.findAll();
+            library.showLibrary(all);
+//                List<Operation> all = storage.findAll();
+//                writer.write("Want to see the library? yes/no");
+//                String answer = reader.readString();
+//                switch (answer){
+//                    case "yes" -> {
+//                        consoleWriter.writeOperationStorage(all);
+//                        writer.write(" ");
 //                        }
-//                        Stream<Operation> stream = operations.stream();
-//                            List<Double> collect = operations.stream()
-//                                    .sorted()
-//                                    .map(operation -> operation.getNum1() + operation.getNum2())
-//                                    .collect(Collectors.toList());
-//                            writer.write(collect + " ");
-//                            for(Operation operation: all){
-//                                    writer.write(operation.getNum1() + " " + operation.getType() + " " +
-//                                            operation.getNum2() + " = " + operation.getResult()+ " ");
-//                            }
-                        }
-                     case "no"->
-                        writer.write("stop program");
-            }
+//                     case "no"->
+//                        writer.write("stop program");
+//                    default -> writer.writeError(" Error, ");
+//            }         l
+
     }
 }
