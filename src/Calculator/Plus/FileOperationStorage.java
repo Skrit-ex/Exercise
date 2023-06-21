@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FileOperationStorage implements OperationStorage{
+public class
+FileOperationStorage implements OperationStorage{
     Writer writer = new ConsoleWriter();
     @Override
     public void save(Operation operation){
