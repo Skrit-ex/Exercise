@@ -12,10 +12,9 @@ FileOperationStorage implements OperationStorage{
     @Override
     public void save(Operation operation){
         try {
-            File file = new File("G:\\JDK\\src\\Calculator\\FileOperationStorage\\history.txt");
-            file.createNewFile();
-            String result = String.format("%s,%s,%s,%s", operation.getNum1(), operation.getNum2(), operation.getType(),
-                    operation.getResult());
+            File file = new File("G:\\JDK\\Exercises\\src\\Calculator\\history.txt");
+            String result = String.format("%s,%s,%s,%s,%s", operation.getNum1(), operation.getType(), operation.getNum2(),
+                    operation.getResult() , operation.getTime());
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(result.getBytes());
             fileOutputStream.write(10);
@@ -27,7 +26,7 @@ FileOperationStorage implements OperationStorage{
 
     @Override
     public List<Operation> findAll() throws IOException{
-        File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.txt");
+        File file = new File("G:\\JDK\\Exercises\\src\\Calculator\\history.txt");
     BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
             List<Operation> operationList = new ArrayList<>();
