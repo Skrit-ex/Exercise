@@ -19,11 +19,11 @@ public class Operation {
         this.num2 = num2;
         this.type = type;
     }
-
-    public Operation(double num1, double num2, OperationType type, double result) {
+    public Operation(Double num1, OperationType type, Double num2,  double result, Double time) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
+        this.result = result;
     }
 
     public LocalDateTime getTime() {
@@ -62,7 +62,7 @@ public class Operation {
         return result;
     }
 
-    public Operation setResult(double result) {
+    public Operation setResult(double result) {         //!!!!!!!!!
         this.result = result;
         return this;
     }

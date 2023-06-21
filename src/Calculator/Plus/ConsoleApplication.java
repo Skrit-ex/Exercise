@@ -2,12 +2,11 @@ package Calculator.Plus;
 
 
 import Calculator.Plus.ShowLibrary.Library;
-import TeachMeSkills.Enum.Oper;
 import TeachMeSkills.Exception.OperationNotFoundException;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ConsoleApplication implements Application {
     private final Calculator calculator = new Calculator();
@@ -16,9 +15,9 @@ public class ConsoleApplication implements Application {
     private final Writer writer = new ConsoleWriter();
     InMemoryOperationStorage storage = new InMemoryOperationStorage();
     Library library = new Library();
-   // OperationStorage fileStorage = new FileOperationStorage();
+    OperationStorage fileStorage = new FileOperationStorage();
     @Override
-    public void run() {
+    public void run() throws IOException {
         boolean continueCalculator = true;
             while (continueCalculator) {
                 writer.write("Enter num1");
@@ -33,9 +32,10 @@ public class ConsoleApplication implements Application {
                     writer.write("Operation not found");
                     continue;
                 }
-                Operation op = new Operation(num1, num2, type);
+                Operation op = new Operation(num1,num2,type);
                 Optional<Operation> result = calculator.calculate(op);
                 storage.save(result.get());
+                fileStorage.save(result.get());
                 writer.write("Your result = " + op.getResult());
 
                 writer.write("Would you like continue calculations?  yes/no");

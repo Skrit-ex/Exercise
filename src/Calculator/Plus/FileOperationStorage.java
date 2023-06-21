@@ -10,8 +10,9 @@ public class FileOperationStorage implements OperationStorage{
     Writer writer = new ConsoleWriter();
     @Override
     public void save(Operation operation){
-        File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv");
         try {
+            File file = new File("G:\\JDK\\src\\Calculator\\FileOperationStorage\\history.txt");
+            file.createNewFile();
             String result = String.format("%s,%s,%s,%s", operation.getNum1(), operation.getNum2(), operation.getType(),
                     operation.getResult());
             FileOutputStream fileOutputStream = new FileOutputStream(file);
@@ -24,31 +25,28 @@ public class FileOperationStorage implements OperationStorage{
     }
 
     @Override
-    public List<Operation> findAll() {
-        try {
-            BufferedReader bufferedReader = new BufferedReader
-                    (new FileReader("G:\\JDK\\src\\Calculator\\FileOperation\\history.csv"));
-           // List<Operation> operationList = new ArrayList<>();
+    public List<Operation> findAll() throws IOException{
+        File file = new File("G:\\JDK\\src\\Calculator\\FileOperation\\history.txt");
+    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+
+            List<Operation> operationList = new ArrayList<>();
             String line;
-            while ((line = bufferedReader.readLine()) != null){
-                writer.write("" + convertOperation(line));
+            while ((line = bufferedReader.readLine()) != null) {
+                operationList.add(convertOperation(line));
             }
-//            Stream<Operation> stream = operationList.stream();
-//            operationList = stream.sorted().collect(Collectors.toList());
-//            return operationList;
-        }catch (IOException e){
-            writer.writeError("File not found*");
-        }
-        return new ArrayList<>();
+            Stream<Operation> stream = operationList.stream();
+            operationList = stream.sorted().collect(Collectors.toList());
+            return operationList;
     }
 
     private Operation convertOperation(String operation){
         String [] arr = operation.split(",");
         double num1 = Double.parseDouble(arr[0]);
-        double num2 = Double.parseDouble(arr[1]);
-        double result = Double.parseDouble(arr[2]);
-        OperationType operationType = OperationType.valueOf((arr[3]));
-        Operation operation1 = new Operation(num1,num2,operationType,result);
-        return operation1;
+        OperationType operationType = OperationType.valueOf((arr[1]));
+        double num2 = Double.parseDouble(arr[2]);
+        double result = Double.parseDouble(arr[3]);
+        Double time = Double.valueOf(arr[4]);
+        return new Operation(num1,operationType, num2,result, time);
+
     }
 }
