@@ -1,6 +1,6 @@
 package ExersiceDemo.Serialization.ArraySerialization;
 
-import ExersiceDemo.Serialization.Person;
+import ExersiceDemo.Collection.Comparable.Person;
 
 import java.io.FileInputStream;
 import java.io.IOException;

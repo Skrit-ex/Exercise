@@ -9,6 +9,16 @@
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/Exersice/String/Formatter/FormatterExersice.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/Exersice/UserPassword/UserPaassword.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/Exersice/UserPassword/UserPasswordDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/DressMarket.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/FemaleClothes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/MainDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/MaleClothes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Pants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Shirt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Sizes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Tie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Tovar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ExersiceDemo/ExersiceTest/Watch.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/HomeWork/OOP/Animals/Animal.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/HomeWork/OOP/Animals/Cat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/HomeWork/OOP/Animals/Doctor.java" charset="UTF-8" />
@@ -32,15 +42,5 @@
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/LocalTime/LocalTimeEditWith.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/Locale/LocaleDemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/ExersiceDemo/Locale/ResourceBundleDemo.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/DressMarket.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/FemaleClothes.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MainDemo.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/MaleClothes.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Pants.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Shirt.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Sizes.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Tie.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Tovar.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/ExersiceTest/Watch.java" charset="UTF-8" />
   </component>
 </project>

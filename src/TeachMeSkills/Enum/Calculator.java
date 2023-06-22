@@ -1,6 +1,6 @@
 package TeachMeSkills.Enum;
-import Calculator.Plus.ConsoleReader;
-import Calculator.Plus.ConsoleWriter;
+import Calculator.CalculatorTMS.console.util.ConsoleReader;
+import Calculator.CalculatorTMS.console.util.ConsoleWriter;
 
 import java.util.Locale;
 

@@ -1,6 +1,6 @@
 package TeachMeSkills.Stream;
 
-import Calculator.Plus.Operation;
+import Calculator.CalculatorTMS.entity.Operation;
 
 import java.util.Comparator;
 
