@@ -1,4 +1,4 @@
-package Calculator.CalculatorTMS.InterfaceModule;
+package Calculator.CalculatorTMS.storage;
 
 import Calculator.CalculatorTMS.entity.Operation;
 

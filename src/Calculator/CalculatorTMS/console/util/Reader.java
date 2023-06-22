@@ -1,4 +1,4 @@
-package Calculator.CalculatorTMS.InterfaceModule;
+package Calculator.CalculatorTMS.console.util;
 
 import Calculator.CalculatorTMS.entity.OperationType;
 import TeachMeSkills.Exception.OperationNotFoundException;

@@ -1,8 +1,7 @@
 package Calculator.CalculatorTMS.storage;
 
 import Calculator.CalculatorTMS.console.util.ConsoleWriter;
-import Calculator.CalculatorTMS.InterfaceModule.OperationStorage;
-import Calculator.CalculatorTMS.InterfaceModule.Writer;
+import Calculator.CalculatorTMS.console.util.Writer;
 import Calculator.CalculatorTMS.entity.Operation;
 import Calculator.CalculatorTMS.entity.OperationType;
 

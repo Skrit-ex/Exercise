@@ -1,4 +1,4 @@
-package Calculator.CalculatorTMS.InterfaceModule;
+package Calculator.CalculatorTMS.console.util;
 
 public interface Writer {
 

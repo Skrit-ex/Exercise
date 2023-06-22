@@ -2,7 +2,6 @@ package Calculator.CalculatorTMS.console.util;
 
 
 import Calculator.CalculatorTMS.entity.Operation;
-import Calculator.CalculatorTMS.InterfaceModule.Writer;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;

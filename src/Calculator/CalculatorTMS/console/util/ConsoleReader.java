@@ -1,7 +1,6 @@
 package Calculator.CalculatorTMS.console.util;
 
 import Calculator.CalculatorTMS.entity.OperationType;
-import Calculator.CalculatorTMS.InterfaceModule.Reader;
 import TeachMeSkills.Exception.OperationNotFoundException;
 
 import java.util.Scanner;

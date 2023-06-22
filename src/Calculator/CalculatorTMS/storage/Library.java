@@ -2,8 +2,8 @@ package Calculator.CalculatorTMS.storage;
 
 import Calculator.CalculatorTMS.console.util.ConsoleReader;
 import Calculator.CalculatorTMS.console.util.ConsoleWriter;
-import Calculator.CalculatorTMS.InterfaceModule.Reader;
-import Calculator.CalculatorTMS.InterfaceModule.Writer;
+import Calculator.CalculatorTMS.console.util.Reader;
+import Calculator.CalculatorTMS.console.util.Writer;
 import Calculator.CalculatorTMS.entity.Operation;
 
 import java.util.List;
