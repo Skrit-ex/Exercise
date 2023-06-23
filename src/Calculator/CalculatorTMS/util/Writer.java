@@ -1,4 +1,4 @@
-package Calculator.CalculatorTMS.console.util;
+package Calculator.CalculatorTMS.util.util;
 
 public interface Writer {
 

@@ -1,18 +1,18 @@
 package Calculator.CalculatorTMS.console;
 
-
-import Calculator.CalculatorTMS.console.util.ConsoleReader;
-import Calculator.CalculatorTMS.console.util.ConsoleWriter;
+import Calculator.CalculatorTMS.util.util.ConsoleReader;
+import Calculator.CalculatorTMS.util.util.ConsoleWriter;
 import Calculator.CalculatorTMS.Application;
 import Calculator.CalculatorTMS.storage.OperationStorage;
-import Calculator.CalculatorTMS.console.util.Reader;
-import Calculator.CalculatorTMS.console.util.Writer;
+import Calculator.CalculatorTMS.util.util.Reader;
+import Calculator.CalculatorTMS.util.util.Writer;
 import Calculator.CalculatorTMS.storage.Library;
 import Calculator.CalculatorTMS.entity.Operation;
 import Calculator.CalculatorTMS.entity.OperationType;
 import Calculator.CalculatorTMS.service.Calculator;
 import Calculator.CalculatorTMS.storage.FileOperationStorage;
 import Calculator.CalculatorTMS.storage.InMemoryOperationStorage;
+import Calculator.CalculatorTMS.validator.UserValidator;
 import TeachMeSkills.Exception.OperationNotFoundException;
 
 import java.io.IOException;
@@ -27,12 +27,14 @@ public class ConsoleApplication implements Application {
     InMemoryOperationStorage storage = new InMemoryOperationStorage();
     Library library = new Library();
     OperationStorage fileStorage = new FileOperationStorage();
+    UserValidator valid = new UserValidator();
     @Override
     public void run() throws IOException {
         boolean continueCalculator = true;
             while (continueCalculator) {
                 writer.write("Enter num1");
                 double num1 = reader.readDouble();
+                System.out.println(valid.validNum(String.valueOf(num1)));
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
                 writer.write("Enter operation type -> (sum/min/mul/div)");
