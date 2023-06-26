@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+    <users>
+        <user id="1" name = "alex" username="kirilov" password = "1211234"/>
+        <user id="2">
+            <name type="string">Alex</name>
+            <username type = "string">kirilov</username>
+            <password type = "string">1211234</password>
+        </user>
+    </users>
+</root>
