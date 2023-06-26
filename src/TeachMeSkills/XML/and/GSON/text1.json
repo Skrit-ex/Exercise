@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Alex",
+    "username": "simon",
+    "password": "simon",
+    "age": 23,
+    "telephone": [
+      {
+        "id": 1,
+        "number": "15151231245"
+      },
+      {
+        "id": 1,
+        "number": "513532321321"
+      }
+    ]
+  },
+  {
+    "name": "Denis",
+    "username": "lemon",
+    "password": "simon",
+    "telephone": ["1656484111","51354684684"]
+  }
+]
