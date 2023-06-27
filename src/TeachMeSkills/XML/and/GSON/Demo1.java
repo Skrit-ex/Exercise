@@ -28,10 +28,10 @@ public class Demo1 {
         users.add(user1);
         users.add(user2);
 
-        String s = gson.toJson(users);
-        System.out.println(s);
+          String s = gson.toJson(users);
+//        System.out.println(s);
 //
-//        // если имеются данные gson (можно быстро преобразовать, записав в файл, смотри ниже)
+//        // если имеются данные gson  (+можно быстро преобразовать, записав в файл, смотри ниже)
 //        List list = gson.fromJson("[{\"name\": \"Alex\",\"username\": \"simon\",\"password\": \"simon\",\"age\": \"23\",\"telephone\": \"164616161\"}," +
 //                "{\"name\": \"Alex1\",\"username\": \"simon1\",\"password\": \"simon2\",\"age\": \"24\",\"telephone\": \"16214412161\"}]", List.class);
 //
@@ -40,7 +40,7 @@ public class Demo1 {
 
 //        //Запись в файл
 //
-//        FileWriter fileWriter = new FileWriter("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\textDemo.json");
+        FileWriter fileWriter = new FileWriter("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\textDemo.json");
 //        fileWriter.write(s); //s из примера 1
 //        fileWriter.close();
 
@@ -49,7 +49,6 @@ public class Demo1 {
         FileReader fileReader = new FileReader("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\textDemo.json");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String s3 = bufferedReader.readLine();
-        System.out.println(s3);
         List list1 = gson.fromJson(s3, List.class);
         System.out.println(list1);
 
