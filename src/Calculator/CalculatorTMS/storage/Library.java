@@ -9,10 +9,10 @@ import Calculator.CalculatorTMS.entity.Operation;
 import java.util.List;
 
 public class Library {
-    Writer writer = new ConsoleWriter();
-    ConsoleWriter consoleWriter = new ConsoleWriter();
-    InMemoryOperationStorage storage = new InMemoryOperationStorage();
-    Reader reader = new ConsoleReader();
+   private final Writer writer = new ConsoleWriter();
+    private final ConsoleWriter consoleWriter = new ConsoleWriter();
+    //private final InMemoryOperationStorage storage = new InMemoryOperationStorage();
+    private final Reader reader = new ConsoleReader();
     public void showLibrary(List<Operation> all) {
         writer.write("Want to see the library? yes/no");
         String answer = reader.readString();

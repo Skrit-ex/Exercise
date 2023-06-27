@@ -1,4 +1,4 @@
-package TeachMeSkills.XML.and.GSON;
+package TeachMeSkills.XMLandGSON;
 
 public class User {
     private String name;

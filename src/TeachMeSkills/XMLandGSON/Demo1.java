@@ -1,4 +1,4 @@
-package TeachMeSkills.XML.and.GSON;
+package TeachMeSkills.XMLandGSON;
 
 import com.google.gson.Gson;
 
@@ -40,13 +40,13 @@ public class Demo1 {
 
 //        //Запись в файл
 //
-        FileWriter fileWriter = new FileWriter("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\textDemo.json");
+        FileWriter fileWriter = new FileWriter("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XMLandGson\\textDemo.json");
 //        fileWriter.write(s); //s из примера 1
 //        fileWriter.close();
 
 
         // чтение из gson
-        FileReader fileReader = new FileReader("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\textDemo.json");
+        FileReader fileReader = new FileReader("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XMLandGson\\textDemo.json");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String s3 = bufferedReader.readLine();
         List list1 = gson.fromJson(s3, List.class);
@@ -56,7 +56,7 @@ public class Demo1 {
 //
 //        DocumentBuilderFactory doc = DocumentBuilderFactory.newInstance(); //cоздаём фабрику
 //        DocumentBuilder documentBuilder = doc.newDocumentBuilder();   // просим у фабрики создать документ
-//        Document parse = documentBuilder.parse(new File("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XML\\text.xml")); //парсим документ
+//        Document parse = documentBuilder.parse(new File("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XMLandGSON\\text.xml")); //парсим документ
 //
 //        Element documentElement = parse.getDocumentElement();
 //        System.out.println(documentElement.getAttributes());

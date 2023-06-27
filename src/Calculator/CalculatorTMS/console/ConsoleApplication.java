@@ -1,18 +1,15 @@
 package Calculator.CalculatorTMS.console;
 
+import Calculator.CalculatorTMS.storage.*;
 import Calculator.CalculatorTMS.util.util.ConsoleReader;
 import Calculator.CalculatorTMS.util.util.ConsoleWriter;
 import Calculator.CalculatorTMS.Application;
-import Calculator.CalculatorTMS.storage.OperationStorage;
 import Calculator.CalculatorTMS.util.util.Reader;
 import Calculator.CalculatorTMS.util.util.Writer;
-import Calculator.CalculatorTMS.storage.Library;
 import Calculator.CalculatorTMS.entity.Operation;
 import Calculator.CalculatorTMS.entity.OperationType;
 import Calculator.CalculatorTMS.service.Calculator;
-import Calculator.CalculatorTMS.storage.FileOperationStorage;
-import Calculator.CalculatorTMS.storage.InMemoryOperationStorage;
-import Calculator.CalculatorTMS.validator.UserValidator;
+import Calculator.CalculatorTMS.validator.OperationValidator;
 import TeachMeSkills.Exception.OperationNotFoundException;
 
 import java.io.IOException;
@@ -24,17 +21,20 @@ public class ConsoleApplication implements Application {
     private final Reader reader = new ConsoleReader();
     private final ConsoleWriter consoleWriter = new ConsoleWriter();
     private final Writer writer = new ConsoleWriter();
-    InMemoryOperationStorage storage = new InMemoryOperationStorage();
-    Library library = new Library();
-    OperationStorage fileStorage = new FileOperationStorage();
-    UserValidator valid = new UserValidator();
+    private final InMemoryOperationStorage storage = new InMemoryOperationStorage();
+    private final Library library = new Library();
+    private  final OperationStorage fileStorage = new FileOperationStorage();
+    private final OperationValidator valid = new OperationValidator();
+    private final GsonOperationStorage gStorage = new GsonOperationStorage();
     @Override
     public void run() throws IOException {
         boolean continueCalculator = true;
             while (continueCalculator) {
                 writer.write("Enter num1");
-                double num1 = reader.readDouble();
-                System.out.println(valid.validNum(String.valueOf(num1)));
+                double num1;
+                while (!(valid.validNum(String.valueOf(num1 = reader.readDouble())))){
+                    writer.writeError("Input error");
+                }
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();
                 writer.write("Enter operation type -> (sum/min/mul/div)");
@@ -67,6 +67,10 @@ public class ConsoleApplication implements Application {
             }
             List<Operation> all = storage.findAll();
             library.showLibrary(all);
+//            LibraryGson libraryGson = new LibraryGson();
+//            libraryGson.gsonLibrary(all);
+
+
 //                List<Operation> all = storage.findAll();
 //                writer.write("Want to see the library? yes/no");
 //                String answer = reader.readString();
