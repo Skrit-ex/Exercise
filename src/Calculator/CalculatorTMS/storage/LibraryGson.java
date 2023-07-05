@@ -19,9 +19,12 @@ public class LibraryGson {
     public void gsonLibrary(List<Operation> all){
         writer.write("Do you want to see library? [0] - no/  [1] - yes ");
         String answer = reader.readString();
-        switch (answer){
-            case "1" ->
-                gson.toJson(all);
+        switch (answer) {
+            case "1" ->{
+            for (Operation op : all) {
+                gson.toJson(op);
+            }
+        }
             case "0"->
                 writer.writeError(" Program terminated");
         }
