@@ -30,10 +30,13 @@ public class ConsoleApplication implements Application {
     public void run() throws IOException {
         boolean continueCalculator = true;
             while (continueCalculator) {
+                boolean isValid = false;
+
                 writer.write("Enter num1");
-                double num1;
-                while (!(valid.validNum(String.valueOf(num1 = reader.readDouble())))){
-                    writer.writeError("Input error");
+                double num1= reader.readDouble();
+                isValid = (valid.validNum(String.valueOf(num1)));
+                if(!isValid){
+                    continue;
                 }
                 writer.write("Enter num 2");
                 double num2 = reader.readDouble();

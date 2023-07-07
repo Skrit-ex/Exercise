@@ -1,9 +1,11 @@
 import Calculator.CalculatorTMS.entity.Operation;
 import Calculator.CalculatorTMS.util.util.ConsoleWriter;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Test {
 //    private String x;
@@ -32,9 +34,23 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         ConsoleWriter consoleWriter = new ConsoleWriter();
+        Gson gson = new Gson();
 
-        List<Operation> all = new ArrayList<>();
-        //consoleWriter.writeOperationGson(all);
+        List<String> all = new ArrayList<>();
+        all.add("hbjb");
+        all.add("hkjl");
+        all.add("klm");
+        String stroka = null;
+
+        for (String a : all){
+                gson.toJson(a);
+            stroka = gson.toJson(a);
+            while (a != null) {
+                return;
+            }
+        }
+        System.out.println(stroka);
+
     }
 }
 
