@@ -22,7 +22,8 @@ public class LibraryGson {
         switch (answer) {
             case "1" ->{
             for (Operation op : all) {
-                gson.toJson(op);
+                String s = gson.toJson(op.toString());
+                System.out.println(s);
             }
         }
             case "0"->

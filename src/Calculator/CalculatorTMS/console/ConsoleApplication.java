@@ -70,6 +70,8 @@ public class ConsoleApplication implements Application {
             }
             List<Operation> all = storage.findAll();
             library.showLibrary(all);
+            LibraryGson libraryGson = new LibraryGson();
+            libraryGson.gsonLibrary(all);
 //            LibraryGson libraryGson = new LibraryGson();
 //            libraryGson.gsonLibrary(all);
 
