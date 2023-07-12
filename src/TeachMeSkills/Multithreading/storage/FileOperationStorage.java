@@ -5,7 +5,7 @@ import TeachMeSkills.Multithreading.entity.Operation;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileOperationStorage {
+public class FileOperationStorage extends Thread{
 
     private final FileWriter fileWriter;
 
@@ -19,10 +19,11 @@ public class FileOperationStorage {
     }
     public void save(Operation operation){
         try {
+            Thread.sleep(5000);
             fileWriter.write(operation.toString());
             fileWriter.write("\n");
             fileWriter.flush();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
