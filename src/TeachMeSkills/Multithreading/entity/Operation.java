@@ -17,6 +17,16 @@ public class Operation {
         this.result = result;
     }
 
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "num1=" + num1 +
+                ", num2=" + num2 +
+                ", type='" + type + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
     public double getNum1() {
         return num1;
     }

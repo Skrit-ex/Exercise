@@ -1,0 +1,3 @@
+
+TeachMeSkills.Multithreading.entity.Operation@7eda2dbb
+Operation{num1=5.0, num2=5.0, type='sum', result=10.0}

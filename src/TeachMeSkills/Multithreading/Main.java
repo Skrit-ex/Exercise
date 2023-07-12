@@ -1,5 +1,7 @@
 package TeachMeSkills.Multithreading;
 
+import TeachMeSkills.Multithreading.console.ConsoleApplication;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -12,7 +14,8 @@ public class Main {
 //
 //        thread.start();
 //        thread1.start();
-
+        ConsoleApplication application = new ConsoleApplication();
+        application.run();
 
 
     }

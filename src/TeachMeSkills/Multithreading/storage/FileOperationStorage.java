@@ -18,6 +18,12 @@ public class FileOperationStorage {
         }
     }
     public void save(Operation operation){
-
+        try {
+            fileWriter.write(operation.toString());
+            fileWriter.write("\n");
+            fileWriter.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
