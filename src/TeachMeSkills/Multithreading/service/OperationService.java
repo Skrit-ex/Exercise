@@ -14,12 +14,18 @@ public class OperationService {
             case "sum":
                 double v = num1 + num2;
                 Operation operation = new Operation(num1,num2,type,v);
-                fileOperationStorage.save(operation);
+                Thread thread = new Thread ( () -> {                        //поток через лямду
+                    fileOperationStorage.save(operation);
+                });
+                thread.start();
                 return Optional.of(operation);
             case "mul":{
                 double v1 = num1 * num2;
                 Operation operation1 = new Operation(num1,num2,type,v1);
-                fileOperationStorage.save(operation1);
+                Thread thread1 = new Thread ( () -> {                        //поток через лямду
+                    fileOperationStorage.save(operation1);
+                });
+                thread1.start();
                 return Optional.of(operation1);
             }
         }

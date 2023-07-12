@@ -1,7 +1,8 @@
-import Calculator.CalculatorTMS.entity.Operation;
 import Calculator.CalculatorTMS.util.util.ConsoleWriter;
 import com.google.gson.Gson;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,16 +41,14 @@ public class Test {
         all.add("hbjb");
         all.add("hkjl");
         all.add("klm");
-        String stroka = null;
 
-        for (String a : all){
-                gson.toJson(a);
-            stroka = gson.toJson(a);
-            while (a != null) {
-                return;
-            }
-        }
-        System.out.println(stroka);
+
+
+        FileReader fileReader = new FileReader("G:\\JDK\\Exercises\\src\\TeachMeSkills\\XMLandGson\\textDemo.json");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String s3 = bufferedReader.readLine();
+        List list1 = gson.fromJson(s3, List.class);
+        System.out.println(list1);
 
     }
 }

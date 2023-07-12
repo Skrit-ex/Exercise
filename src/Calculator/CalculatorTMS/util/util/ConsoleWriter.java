@@ -11,6 +11,16 @@ import java.util.List;
 
 public class ConsoleWriter implements Calculator.CalculatorTMS.util.util.Writer {
     private final Gson gson = new Gson();
+    private FileWriter fileWriter;
+
+    public ConsoleWriter() {
+        try {
+            fileWriter = new FileWriter
+                    ("G:\\JDK\\Exercises\\src\\Calculator\\CalculatorTMS\\storage\\text.json");
+        } catch (IOException e) {
+            write("File not found");
+        }
+    }
 
     public void write(String message) {
         System.out.println(message);
@@ -32,12 +42,13 @@ public class ConsoleWriter implements Calculator.CalculatorTMS.util.util.Writer 
     }
 }
 
-//    public void writeOperationGson (List<Operation> all) throws IOException {
-//       //DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd");
-//        FileWriter fileWriter = new FileWriter
-//                ("G:\\JDK\\Exercises\\src\\Calculator\\CalculatorTMS\\storage\\text.json");
-//                String s = gson.toJson(all);
-//                fileWriter.write(s);
-//                fileWriter.close();
-//            }
+//    public void writeOperationGson(List<Operation> all) throws IOException {
+//        //DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd");
+//        for (Operation operation : all) {
+//            String s = gson.toJson(operation);
+//            fileWriter.write(s);
+//            fileWriter.write("\n");
+//            fileWriter.flush();
 //        }
+//    }
+//}

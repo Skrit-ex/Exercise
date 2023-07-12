@@ -3,6 +3,22 @@ package Calculator.CalculatorTMS.entity;
 import java.time.LocalDateTime;
 
 public class Operation {
+    public Operation(double num1, double num2, double result) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.result = result;
+    }
+
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "num1=" + num1 +
+                ", num2=" + num2 +
+                ", type=" + type +
+                ", result=" + result +
+                ", time=" + time +
+                '}';
+    }
 
     private double num1;
 
