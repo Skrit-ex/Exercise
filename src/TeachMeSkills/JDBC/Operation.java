@@ -15,10 +15,11 @@ public class Operation {
         this.result = result;
     }
 
-    public Operation(int num1, int num2, String type) {
+    public Operation(int num1, int num2, String type, int result) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
+        this.result = result;
     }
 
     public int getId() {
