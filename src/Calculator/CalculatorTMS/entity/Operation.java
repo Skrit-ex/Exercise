@@ -20,6 +20,13 @@ public class Operation {
                 '}';
     }
 
+    public Operation(double num1, double num2, String type, double result) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.type = OperationType.valueOf(type);
+        this.result = result;
+    }
+
     private double num1;
 
     private double num2;
