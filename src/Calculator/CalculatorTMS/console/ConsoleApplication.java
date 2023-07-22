@@ -19,13 +19,13 @@ import java.util.Optional;
 public class ConsoleApplication implements Application {
     private final Calculator calculator = new Calculator();
     private final Reader reader = new ConsoleReader();
-    private final ConsoleWriter consoleWriter = new ConsoleWriter();
     private final Writer writer = new ConsoleWriter();
     private final InMemoryOperationStorage storage = new InMemoryOperationStorage();
     private final Library library = new Library();
     private  final OperationStorage fileStorage = new FileOperationStorage();
     private final OperationValidator valid = new OperationValidator();
     private final GsonOperationStorage gStorage = new GsonOperationStorage();
+    private final JDBCOperationStorage jdbcOperationStorage = new JDBCOperationStorage();
     @Override
     public void run() throws IOException {
         boolean continueCalculator = true;
@@ -52,6 +52,8 @@ public class ConsoleApplication implements Application {
                 Optional<Operation> result = calculator.calculate(op);
                 storage.save(result.get());
                 fileStorage.save(result.get());
+                gStorage.save(result.get());
+                jdbcOperationStorage.save(result.get());
                 writer.write("Your result = " + op.getResult());
 
                 writer.write("Would you like continue calculations?  yes/no");
@@ -70,6 +72,8 @@ public class ConsoleApplication implements Application {
             }
             List<Operation> all = storage.findAll();
             library.showLibrary(all);
+
+            jdbcOperationStorage.findAll();
 
             LibraryGson libraryGson = new LibraryGson();
             libraryGson.gsonLibrary(all);
