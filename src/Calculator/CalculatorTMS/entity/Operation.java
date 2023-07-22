@@ -23,26 +23,34 @@ public class Operation {
     public Operation(double num1, double num2, String type, double result) {
         this.num1 = num1;
         this.num2 = num2;
-        this.type = OperationType.valueOf(type);
+        this.type = type;
+        this.result = result;
+    }
+
+    public Operation( double id,double num1, double num2, String type, double result) {
+        this.num1 = num1;
+        this.id = id;
+        this.num2 = num2;
+        this.type = type;
         this.result = result;
     }
 
     private double num1;
-
+    private double id;
     private double num2;
 
-    private OperationType type;
+    private String type;
 
     private double result;
 
     private LocalDateTime time;
 
-    public Operation(double num1, double num2, OperationType type) {
+    public Operation(double num1, double num2, String type) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
     }
-    public Operation(Double num1, OperationType type, Double num2,  double result, Double time) {
+    public Operation(Double num1, String type, Double num2,  double result, Double time) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
@@ -51,6 +59,14 @@ public class Operation {
 
     public LocalDateTime getTime() {
         return time;
+    }
+
+    public double getId() {
+        return id;
+    }
+
+    public void setId(double id) {
+        this.id = id;
     }
 
     public void setTime(LocalDateTime time) {
@@ -73,11 +89,11 @@ public class Operation {
         this.num2 = num2;
     }
 
-    public OperationType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(OperationType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
