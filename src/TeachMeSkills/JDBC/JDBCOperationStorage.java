@@ -9,20 +9,24 @@ public class JDBCOperationStorage {
 
     private final Connection connection;
 
+    private final static String INSERT_INTO = "insert into operation ( num1, num2, type, result) values ( ?, ?, ?,?)";
+    private final static String URL = "jdbc:postgresql://localhost:5432/postgres";
+    private final static String USER_JDBC = "postgres";
+    private final static String PASSWORD_JDBC = "admin";
+    private final static String DELETE_SQL = "delete from operation where id = ?";
+
     public JDBCOperationStorage() {
         try {
-            this.connection = DriverManager.getConnection
-                    ("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
+            this.connection = DriverManager.getConnection (URL, USER_JDBC , PASSWORD_JDBC );
         }catch (SQLException e){
             throw new RuntimeException();
         }
     }
 
     public void save(Operation operation) {
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         try {
-         preparedStatement = connection.prepareStatement
-                 ("insert into operation ( num1, num2, type, result) values ( ?, ?, ?,?)");
+         preparedStatement = connection.prepareStatement(INSERT_INTO);
          // preparedStatement.setInt(1,operation.getId());
         preparedStatement.setInt(1, operation.getNum1());
         preparedStatement.setInt(2, operation.getNum2());
@@ -35,7 +39,7 @@ public class JDBCOperationStorage {
 
     }
     public List<Operation> findAll(){
-        Statement statement = null;
+        Statement statement;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select  * from operation ");
@@ -57,7 +61,7 @@ public class JDBCOperationStorage {
     }
     public void deleteById( int id) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("delete from operation where id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_SQL);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {

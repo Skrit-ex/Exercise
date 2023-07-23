@@ -12,11 +12,12 @@ public class Operation {
     @Override
     public String toString() {
         return "Operation{" +
-                "num1=" + num1 +
-                ", num2=" + num2 +
-                ", type=" + type +
-                ", result=" + result +
-                ", time=" + time +
+                "num1 = " + num1 +
+                ", id = " + id +
+                ", num2 = " + num2 +
+                ", type = '" + type + '\'' +
+                ", result = " + result +
+                ", time = " + time +
                 '}';
     }
 
@@ -27,12 +28,13 @@ public class Operation {
         this.result = result;
     }
 
-    public Operation( double id,double num1, double num2, String type, double result) {
+    public Operation( double id,double num1, double num2, String type, double result, LocalDateTime time) {
         this.num1 = num1;
         this.id = id;
         this.num2 = num2;
         this.type = type;
         this.result = result;
+        this.time = time;
     }
 
     private double num1;
