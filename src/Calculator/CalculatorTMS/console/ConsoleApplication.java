@@ -11,6 +11,7 @@ import Calculator.CalculatorTMS.entity.OperationType;
 import Calculator.CalculatorTMS.service.Calculator;
 import Calculator.CalculatorTMS.validator.OperationValidator;
 import TeachMeSkills.Exception.OperationNotFoundException;
+import TeachMeSkills.Exception.TypeOperation;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,61 +23,62 @@ public class ConsoleApplication implements Application {
     private final Writer writer = new ConsoleWriter();
     private final InMemoryOperationStorage storage = new InMemoryOperationStorage();
     private final Library library = new Library();
-    private  final OperationStorage fileStorage = new FileOperationStorage();
+    private final OperationStorage fileStorage = new FileOperationStorage();
     private final OperationValidator valid = new OperationValidator();
     private final GsonOperationStorage gStorage = new GsonOperationStorage();
     private final JDBCOperationStorage jdbcOperationStorage = new JDBCOperationStorage();
+
     @Override
     public void run() throws IOException {
         boolean continueCalculator = true;
-            while (continueCalculator) {
-                boolean isValid = false;
+        while (continueCalculator) {
+            boolean isValid = false;
 
-                writer.write("Enter num1");
-                double num1= reader.readDouble();
-                isValid = (valid.validNum(String.valueOf(num1)));
-                if(!isValid){
-                    continue;
-                }
-                writer.write("Enter num 2");
-                double num2 = reader.readDouble();
-                writer.write("Enter operation type -> (sum/min/mul/div)");
-                OperationType type;
-                try {
-                    type = reader.readOperationType();
-                }catch (OperationNotFoundException e){
-                    writer.write("Operation not found");
-                    continue;
-                }
-                Operation op = new Operation(num1,num2,type);
-                Optional<Operation> result = calculator.calculate(op);
-                storage.save(result.get());
-                fileStorage.save(result.get());
-                gStorage.save(result.get());
-                jdbcOperationStorage.save(result.get());
-                writer.write("Your result = " + op.getResult());
+            writer.write("Enter num1");
+            double num1 = reader.readDouble();
+            isValid = (valid.validNum(String.valueOf(num1)));
+            if (!isValid) {
+                continue;
+            }
+            writer.write("Enter num 2");
+            double num2 = reader.readDouble();
+            writer.write("Enter operation type -> (sum/min/mul/div)");
+            TypeOperation type;
+            try {
+                type = reader.readOperationType();
+            } catch (OperationNotFoundException e) {
+                writer.write("Operation not found");
+                continue;
+            }
+            Operation op = new Operation(num1, num2, type);
+            Optional<Operation> result = calculator.calculate(op);
+            storage.save(result.get());
+            fileStorage.save(result.get());
+            gStorage.save(result.get());
+            jdbcOperationStorage.save(result.get());
+            writer.write("Your result = " + op.getResult());
 
-                writer.write("Would you like continue calculations?  yes/no");
-                String answer = reader.readString();
-                switch (answer) {
-                    case "yes" -> writer.write("Continue ");
-                    case "no" -> {
-                        writer.write("Program stops working ");
-                        continueCalculator = false;
-                    }
-                    default -> {
-                        writer.writeError("You inputted error, program stops working ");
-                        continueCalculator = false;
-                    }
+            writer.write("Would you like continue calculations?  yes/no");
+            String answer = reader.readString();
+            switch (answer) {
+                case "yes" -> writer.write("Continue ");
+                case "no" -> {
+                    writer.write("Program stops working ");
+                    continueCalculator = false;
+                }
+                default -> {
+                    writer.writeError("You inputted error, program stops working ");
+                    continueCalculator = false;
                 }
             }
-            List<Operation> all = storage.findAll();
-            library.showLibrary(all);
+        }
+        List<Operation> all = storage.findAll();
+        library.showLibrary(all);
 
-            jdbcOperationStorage.findAll();
+        printHistory(jdbcOperationStorage.findAll());
 
-            LibraryGson libraryGson = new LibraryGson();
-            libraryGson.gsonLibrary(all);
+        LibraryGson libraryGson = new LibraryGson();
+        libraryGson.gsonLibrary(all);
 
 //                List<Operation> all = storage.findAll();
 //                writer.write("Want to see the library? yes/no");
@@ -89,7 +91,16 @@ public class ConsoleApplication implements Application {
 //                     case "no"->
 //                        writer.write("stop program");
 //                    default -> writer.writeError(" Error, ");
-//            }         l
+//            }
 
+    }
+
+    private void printHistory(List<Operation> operations) {
+        for (Operation operation : operations) {
+            for (int i = 1; i < operations.stream().count(); i++) {
+                writer.write(i + ". " + operation.toString());
+                writer.write(" ");
+            }
+        }
     }
 }

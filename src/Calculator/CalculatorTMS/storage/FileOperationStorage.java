@@ -51,7 +51,7 @@ FileOperationStorage implements OperationStorage {
         double num2 = Double.parseDouble(arr[2]);
         double result = Double.parseDouble(arr[3]);
         Double time = Double.valueOf(arr[4]);
-        return new Operation(num1,operationType, num2,result, time);
+        return new Operation(num1,operationType.toString(), num2,result, time);
 
     }
 }
