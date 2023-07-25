@@ -1,6 +1,7 @@
 package Calculator.CalculatorTMS.storage;
 
 import Calculator.CalculatorTMS.entity.Operation;
+import Calculator.CalculatorTMS.entity.OperationType;
 
 import java.io.IOException;
 import java.sql.*;
@@ -56,7 +57,7 @@ public class JDBCOperationStorage implements OperationStorage {
                 double id = resultSet.getDouble(1);
                 double num1 = resultSet.getDouble(2);
                 double num2 = resultSet.getDouble(3);
-                String type = resultSet.getString(4);
+                OperationType type = OperationType.valueOf(resultSet.getString(4));
                 double result = resultSet.getDouble(5);
                 LocalDateTime time = resultSet.getTimestamp(6).toLocalDateTime();
                 Operation operationJDBC = new Operation(id, num1, num2, type, result, time);

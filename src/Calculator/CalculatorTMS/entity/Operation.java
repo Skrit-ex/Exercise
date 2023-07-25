@@ -21,14 +21,14 @@ public class Operation {
                 '}';
     }
 
-    public Operation(double num1, double num2, String type, double result) {
+    public Operation(double num1, double num2, OperationType type, double result) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
         this.result = result;
     }
 
-    public Operation( double id,double num1, double num2, String type, double result, LocalDateTime time) {
+    public Operation( double id,double num1, double num2, OperationType type, double result, LocalDateTime time) {
         this.num1 = num1;
         this.id = id;
         this.num2 = num2;
@@ -41,18 +41,18 @@ public class Operation {
     private double id;
     private double num2;
 
-    private String type;
+    private OperationType type;
 
     private double result;
 
     private LocalDateTime time;
 
-    public Operation(double num1, double num2, String type) {
+    public Operation(double num1, double num2, OperationType type) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
     }
-    public Operation(Double num1, String type, Double num2,  double result, Double time) {
+    public Operation(Double num1, OperationType type, Double num2,  double result, Double time) {
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
@@ -91,11 +91,11 @@ public class Operation {
         this.num2 = num2;
     }
 
-    public String getType() {
+    public OperationType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(OperationType type) {
         this.type = type;
     }
 

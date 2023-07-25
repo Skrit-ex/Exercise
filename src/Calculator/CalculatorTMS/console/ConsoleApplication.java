@@ -11,7 +11,6 @@ import Calculator.CalculatorTMS.entity.OperationType;
 import Calculator.CalculatorTMS.service.Calculator;
 import Calculator.CalculatorTMS.validator.OperationValidator;
 import TeachMeSkills.Exception.OperationNotFoundException;
-import TeachMeSkills.Exception.TypeOperation;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,7 +42,7 @@ public class ConsoleApplication implements Application {
             writer.write("Enter num 2");
             double num2 = reader.readDouble();
             writer.write("Enter operation type -> (sum/min/mul/div)");
-            TypeOperation type;
+            OperationType type;
             try {
                 type = reader.readOperationType();
             } catch (OperationNotFoundException e) {
@@ -97,10 +96,8 @@ public class ConsoleApplication implements Application {
 
     private void printHistory(List<Operation> operations) {
         for (Operation operation : operations) {
-            for (int i = 1; i < operations.stream().count(); i++) {
-                writer.write(i + ". " + operation.toString());
+                writer.write(operation.toString());
                 writer.write(" ");
-            }
         }
     }
 }
