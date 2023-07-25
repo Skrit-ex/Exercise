@@ -41,10 +41,16 @@ public class ConsoleApplication implements Application {
             }
             writer.write("Enter num 2");
             double num2 = reader.readDouble();
+            if(! valid.validNum(String.valueOf(num2))){
+                continue;
+            }
             writer.write("Enter operation type -> (sum/min/mul/div)");
             OperationType type;
             try {
                 type = reader.readOperationType();
+                if(valid.validType(String.valueOf(type))){
+                    continue;
+                }
             } catch (OperationNotFoundException e) {
                 writer.write("Operation not found");
                 continue;
@@ -76,9 +82,8 @@ public class ConsoleApplication implements Application {
 
         printHistory(jdbcOperationStorage.findAll());
 
-        LibraryGson libraryGson = new LibraryGson();
+        LibraryGson libraryGson = new LibraryGson();  // FIXME: 25.07.2023 
         libraryGson.gsonLibrary(all);
-
 //                List<Operation> all = storage.findAll();
 //                writer.write("Want to see the library? yes/no");
 //                String answer = reader.readString();
