@@ -46,6 +46,11 @@ public class JDBCOperationStorage implements OperationStorage {
     }
 
     @Override
+    public void saveList(List<Operation> operations) {
+
+    }
+
+    @Override
     public List<Operation> findAll() throws IOException {
         Statement statement;
         try {

@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class
-FileOperationStorage implements OperationStorage {
+public class FileOperationStorage implements OperationStorage {
     Writer writer = new ConsoleWriter();
     @Override
     public void save(Operation operation){
@@ -27,6 +26,11 @@ FileOperationStorage implements OperationStorage {
         }catch (IOException e){
             writer.writeError("File not found");
         }
+    }
+
+    @Override
+    public void saveList(List<Operation> operations) {
+
     }
 
     @Override

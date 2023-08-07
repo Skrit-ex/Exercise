@@ -31,18 +31,25 @@ public class GsonOperationStorage implements OperationStorage {
     }
 
     @Override
-    public void save(Operation operation) {
+    public void save(Operation operation) throws IOException {
+
+    }
+
+    @Override
+    public void saveList(List<Operation> operations) {
         try {
-            operations.add(operation);
-            String s = gson.toJson(operations.toString());
-            fileWriter.write(s);
-            fileWriter.write("\n");
-            fileWriter.flush();
+            for( Operation operation: operations) {
+                operations.add(operation);
+
+                String s = gson.toJson(operations.toString());
+                fileWriter.write(s);
+                fileWriter.write("\n");
+                fileWriter.flush();
+            }
         } catch (IOException e) {
             writer.writeError("File not found");
         }
     }
-
     @Override
 
     // FIXME: 12.07.2023

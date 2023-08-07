@@ -18,6 +18,11 @@ public class InMemoryOperationStorage implements OperationStorage {
     }
 
     @Override
+    public void saveList(List<Operation> operations) {
+
+    }
+
+    @Override
     public List<Operation> findAll() {
         return new ArrayList<>(operations);
     }

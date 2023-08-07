@@ -48,7 +48,7 @@ public class ConsoleApplication implements Application {
             OperationType type;
             try {
                 type = reader.readOperationType();
-                if(valid.validType(String.valueOf(type))){
+                if(!(valid.validType(String.valueOf(type)))){
                     continue;
                 }
             } catch (OperationNotFoundException e) {
@@ -68,7 +68,7 @@ public class ConsoleApplication implements Application {
             switch (answer) {
                 case "yes" -> writer.write("Continue ");
                 case "no" -> {
-                    writer.write("Program stops working ");
+                    writer.writeError("Program stops working ");
                     continueCalculator = false;
                 }
                 default -> {

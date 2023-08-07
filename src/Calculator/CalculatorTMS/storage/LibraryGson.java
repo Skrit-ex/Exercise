@@ -17,7 +17,7 @@ public class LibraryGson {
     private final ConsoleWriter consoleWriter = new ConsoleWriter();
     private final GsonOperationStorage storage = new GsonOperationStorage();
 
-    public void gsonLibrary(List<Operation> all){
+    public void gsonLibrary(List<Operation> all) throws IOException {
         writer.write("Do you want to see library? [0] - no/  [1] - yes ");
         String answer = reader.readString();
         switch (answer) {
