@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 
-public class CalculatorWeb implements HttpHandler {
+public class CalculatorWeb1 implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         //System.out.println(exchange.getRequestURI().getQuery());

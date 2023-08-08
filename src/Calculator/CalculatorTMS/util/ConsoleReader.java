@@ -1,11 +1,11 @@
-package Calculator.CalculatorTMS.util.util;
+package Calculator.CalculatorTMS.util;
 
 import Calculator.CalculatorTMS.entity.OperationType;
 import TeachMeSkills.Exception.OperationNotFoundException;
 
 import java.util.Scanner;
 
-public class ConsoleReader implements Reader {
+public class ConsoleReader implements Calculator.CalculatorTMS.util.util.Reader {
 
     Scanner scanner = new Scanner(System.in);
 

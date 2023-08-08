@@ -1,8 +1,8 @@
 package Calculator.CalculatorTMS.console;
 
 import Calculator.CalculatorTMS.storage.*;
-import Calculator.CalculatorTMS.util.util.ConsoleReader;
-import Calculator.CalculatorTMS.util.util.ConsoleWriter;
+import Calculator.CalculatorTMS.util.ConsoleReader;
+import Calculator.CalculatorTMS.util.ConsoleWriter;
 import Calculator.CalculatorTMS.Application;
 import Calculator.CalculatorTMS.util.util.Reader;
 import Calculator.CalculatorTMS.util.util.Writer;
@@ -82,8 +82,9 @@ public class ConsoleApplication implements Application {
 
         printHistory(jdbcOperationStorage.findAll());
 
-        LibraryGson libraryGson = new LibraryGson();  // FIXME: 25.07.2023 
-        libraryGson.gsonLibrary(all);
+//        LibraryGson libraryGson = new LibraryGson();  // FIXME: 25.07.2023
+//        libraryGson.gsonLibrary(all);
+
 //                List<Operation> all = storage.findAll();
 //                writer.write("Want to see the library? yes/no");
 //                String answer = reader.readString();
@@ -99,10 +100,12 @@ public class ConsoleApplication implements Application {
 
     }
 
+
     private void printHistory(List<Operation> operations) {
         for (Operation operation : operations) {
                 writer.write(operation.toString());
                 writer.write(" ");
         }
     }
+
 }

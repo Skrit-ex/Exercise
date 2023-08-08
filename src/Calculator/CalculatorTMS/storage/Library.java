@@ -1,7 +1,7 @@
 package Calculator.CalculatorTMS.storage;
 
-import Calculator.CalculatorTMS.util.util.ConsoleReader;
-import Calculator.CalculatorTMS.util.util.ConsoleWriter;
+import Calculator.CalculatorTMS.util.ConsoleReader;
+import Calculator.CalculatorTMS.util.ConsoleWriter;
 import Calculator.CalculatorTMS.util.util.Reader;
 import Calculator.CalculatorTMS.util.util.Writer;
 import Calculator.CalculatorTMS.entity.Operation;
