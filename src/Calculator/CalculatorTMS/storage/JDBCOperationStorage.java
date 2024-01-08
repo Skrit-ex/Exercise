@@ -11,11 +11,11 @@ import java.util.List;
 
 public class JDBCOperationStorage implements OperationStorage {
 
-    private static final String SELECT_ALL_OPERATION = "select  * from operation ";
+    private static final String SELECT_ALL_OPERATION = "select  * from operations ";
     private static final String POSTGRES = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USER = "postgres";
     private static final String PASSWORD = "admin";
-    private static final String INSERT_OPERATION = "insert into operation (num1, num2, type, result, time) values ( ?, ?, ?,?,?)";
+    private static final String INSERT_OPERATION = "insert into operations (num1, num2, type, result, time) values ( ?, ?, ?,?,?)";
 
     private final Connection connection;
 

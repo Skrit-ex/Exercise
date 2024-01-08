@@ -19,11 +19,14 @@ public class CalculatorWeb1 implements HttpHandler {
         System.out.println(type);
 
 
-        String s = "Result = 4";
+        String s = "Result = 3";
+        //String s2 = "resada";
         exchange.sendResponseHeaders(200, s.length());
+        //exchange.sendResponseHeaders(210, s2.length());
         OutputStream responseBody =  exchange.getResponseBody();
         PrintWriter printWriter = new PrintWriter(responseBody);
-        printWriter.print(s);
+        printWriter.println(s);
+        //printWriter.println(s2);
         printWriter.close();
 
     }
