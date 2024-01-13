@@ -49,22 +49,33 @@ public class Test {
 //
 //            System.out.printf("%s,%s,%s,%s \n", id, name, username, password);
 
-        // работа по связыванию баз данных через ключи
+//        // работа по связыванию баз данных через ключи
+//
+//        PreparedStatement preparedStatement = connection.prepareStatement("insert into address values (default, ?) returning id"); // для получение id
+//        preparedStatement.setString(1, "Test");
+//        ResultSet resultSet = preparedStatement.executeQuery();
+//        resultSet.next();
+//        int addressId = resultSet.getInt(1);
+//
+//        PreparedStatement preparedStatement1 = connection.prepareStatement("insert into account values (default, ?, ?, ?,?)");
+//        preparedStatement1.setString(1, "test");
+//        preparedStatement1.setString(2, "test");
+//        preparedStatement1.setString(3, "test");
+//        preparedStatement1.setInt(4, addressId);
+//        preparedStatement1.execute();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into address values (default, ?) returning id"); // для получение id
-        preparedStatement.setString(1, "Test");
-        ResultSet resultSet = preparedStatement.executeQuery();
-        resultSet.next();
-        int addressId = resultSet.getInt(1);
+        // join
+        PreparedStatement preparedStatement2 = connection.prepareStatement("select ac.name, ac.username, ac.password, ad.street from account ac join address ad on ac.address_id = ad.id ");
+        ResultSet resultSet = preparedStatement2.executeQuery();
 
-        PreparedStatement preparedStatement1 = connection.prepareStatement("insert into account values (default, ?, ?, ?,?)");
-        preparedStatement1.setString(1, "test");
-        preparedStatement1.setString(2, "test");
-        preparedStatement1.setString(3, "test");
-        preparedStatement1.setInt(4, addressId);
-        preparedStatement1.execute();
+        while (resultSet.next()){
+            String name = resultSet.getString(1);
+            String username = resultSet.getString(2);
+            String password = resultSet.getString(3);
+            String street = resultSet.getString(4);
 
-
+            System.out.printf("%s,%s,%s,%s \n", name, username,password, street);
+        }
     }
 }
 
