@@ -31,20 +31,33 @@ public class Test {
         //HashSet
         //TreeSet
 
-        Set<String> set = new HashSet<>();   //данные не дублируются
-        set.add("ACB");
-        set.add("ACT");
-        set.add("CAR");
-        set.add("ACB");
+//        Set<String> set = new HashSet<>();   //данные не дублируются
+//        set.add("ACB");
+//        set.add("ACT");
+//        set.add("CAR");
+//        set.add("ACB");
+//
+//        System.out.println(set);
+//
+//        Set<String> set1 = new TreeSet<>();  // если  требуется сортировка
+//        set1.add("BBB");
+//        set1.add("DDD");
+//        set1.add("AAC");
+//        set1.add("AAA");
+//
+//        System.out.println(set1);
 
-        System.out.println(set);
 
-        Set<String> set1 = new TreeSet<>();  // если  требуется сортировка
-        set1.add("BBB");
-        set1.add("DDD");
-        set1.add("AAC");
-        set1.add("AAA");
+        //Map
+        //HashMap
+        //TreeMap
 
-        System.out.println(set1);
+        Map<String, String> map = new HashMap<>();
+        map.put("Hello world1", "1");
+        map.put("Hello world2", "2");
+        map.put("Hello world3", "3");
+        map.put("Hello world4", "4");
+
+
     }
 }
