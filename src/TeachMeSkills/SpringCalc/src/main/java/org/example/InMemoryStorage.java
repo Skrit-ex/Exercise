@@ -1,8 +1,11 @@
 package org.example;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class InMemoryStorage implements OperationStorage{
 
     List<Operation> operations = new ArrayList<>();
