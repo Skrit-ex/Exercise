@@ -1,8 +1,12 @@
 package tms.SpringCore;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
-    private Dog dog;
-    private Cat cat;
+    private final Dog dog;
+    private final Cat cat;
 
     public User(Dog dog, Cat cat) {
         this.dog = dog;
