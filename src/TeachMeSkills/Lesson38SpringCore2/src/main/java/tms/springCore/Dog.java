@@ -1,4 +1,4 @@
-package tms.SpringCore;
+package tms.springCore;
 
 import org.springframework.stereotype.Component;
 
