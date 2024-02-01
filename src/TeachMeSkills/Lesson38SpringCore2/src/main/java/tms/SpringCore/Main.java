@@ -8,6 +8,5 @@ public class Main {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(RootConfiguration.class);
         User user = applicationContext.getBean("user", User.class);
         System.out.println(user);
-
     }
 }

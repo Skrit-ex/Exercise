@@ -14,6 +14,9 @@ public class User {
         this.dog = dog;
         this.cat = cat;
     }
+    public void sayHello(){
+        System.out.println("Hello");
+    }
 
     public String getCode() {
         return code;
@@ -22,6 +25,7 @@ public class User {
     public void setCode(String code) {
         this.code = code;
     }
+
 
     @Override
     public String toString() {
