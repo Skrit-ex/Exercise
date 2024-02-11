@@ -29,7 +29,7 @@ public class TestController {
     }
 
 
-    //get localhost:8080/test?name=test&age=12
+    //get localhost:8080/test/test1?name=test&age=12
     @GetMapping("/test1")
     public ModelAndView test(String name,
                              @RequestParam(defaultValue = "0") int age,
