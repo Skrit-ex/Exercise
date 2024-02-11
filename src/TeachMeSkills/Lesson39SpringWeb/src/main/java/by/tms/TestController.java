@@ -14,7 +14,7 @@ public class TestController {
     // GET localhost:8080/test?name=Test&age=22
 
     @GetMapping
-    public String test(String name, @RequestParam(defaultValue = "0") int age){   //if user input empty age
+    public String test(String name, @RequestParam(defaultValue = "0") int age){   // @RequestParam, if user input empty age
         System.out.println(name);
         System.out.println(age);
         return "test";
