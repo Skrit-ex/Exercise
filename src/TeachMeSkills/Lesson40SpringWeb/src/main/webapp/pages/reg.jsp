@@ -13,9 +13,12 @@
 <body>
 
 <form action="/user/reg" method="post">
-    <input type="text" name="user" placeholder="name">
+    <input type="text" name="name" placeholder="Name">
+    <p>${name}</p>
     <input type="text" name="username" placeholder="Username">
+    <p>${username}</p>
     <input type="text" name="password" placeholder="password">
+    <p>${password}</p>
     <button>Submit</button>
 </form>
 
