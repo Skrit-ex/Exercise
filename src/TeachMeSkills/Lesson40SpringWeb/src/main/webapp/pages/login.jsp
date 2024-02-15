@@ -15,7 +15,7 @@
 
 <p1> Log In </p1>
 
-<form action="/user/login" method="post" modelAttribute="newLogin">
+<s:form action="/user/login" method="post" modelAttribute="newLogin" >
     <s:input path="name" placeholder="Name"/>
     <br>
     <s:errors path="name"/>

@@ -46,8 +46,7 @@ public class UserController {
     @PostMapping("login")
     public String login(@ModelAttribute("newLogin") @Validated LoginDto loginDto,
                         BindingResult bindingResult,
-                        Model model,
-                        HttpSession httpSession) {
+                        Model model) {
         if (bindingResult.hasErrors()) {
             return "login";
         }
