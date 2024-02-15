@@ -1,8 +1,6 @@
 package by.validation;
 
 
-
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,9 +43,10 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public String login(@ModelAttribute("newLogin") @Validated LoginDto loginDto,
                         BindingResult bindingResult,
+                        Model model,
                         HttpSession httpSession) {
         if (bindingResult.hasErrors()) {
             return "login";
