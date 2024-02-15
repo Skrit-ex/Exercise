@@ -1,4 +1,4 @@
-package by.tms;
+package by.validation;
 
 
 import lombok.AllArgsConstructor;
@@ -12,13 +12,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 @NoArgsConstructor
 public class User {
 
-    @NotBlank
-    @NotEmpty
+    @NotBlank(message = "Not Blank")
+    @NotEmpty(message = "Not Empty")
     private String name;
-    @NotBlank
-    @NotEmpty
+    @NotBlank(message = "Not Blank")
+    @NotEmpty(message = "Not Empty")
     private String username;
-    @NotBlank
-    @NotEmpty
+    @NotBlank(message = "Not Blank")
+    @NotEmpty(message = "Not Empty")
     private String password;
 }
