@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,6 +26,15 @@ public class UserController {
         return "reg";
     }
 
+
+    // FIXME: 19.02.2024  ModelandView don't work with Exception
+//    @GetMapping("/reg")
+//    public ModelAndView reg(ModelAndView modelAndView){
+//        modelAndView.setViewName("reg");
+//        modelAndView.addObject("newUser", new User());
+//        return modelAndView;
+//    }
+
     @PostMapping("reg")
     public String reg(@ModelAttribute("newUser") @Validated User user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
@@ -38,11 +48,11 @@ public class UserController {
         userService.save(user);
         return "redirect:/";
     }
-
-    @ExceptionHandler(RuntimeException.class)
-    public String re(RuntimeException exception){
-        return "error";
-    }
+    // FIXME: 19.02.2024 if you use without class ExceptionController
+//    @ExceptionHandler(RuntimeException.class) 
+//    public String re(RuntimeException exception){
+//        return "error";
+//    }
 
 
     @GetMapping("/login")
