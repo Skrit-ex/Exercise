@@ -12,16 +12,18 @@
 </head>
 <body>
 
-<h1> Home title </h1>
+<h1> Home title</h1>
+
+
+<h1> Home ${myName} - ${myAge}</h1>
+
 
 <form action="/user/login" method="post">
     <button>Login</button>
 </form>
-<br>
-<form action="/user/reg" method="post">
-    <button>Registration</button>
-</form>
 
+<br>
+ <a href="/user/reg" reg />
 
 </body>
 </html>
