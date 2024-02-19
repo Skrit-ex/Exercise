@@ -14,7 +14,7 @@ public class UserService {
 
     public void save(User user){
         if(user.getName().equals("admin")){
-            throw new RuntimeException();
+            throw new RuntimeException(" Admin exist!");
         }
         users.add(user);
     }
