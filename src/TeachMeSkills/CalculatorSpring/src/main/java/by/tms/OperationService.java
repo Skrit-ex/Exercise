@@ -13,4 +13,11 @@ public class OperationService {
     public void save(Operation operation){
         operations.add(operation);
     }
+
+    public List<Operation> findAll(){
+        for(Operation operation: operations){
+            System.out.println(operation.getNum1() + " " +operation.getType() + " " + operation.getNum2()+ " = " + operation.getResult());
+        }
+        return new ArrayList<>();
+    }
 }
