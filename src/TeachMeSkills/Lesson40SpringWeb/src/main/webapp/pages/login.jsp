@@ -24,7 +24,7 @@
     <br>
     <s:errors path="password"/>
     <s:button>Submit</s:button>
-</form>
+</s:form>
 
 </body>
 </html>

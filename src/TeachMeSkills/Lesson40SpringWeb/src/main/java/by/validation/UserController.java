@@ -1,6 +1,7 @@
 package by.validation;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +17,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/reg")
     public String reg(Model model) {
@@ -33,6 +38,7 @@ public class UserController {
             //model.addAttribute("newUser", user); // FIXME: 14.02.2024 ( if you use taglib spring , or you must write @ModelAttribute in method)               return "reg";
             return "reg";
         }
+        userService.save(user);
         return "redirect:/";
     }
 
