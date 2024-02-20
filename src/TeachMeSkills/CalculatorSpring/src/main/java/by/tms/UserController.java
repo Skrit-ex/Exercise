@@ -1,5 +1,7 @@
 package by.tms;
 
+import by.tms.service.OperationService;
+import by.tms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -31,7 +32,7 @@ public class UserController {
     @PostMapping("reg")
     public String reg(@Validated User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "user";
+            return "home";
         }
         userService.save(user);
         return "redirect:/";
@@ -39,13 +40,13 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "reg";
     }
 
     @PostMapping("login")
     public String login(@Validated User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "user";
+            return "home";
         }
         return "redirect:/";
     }

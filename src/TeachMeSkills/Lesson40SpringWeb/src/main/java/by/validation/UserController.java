@@ -27,7 +27,7 @@ public class UserController {
     }
 
 
-    // FIXME: 19.02.2024  ModelandView don't work with Exception
+    // FIXME: 19.02.2024  ModelAndView don't work with Exception
 //    @GetMapping("/reg")
 //    public ModelAndView reg(ModelAndView modelAndView){
 //        modelAndView.setViewName("reg");
