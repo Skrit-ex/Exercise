@@ -15,11 +15,11 @@
 <h1> Home page </h1>
 <br>
 <s:form action="/user/reg" method="post">
-<s:button>Registration</s:button>
+<button>Registration</button>
 </s:form>
 <br>
 <s:form action="/user/login" method="post">
-    <s:button Login />
+    <button>Login</button>
 </s:form>
 
 </body>

@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping("reg")
     public String reg(@Validated User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "home";
+            return "reg";
         }
         userService.save(user);
         return "redirect:/";
@@ -46,7 +46,7 @@ public class UserController {
     @PostMapping("login")
     public String login(@Validated User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "home";
+            return "reg";
         }
         return "redirect:/";
     }

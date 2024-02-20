@@ -14,12 +14,12 @@
 <body>
 <h1> Registration </h1>
 <s:form action="/user/reg" method="post">
-    <s:input path="name" placeholder="Name"/>
+    <input path="name" placeholder="Name"/>
     <br>
-    <s:input path="username" placehorlder="Username" />
+    <input path="username" placehorlder="Username" />
     <br>
-    <s:input path="password" placehorlder="Password" />
-    <s:button> Submit </s:button>
+    <input path="password" placehorlder="Password" />
+    <button> Submit </button>
 </s:form>
 </body>
 </html>

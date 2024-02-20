@@ -12,15 +12,14 @@
     <title>Home</title>
 </head>
 <body>
-
 <h1> Home page </h1>
 <br>
 <s:form action="/user/reg" method="post">
-<s:button>Registration</s:button>
+<button>Registration</button>
 </s:form>
 <br>
 <s:form action="/user/login" method="post">
-    <s:button>Login</s:button>
+    <button>Login</button>
 </s:form>
 
 </body>
