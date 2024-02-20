@@ -18,4 +18,6 @@ public class User {
     private String username;
     @NotEmpty
     private String password;
+
+
 }

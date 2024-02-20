@@ -14,5 +14,8 @@ public class Operation {
     private String result;
     private String type;
 
-
+    public Operation setResult(String result) {
+        this.result = result;
+        return this;
+    }
 }

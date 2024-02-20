@@ -1,5 +1,6 @@
-package by.tms;
+package by.tms.controller;
 
+import by.tms.Operation;
 import by.tms.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
