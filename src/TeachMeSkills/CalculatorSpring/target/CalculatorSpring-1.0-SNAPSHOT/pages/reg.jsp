@@ -11,9 +11,13 @@
 <html>
 <head>
     <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<h1> Registration </h1>
+<jsp:include page="home.jsp"></jsp:include>
+
+
 
 
 <%
@@ -30,13 +34,13 @@
 
 
  <s:form action = "/user/reg" method = "post" >
-    <input path = "name" placeholder = "Name" />
-    <br>
-    <input path = "username" placeholder = "Username" />
-    <br>
-    <input path = "password" placeholder = "Password" />
-    <button > Submit </button >
+         <input type="text" placeholder="Name" name="name">
+         <input type="text" placeholder="Username" name="username">
+         <input type="text" placeholder="Password" name="password">
+         <button> Submit </button>
 </s:form>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
