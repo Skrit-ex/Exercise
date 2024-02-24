@@ -40,15 +40,5 @@
     <button > Submit </button >
 </s:form>
 
-
-
-<s:form action="/user/reg" method="post">
-    <input path="name" placeholder="Name"/>
-    <br>
-    <input path="username" placeholder="Username" />
-    <br>
-    <input path="password" placeholder="Password" />
-    <button> Submit </button>
-</s:form>
 </body>
 </html>
