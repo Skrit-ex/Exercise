@@ -42,13 +42,13 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(){
-        return "reg";
+        return "login";
     }
 
     @PostMapping("login")
     public String login(@Validated User user, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "reg";
+            return "login";
         }
         return "redirect:/";
     }

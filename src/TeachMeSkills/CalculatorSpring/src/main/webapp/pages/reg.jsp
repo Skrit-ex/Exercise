@@ -32,12 +32,10 @@
 
 
  <s:form action = "/user/reg" method = "post" >
-    <input path = "name" placeholder = "Name" />
-    <br>
-    <input path = "username" placeholder = "Username" />
-    <br>
-    <input path = "password" placeholder = "Password" />
-    <button > Submit </button >
+         <input type="text" placeholder="Name" name="name">
+         <input type="text" placeholder="Username" name="username">
+         <input type="text" placeholder="Password" name="password">
+         <button> Submit </button>
 </s:form>
 
 </body>

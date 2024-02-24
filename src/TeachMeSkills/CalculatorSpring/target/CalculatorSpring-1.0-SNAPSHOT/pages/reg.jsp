@@ -16,8 +16,6 @@
 <h1> Registration </h1>
 
 
-
-
 <%
     User user = (User) session.getAttribute("user");
 

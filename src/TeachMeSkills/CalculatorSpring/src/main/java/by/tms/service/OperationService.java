@@ -1,4 +1,9 @@
 package by.tms.service;
+/**
+ * Project: CalculatorSpring
+ * Author: Skritex
+ * Date: 24.02.2024
+ */
 
 import by.tms.Operation;
 import org.springframework.stereotype.Component;
