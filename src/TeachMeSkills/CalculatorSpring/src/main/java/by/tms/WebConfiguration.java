@@ -9,15 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages = "by.tms")
+@ComponentScan(basePackages = {"by.tms.controller"})
 @EnableWebMvc
 public class WebConfiguration extends WebMvcConfigurationSupport {
+
 
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-        internalResourceViewResolver.setSuffix(".jsp");
         internalResourceViewResolver.setPrefix("/pages/");
+        internalResourceViewResolver.setSuffix(".jsp");
         return internalResourceViewResolver;
     }
 }

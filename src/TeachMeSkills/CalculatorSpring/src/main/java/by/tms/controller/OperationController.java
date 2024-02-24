@@ -3,6 +3,7 @@ package by.tms.controller;
 import by.tms.Operation;
 import by.tms.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Component
+@ComponentScan(basePackages = "by.tms.service")
 @RequestMapping("/operation")
 public class OperationController {
 
