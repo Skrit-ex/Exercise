@@ -8,7 +8,7 @@ public interface Storage {
 
     void save(User user);
 
-    Optional<User> findByUsername(String username);
+    Optional<User> findByEmail(String email);
 
     boolean checkUsername(String username);
 

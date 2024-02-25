@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f196a608-04d0-4498-ae77-aa8d551a901a" name="Changes" comment="add" />
+    <list default="true" id="f196a608-04d0-4498-ae77-aa8d551a901a" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/../CalculatorSpring/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CalculatorSpring/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CalculatorSpring/PostgresTables/users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/storage/UserStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/storage/OperationStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorSpring/src/main/java/by/tms/storage/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorSpring/target/CalculatorSpring-1.0-SNAPSHOT/pages/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorSpring/target/CalculatorSpring-1.0-SNAPSHOT/pages/home.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,10 +45,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/JDK/Exercises/src/TeachMeSkills/CalculatorSpring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "6e3de54d607c2adb5c08d2c2d79d705c"
   }
 }]]></component>
   <component name="RunManager">
@@ -70,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706294956579</updated>
       <workItem from="1706294958038" duration="4992000" />
+      <workItem from="1708848537461" duration="163000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1706296338958</created>

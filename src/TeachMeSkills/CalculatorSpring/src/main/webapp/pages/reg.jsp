@@ -27,16 +27,25 @@
         out.print("<h1> Hello guest </h1>");
     }
     if(user != null){
-        out.print("<h1> Hello" + user.getName() + "! </h1>");
+        out.print("<h1> Hello" + user.getFirstname() + "! </h1>");
     }
     %>
 
 
 
  <s:form action = "/user/reg" method = "post" >
-         <input type="text" placeholder="Name" name="name">
+         <input type="text" placeholder="Firstname" name="firstname">
+     <br>
+     <p>${firstname}</p>
          <input type="text" placeholder="Username" name="username">
-         <input type="text" placeholder="Password" name="password">
+     <br>
+     <p>${username}</p>
+     <input type="text" placeholder="Email" name="email">
+     <br>
+     <p>${email}</p>
+         <input type="password" placeholder="Password" name="password" >
+     <br>
+     <p>${password}</p>
          <button> Submit </button>
 </s:form>
 

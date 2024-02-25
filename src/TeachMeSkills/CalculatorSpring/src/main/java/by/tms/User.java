@@ -12,12 +12,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class User {
 
 
+    private int id;
     @NotEmpty
-    private String name;
+    private String firstname;
     @NotEmpty
     private String username;
     @NotEmpty
     private String password;
-
+    @NotEmpty
+    private String email;
 
 }
