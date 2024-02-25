@@ -4,6 +4,7 @@ import by.tms.Operation;
 import by.tms.User;
 import by.tms.service.OperationService;
 import by.tms.service.UserService;
+import by.tms.storage.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -24,9 +25,7 @@ import java.util.List;
 @ComponentScan
 @RequestMapping("/user")
 public class UserController {
-
-    @Autowired
-    private UserService userService;
+    private final UserStorage userStorage = UserStorage.getInstance();
 
     @Autowired
     private OperationService operationService;
@@ -46,7 +45,7 @@ public class UserController {
         model.addAttribute("newUser", user);
             return "reg";
         }
-        userService.save(user);
+        userStorage.save(user);
         return "redirect:/";
     }
 
