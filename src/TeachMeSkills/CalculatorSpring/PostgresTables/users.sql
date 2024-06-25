@@ -3,7 +3,7 @@ create table users1
     id        serial
         constraint users_pk
             primary key,
-    name    varchar,
+    firstname    varchar,
     username  varchar,
     email     varchar,
     password  varchar
