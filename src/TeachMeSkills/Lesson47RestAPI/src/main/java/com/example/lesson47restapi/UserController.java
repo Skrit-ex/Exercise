@@ -29,6 +29,9 @@ public class UserController {
 
     @GetMapping("{username}")
     public ResponseEntity<User> findByUsername(@PathVariable String username){
+        if(username.equals("ADMIN")){
+            throw new RuntimeException("Error");
+        }
         for(User user:users){
             if(user.getUsername().equals(username)){
                 return ResponseEntity.ok(user);
