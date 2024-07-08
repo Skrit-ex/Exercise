@@ -4,6 +4,7 @@ package com.example.lesson47restapi;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,5 +47,12 @@ public class UserController {
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();
+    }
+
+
+    @PostMapping("/upload")
+    public void uploadAvatar (@PathVariable String username,
+                                  MultipartFile file){
+        System.out.println(file);
     }
 }
