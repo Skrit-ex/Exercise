@@ -1,12 +1,15 @@
 package com.example.lesson49springdatajpa;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+@Table(name = "users")
 @Entity
+@Getter
+@Setter
 public class User {
 
     @Id

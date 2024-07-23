@@ -18,7 +18,7 @@ public class UserController {
         return "reg";
     }
 
-    @PostMapping
+    @PostMapping("/reg")
     public String reg(User user){
         userRepository.save(user);
         return "redirect:/";
