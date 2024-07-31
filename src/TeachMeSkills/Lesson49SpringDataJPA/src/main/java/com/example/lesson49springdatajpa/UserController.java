@@ -15,7 +15,7 @@ public class UserController {
 
     @GetMapping("/reg")
     public String reg(){
-        return "reg";
+        return "index";
     }
 
     @PostMapping("/reg")
