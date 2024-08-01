@@ -10,25 +10,25 @@
 <body style="display:flex; align-items:center; justify-content:center;">
 <div class="login-page">
     <div class="form">
-        <form class="register-form" method="POST">
+        <form action="/user/reg" class="register-form" method="POST" modelAttribute="newUser" >
             <h2>Register</h2>
             <input type="text" name="name" placeholder="name*" required/>
             <input type="text" name="username" placeholder="username *" required/>
             <input type="password" name="password" placeholder="Password *" required/>
-            <a class="btn" href="#">
+            <button class="btn" type="submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Create
-            </a>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </button>
+            <p class="message">Already registered? <a href="/reg/auth">Sign In</a></p>
         </form>
-        <form class="login-form" method="post">
+        <form action="/login/auth" class="login-form" method="post">
             <h2></i> Login</h2>
             <input type="text" name="username" placeholder="Username" required />
             <input type="password" name="password" placeholder="Password" required/>
-            <a class="btn" href="#">
+            <a class="btn">
                 <span></span>
                 <span></span>
                 <span></span>
