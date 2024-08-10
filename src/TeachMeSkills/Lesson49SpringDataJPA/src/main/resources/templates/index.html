@@ -11,7 +11,7 @@
 <div class="login-page">
     <div class="form">
         <form action="/user/reg" class="register-form" method="POST" modelAttribute="newUser" >
-            <h2>Register</h2>
+            <h2>Registration</h2>
             <input type="text" name="name" placeholder="name*" required/>
             <input type="text" name="username" placeholder="username *" required/>
             <input type="password" name="password" placeholder="Password *" required/>
@@ -22,10 +22,10 @@
                 <span></span>
                 Create
             </button>
-            <p class="message">Already registered? <a href="/reg/auth">Sign In</a></p>
+            <p class="message">Already registered? <a href="/user/auth">Sign In</a></p>
         </form>
         <form action="/login/auth" class="login-form" method="post">
-            <h2></i> Login</h2>
+            <h2></i> Login </h2>
             <input type="text" name="username" placeholder="Username" required />
             <input type="password" name="password" placeholder="Password" required/>
             <a class="btn">
@@ -35,7 +35,7 @@
                 <span></span>
                 Sign in
             </a>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Not registered? <a href="/user/reg">Create an account</a></p>
         </form>
     </div>
 </div>
