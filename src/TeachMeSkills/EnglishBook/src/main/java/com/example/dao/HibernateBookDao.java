@@ -3,6 +3,7 @@ package com.example.dao;
 import com.example.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -52,6 +53,25 @@ public class HibernateBookDao {
     public List<Book> findAll(){
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Book", Book.class).getResultList();
+    }
+
+    @Transactional
+    public void save(Book book){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = null;
+        try{
+            transaction= session.beginTransaction();
+            session.save(book);
+            transaction.commit();
+        }catch (Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+
     }
 
 }
