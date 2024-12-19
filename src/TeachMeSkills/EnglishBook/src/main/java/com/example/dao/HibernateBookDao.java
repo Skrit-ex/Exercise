@@ -6,13 +6,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
 
-
+@Component
 public class HibernateBookDao {
 
     @Autowired

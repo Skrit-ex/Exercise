@@ -16,7 +16,6 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class User {
