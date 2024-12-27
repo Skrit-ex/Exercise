@@ -1,36 +1,69 @@
- body {
-    background-image: url('images/homePage.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    margin: 0;
- }
- .navbar {
-     background-color: #4CAF50;
- }
- .navbar .nav-link {
-     color: white;
- }
- .navbar.nav-link:hover{
-     color: #FFD700;
- }
- .navbar.navbar-brand{
-     color: white;
- }
- .navbar.navbar-brand:hover{
-     color: #bbe8aa;
- }
- .navbar-toggler{
-     color: white;
-     border-color: white;
- }
 
- .dropdown-menu{
-     background-color: #4CAF50;
-     color: white;
- }
- .dropdown-menu .dropdown-item {
-     color: white;
- }
- 
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    background: green;
+}
+li{
+    list-style: none;
+}
+header{
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+/*navbar checkbox*/
+#checkbox_toggle{
+    display: none;
+}
+/*navbar hamburger*/
+
+.hamburger{
+    display: none;
+    user-select: none;
+    font-size:  24px;
+}
+/*navbar menu*/
+.navbar a{
+    position: relative;
+    font-size: 1.1em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: trasform .5s;
+}
+.navbar-btn{
+    width: 140px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
