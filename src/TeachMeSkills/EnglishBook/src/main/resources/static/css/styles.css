@@ -86,3 +86,8 @@ header{
     align-items: center;
     margin-top: 170px;
 }
+/*position input places(email, password) in form container*/
+.formbox{
+    width: 100%;
+    padding: 40px;
+}
