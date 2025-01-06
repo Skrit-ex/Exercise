@@ -4,7 +4,7 @@ body{
     justify-content: center;
     align-content: center;
     min-height: 80vh;
-    background: green;
+
 }
 li{
     list-style: none;
@@ -77,8 +77,9 @@ header{
 .form-container{
     position: relative;
     width: 400px;
-    height: 440px;
-    background: red;
+    height: 480px;
+    background: transparent;
+    backdrop-filter: blur();
     border: 2px solid rgba(255,255,255, .5);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0, .5);
@@ -120,25 +121,26 @@ header{
     width: 100%;
     height: 50px;
     border-bottom: 2px solid black;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 .input-box label{
     position: absolute;
-    top: 50%;
+    top: 78%;
     left: 5px;
-    transform: translateY(-50%);
+    transform: translateY(-80%);
     font-size: 1em;
     color: #182b2f;
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
 }
-input-box input{
+.input-box input{
     width: 100%;
     height: 100%;
-    color: #182a33;
+    color: #021c30;
     background: transparent;
     border: none;
+    outline: none;
     font-size: 1em;
     font-weight: 600;
     padding: 0 35px 0 5px;
@@ -193,4 +195,19 @@ input-box input{
 }
 .btn:hover{
     background: darkcyan;
+}
+.reg-login{
+    font-size: .9em;
+    color: #021c30;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.reg-login p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.reg-login p a:hover{
+    text-decoration: underline;
 }
