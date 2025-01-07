@@ -179,6 +179,9 @@ header{
     accent-color: cornflowerblue;
     text-decoration: none;
 }
+.forget-remember a{
+    color: #29acf1;
+}
 .forget-remember a:hover{
     text-decoration: underline;
     color: #2966a7;
@@ -201,13 +204,13 @@ header{
 }
 .reg-login{
     font-size: .9em;
-    color: #021c30;
+    color: #f1f5f8;
     text-align: center;
     font-weight: 500;
     margin: 15px 0 10px;
 }
 .reg-login p a{
-    color: #162938;
+    color: #66b6f3;
     text-decoration: none;
     font-weight: 600;
 }
