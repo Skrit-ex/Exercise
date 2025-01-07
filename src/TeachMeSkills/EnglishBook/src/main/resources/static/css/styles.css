@@ -5,6 +5,7 @@ body{
     align-content: center;
     min-height: 80vh;
     background: url("static/images/library.jpg") no-repeat;
+    background-size: cover;
 }
 li{
     list-style: none;
@@ -30,7 +31,6 @@ header{
     display: none;
 }
 /*navbar hamburger*/
-
 .hamburger{
     display: none;
     user-select: none;
@@ -213,4 +213,63 @@ header{
 }
 .reg-login p a:hover{
     text-decoration: underline;
+}
+@media (max-width: 876px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar a {
+        margin-left: 20px;
+        font-size: .9em;
+    }
+
+    .navbar a:hover {
+        display: inline-block;
+        background: transparent;
+        transition: .3s ease;
+    }
+
+    #checkbox_toggle:checked ~ .navbar {
+        display: inline-block;
+        max-width: 600px;
+        padding: 10px;
+        margin-right: 5px;
+        position: absolute;
+        right: 42px;
+        top: 100px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        text-align: center;
+    }
+
+    /*navbar Hamburger*/
+    .hamburger {
+        display: block;
+        color: white;
+        font-size: 2em;
+        z-index: 99;
+    }
+
+    .form-container {
+        position: relative;
+        top: 50px;
+    }
+}
+@media (max-width: 560px) {
+    navbar a{
+        margin-left: 5px;
+    }
+    .navbar-btn{
+        width: 100px;
+        height: 45px;
+        margin-left: 5px;
+    }
+    
 }
