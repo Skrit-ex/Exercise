@@ -3,7 +3,7 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
-    min-height: 97vh;
+    min-height: 97.7vh;
     background: url("static/images/library.jpg") no-repeat;
     background-size: cover;
 }
