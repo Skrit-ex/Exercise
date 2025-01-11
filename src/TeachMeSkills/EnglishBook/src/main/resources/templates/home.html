@@ -23,10 +23,10 @@
             <button class="navbar-btn a">Login</button>
         </nav>
     </header>
-<!--    Form section-->
+<!--    Form  login section-->
     <div class="form-container">
         <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
-        <div class="formbox">
+        <div class="formbox Login">
             <h2>Login</h2>
             <form action="#">
                 <div class="input-box">
@@ -47,6 +47,32 @@
                 <div class="reg-login">
                     <p>Don't have an account? <a href="#" class="reg-link"> Register </a></p>
                 </div>
+            </form>
+        </div>
+
+<!--        form registration section-->
+        <div class="formbox Registration">
+            <h2>Registration</h2>
+            <form action="reg.html">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label for="email">Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label for=""><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button class="btn" type="submit">Submit</button>
             </form>
         </div>
     </div>
