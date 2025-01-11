@@ -5,78 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
-
 </head>
 <body style="background: url('/images/library.jpg') no-repeat center center; background-size: cover;">
-<!--        <navbar selection>-->
-    <header>
-        <h2 class="logo"> My Library </h2>
-<!--        navbar checkbox & hamburger-->
-        <input type="checkbox" id="checkbox_toggle">
-        <label for="checkbox_toggle" class="hamburger">&#9776</label>
-<!--        navbarMenu-->
-        <nav class="navbar">
-            <a href="home.html">HomePage</a>
-            <a href="reg.html">Registration</a>
-            <a href="auth.html">Authorisation</a>
-            <a href="auth.html">Library</a>
-            <button class="navbar-btn a">Login</button>
-        </nav>
-    </header>
-<!--    Form  login section-->
-    <div class="form-container">
-        <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
-        <div class="formbox Login">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
-                    <label for="password">Password</label>
-                </div>
-                <div class="forget-remember">
-                    <label for=""><input type="checkbox"> Remember me</label>
-                    <a href="#">Forget password?</a>
-                </div>
-                <button class="btn" type="submit">Submit</button>
-                <div class="reg-login">
-                    <p>Don't have an account? <a href="#" class="reg-link"> Register </a></p>
-                </div>
-            </form>
-        </div>
 
-<!--        form registration section-->
-        <div class="formbox Registration">
-            <h2>Registration</h2>
-            <form action="reg.html">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" required>
-                    <label for="email">Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
-                    <label for="password">Password</label>
-                </div>
-                <div class="forget-remember">
-                    <label for=""><input type="checkbox"> I agree to the terms & conditions </label>
-                </div>
-                <button class="btn" type="submit">Submit</button>
-            </form>
-        </div>
+<header>
+    <h2 class="logo"> My Library </h2>
+    <input type="checkbox" id="checkbox_toggle">
+    <label for="checkbox_toggle" class="hamburger">&#9776</label>
+    <nav class="navbar">
+        <a href="home.html">HomePage</a>
+        <a href="reg.html">Registration</a>
+        <a href="auth.html">Authorisation</a>
+        <a href="auth.html">Library</a>
+        <button class="navbar-btn a">Login</button>
+    </nav>
+</header>
+
+<div class="form-container active-popup">
+    <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
+    <div class="formbox Login active" id="loginForm">
+        <h2>Login</h2>
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="forget-remember">
+                <label for=""><input type="checkbox"> Remember me</label>
+                <a href="#">Forget password?</a>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+            <div class="reg-login">
+                <p>Don't have an account? <a href="#" class="log-link" onclick="showRegistration()"> Register </a></p>
+            </div>
+        </form>
     </div>
-<!--ionicons fonts-->
+    <div class="formbox Registration" id="registrationForm" style="display: none;">
+        <h2>Registration</h2>
+        <form action="reg.html">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" required>
+                <label for="email">Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="forget-remember">
+                <label for=""><input type="checkbox"> I agree to <a class="term & conditions" href="#">
+                    the terms & conditions</a></label>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+            <div class="reg-login">
+                <p>Already have an account? <a href="#" class="reg-link" onclick="showLogin()">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/js/sk.js}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
