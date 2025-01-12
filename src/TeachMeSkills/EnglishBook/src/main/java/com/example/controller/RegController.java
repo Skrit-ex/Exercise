@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/home")
 public class RegController {
 
     @Autowired
@@ -24,23 +24,23 @@ public class RegController {
 
     @GetMapping("/reg")
     public String reg (Model model){
-        model.addAttribute("newUser", new RegUserDto());
-        return "reg";
+        model.addAttribute("newRegUser", new RegUserDto());
+        return "home";
     }
 
     @PostMapping("/reg")
     public String reg(Model model, BindingResult bindingResult,
-                      @ModelAttribute("newUser") @Valid RegUserDto regUserDto){
+                      @ModelAttribute("newRegUser") @Valid RegUserDto regUserDto){
         if(bindingResult.hasErrors()){
-            return "reg";}
+            return "home";}
         try{
             userService.save(regUserDto);
         }
         catch (ConstraintViolationException e){
             model.addAttribute("regError", "User with this username is already exist");
-            return "reg";
+            return "home";
         }
-        return "redirect:/user/login";
+        return "home";
     }
 
     @GetMapping("/login")

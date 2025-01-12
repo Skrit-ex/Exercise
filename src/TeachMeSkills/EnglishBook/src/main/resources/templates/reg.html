@@ -9,7 +9,7 @@
 
 <div class="container">
     <h2>Registration</h2>
-    <form action="/user/reg" method="post">
+    <form th:action="@{/reg}" method="post">
         <label for="firstname"> First name </label>
         <input type="text" id="firstname" name="firstname" required>
 

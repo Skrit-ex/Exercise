@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1 th:text="Flag"></h1>
+<div th:if="${flag}">
+    <h1 th:text="'Hello ' + name"></h1>
+</div>
+<!--<for th:action="@{/reg}" th:object="${newUserReg}">-->
+<!--    <input type="text" th:field="*{name}"-->
+<!--</for>-->
+
+</body>
+</html>

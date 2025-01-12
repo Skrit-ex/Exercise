@@ -10,7 +10,6 @@ public class UserSessionMapper {
         sessionUser.setId(user.getId());
         sessionUser.setEmail(user.getEmail());
         sessionUser.setUsername(user.getUserName());
-        sessionUser.setName(user.getName());
         return sessionUser;
     }
 }
