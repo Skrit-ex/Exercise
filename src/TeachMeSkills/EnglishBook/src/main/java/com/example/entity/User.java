@@ -4,18 +4,14 @@ package com.example.entity;
 import lombok.*;
 
 import javax.persistence.*;
-@Table(name = "userTable", uniqueConstraints = {
+@Table(name = "EnglishUser", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
         @UniqueConstraint(columnNames = "id"),
         @UniqueConstraint(columnNames = "userName")
 })
-
-
-@Data
-@RequiredArgsConstructor
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @ToString
 public class User {
 
@@ -26,9 +22,4 @@ public class User {
     private String email;
     private String password;
 
-    public User(String userName, String email, String password) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-    }
 }

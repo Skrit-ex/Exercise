@@ -29,8 +29,8 @@ public class RegController {
     }
 
     @PostMapping("/reg")
-    public String reg(Model model, BindingResult bindingResult,
-                      @ModelAttribute("newRegUser") @Valid RegUserDto regUserDto){
+    public String reg(@ModelAttribute("newRegUser") @Valid RegUserDto regUserDto,
+                      BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             return "home";}
         try{
