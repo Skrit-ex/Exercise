@@ -4,21 +4,22 @@ package com.example.entity;
 import lombok.*;
 
 import javax.persistence.*;
-@Table(name = "EnglishUser", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "email"),
-        @UniqueConstraint(columnNames = "id"),
-        @UniqueConstraint(columnNames = "userName")
-})
+
 @Entity
+@Table(name = "EnglishUser")
 @Getter
 @Setter
-@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String userName;
+    @Column(unique = true)
     private String email;
     private String password;
 
