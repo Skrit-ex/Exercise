@@ -24,7 +24,7 @@
     <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
     <div class="formbox Login active" id="loginForm">
         <h2>Login</h2>
-        <form th:action="@{/home/reg}" th:object="${newRegUser}" method="post">
+        <form th:action="@{/home/reg}" th:object="${newLogin}" method="post">
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                 <input type="text" th:field="*{email}" required>

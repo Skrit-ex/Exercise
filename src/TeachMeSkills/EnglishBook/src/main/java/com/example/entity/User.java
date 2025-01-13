@@ -4,9 +4,9 @@ package com.example.entity;
 import lombok.*;
 
 import javax.persistence.*;
-
 @Entity
 @Table(name = "EnglishUser")
+@Data
 @Getter
 @Setter
 @NoArgsConstructor

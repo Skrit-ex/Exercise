@@ -21,7 +21,7 @@ public class HibernateUserDao {
 
     @Transactional
     public void save(User user){
-        Session currentSession = sessionFactory.getCurrentSession();
+        Session currentSession = sessionFactory.openSession();
         currentSession.save(user);
     }
 
