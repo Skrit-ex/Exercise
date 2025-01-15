@@ -1,14 +1,15 @@
 package com.example.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+
 
 @Table(name = "englishBook", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id"),
         @UniqueConstraint(columnNames = "nameBook")
 })
-
+@Entity
 @Data
 @Getter
 @Setter

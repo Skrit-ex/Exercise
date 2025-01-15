@@ -1,9 +1,9 @@
 package com.example.entity;
 
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 @Entity
 @Table(name = "EnglishUser")
 @Data

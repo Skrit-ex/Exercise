@@ -1,11 +1,10 @@
 package com.example.service;
 
-import com.example.dao.HibernateBookDao;
 import com.example.dto.BookDto;
 import com.example.entity.Book;
 import com.example.mapper.BookMapper;
+import com.example.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,13 +14,13 @@ import java.util.Objects;
 public class BookService {
 
     @Autowired
-    private HibernateBookDao hibernateBookDao;
+    private BookRepository bookRepository;
 
     public Book bookInfo;
 
     public void save(BookDto bookDto){
         Book book = BookMapper.bookDtoToBook(bookDto);
-        hibernateBookDao.save(book);
+        bookRepository.save(book);
     }
 
     public void saveBook(){
@@ -39,7 +38,7 @@ public class BookService {
                         String lastNameAuthor = data[2];
                         String description = readAndSaveDescription();
                         bookInfo = new Book(nameBook,nameAuthor,lastNameAuthor,description);
-                        hibernateBookDao.save(bookInfo);
+                        bookRepository.save(bookInfo);
                     }
                 }
             }

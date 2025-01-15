@@ -1,13 +1,14 @@
 package com.example.service;
 
-import com.example.dao.HibernateUserDao;
 import com.example.dto.LoginDto;
 import com.example.dto.RegUserDto;
 import com.example.entity.SessionUser;
 import com.example.entity.User;
 import com.example.mapper.RegUserMapper;
 import com.example.mapper.UserSessionMapper;
+import com.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,14 +17,17 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    private HibernateUserDao hibernateUserDao;
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRepository userRepository;
     public void save(RegUserDto regUserDto){
         User user = RegUserMapper.regUserDtoToUser(regUserDto);
-        hibernateUserDao.save(user);
+        userRepository.save(user);
     }
 
     public Optional<SessionUser> login (LoginDto loginDto){
-        Optional<User> user = hibernateUserDao.findByEmail(loginDto.getEmail());
+        Optional<User> user = userRepository.findByEmail(loginDto.getEmail());
 
         if(user.isPresent()){
 
