@@ -4,7 +4,6 @@ import com.example.dto.LoginDto;
 import com.example.dto.RegUserDto;
 import com.example.entity.SessionUser;
 import com.example.service.UserService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,30 +12,38 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class RegController {
 
+    private final Logger log = Logger.getLogger(UserService.class.getName());
     @Autowired
     private UserService userService;
+
+
 
     @GetMapping("/reg")
     public String reg(Model model) {
         model.addAttribute("newRegUser", new RegUserDto());
-        return "home";
+        model.addAttribute("newLogin", new LoginDto());
+        return "reg";
     }
 
     @PostMapping("/reg")
-    public String reg(@ModelAttribute("newRegUser") @Validated RegUserDto regUserDto,
+    public String reg(@ModelAttribute("newRegUser") RegUserDto regUserDto,
+                      @ModelAttribute("newLogin") LoginDto loginDto,
                       BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "home";
-        }
 
+        if (bindingResult.hasErrors()) return "reg";
+
+            if (userService.save(regUserDto)) {
+                return "redirect:/reg";
+            }
         userService.save(regUserDto);
-
-        return "home";
+        return "login";
     }
 
     @GetMapping("/login")
@@ -47,11 +54,11 @@ public class RegController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute("newLogin") @Validated LoginDto loginDto,
-                        BindingResult bindingResult, Model model) {
+                        BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "login";
         }
         Optional<SessionUser> sessionUser = userService.login(loginDto);
-        return "home";
+        return "login";
     }
 }

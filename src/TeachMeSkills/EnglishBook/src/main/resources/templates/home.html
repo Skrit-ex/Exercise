@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
-<body style="background: url('/images/library.jpg') no-repeat center center; background-size: cover;">
+<body style="background: url('/images/library1.jpg') no-repeat center center; background-size: cover;">
 
 <header>
     <h2 class="logo"> My Library </h2>
@@ -23,10 +23,10 @@
     <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
     <div class="formbox Login active" id="loginForm">
         <h2>Login</h2>
-        <form th:action="@{/home/reg}" th:object="${newRegUser}" method="post">
+        <form th:action="@{/login}" th:object="${newLogin}" method="post">
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                <input type="text" th:field="*{email}" required>
+                <input type="email" th:field="*{email}" required>
                 <label for="email">Email</label>
             </div>
             <div class="input-box">
@@ -46,7 +46,7 @@
     </div>
     <div class="formbox Registration" id="registrationForm" style="display: none;">
         <h2>Registration</h2>
-        <form th:action="@{/home/reg}" th:object="${newRegUser}" method="post">
+        <form action="#" th:action="@{/reg}" th:object="${newRegUser}" method="post">
             <div class="input-box">
                 <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                 <input type="text" th:field="*{username}" required>
@@ -54,7 +54,7 @@
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                <input type="text" th:field="*{email}" required>
+                <input type="email" th:field="*{email}" required>
                 <label for="email">Email</label>
             </div>
             <div class="input-box">

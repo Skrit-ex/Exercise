@@ -12,18 +12,28 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+    private final Logger log = Logger.getLogger(UserService.class.getName());
     @Autowired
     private UserRepository userRepository;
-    public void save(RegUserDto regUserDto){
+    public boolean save(RegUserDto regUserDto){
+
+        if (userRepository.existsUserByEmailAndUserName(regUserDto.getEmail(), regUserDto.getUsername())){
+            log.log(Level.INFO, "user already exist");
+            return false;
+        }
+
         User user = RegUserMapper.regUserDtoToUser(regUserDto);
         userRepository.save(user);
+        log.log(Level.INFO, "user just saved");
+        return true;
     }
 
     public Optional<SessionUser> login (LoginDto loginDto){

@@ -21,11 +21,11 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity){
         return httpSecurity
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/", "/home/reg").permitAll()
+                        request.requestMatchers("/","/home", "/reg", "/css/**", "/js/**", "/images/**").permitAll()
                                 .anyRequest().authenticated()
                         )
                 .formLogin(login ->
-                        login.loginPage("/home/login").permitAll()
+                        login.loginPage("/login").permitAll()
                         )
                 .logout(logout ->
                         logout.permitAll()
