@@ -23,7 +23,12 @@ public class RegController {
     @Autowired
     private UserService userService;
 
-
+    @GetMapping("/home")
+    public String home(Model model){
+        model.addAttribute("newRegUser", new RegUserDto());
+        model.addAttribute("newLogin", new LoginDto());
+        return "home";
+    }
 
     @GetMapping("/reg")
     public String reg(Model model) {
@@ -39,9 +44,9 @@ public class RegController {
 
         if (bindingResult.hasErrors()) return "reg";
 
-            if (userService.save(regUserDto)) {
-                return "redirect:/reg";
-            }
+        if (userService.save(regUserDto)) {
+            return "redirect:/reg";
+        }
         userService.save(regUserDto);
         return "login";
     }
@@ -58,7 +63,6 @@ public class RegController {
         if (bindingResult.hasErrors()) {
             return "login";
         }
-        Optional<SessionUser> sessionUser = userService.login(loginDto);
-        return "login";
+        return "redirect:/";
     }
 }
