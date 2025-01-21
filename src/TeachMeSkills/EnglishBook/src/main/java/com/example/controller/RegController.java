@@ -2,6 +2,8 @@ package com.example.controller;
 
 import com.example.dto.LoginDto;
 import com.example.dto.RegUserDto;
+import com.example.repository.BookRepository;
+import com.example.service.BookService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +22,21 @@ public class RegController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BookService bookService;
+
     @GetMapping("/home")
     public String home(Model model){
         model.addAttribute("newRegUser", new RegUserDto());
         model.addAttribute("newLogin", new LoginDto());
-        return "home";
+        if(bookService.isDataEmpty()){
+            bookService.addListOfBooks();
+            System.err.println("DataBase is empty, file will added");
+            return "home";
+        }else {
+            System.err.println("DataFiles exist");
+        }
+            return "home";
     }
 
     @GetMapping("/reg")
