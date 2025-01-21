@@ -1,0 +1,13 @@
+body{
+    display: flex;!important;
+    justify-content: center;!important;
+    align-content: center;!important;
+    min-height: 97.7vh;!important;
+    background: url("../images/library1.jpg") no-repeat;!important;
+    background-size: cover; !important;
+}
+.nav-item {
+    text-align: center; /* Центрирование текста */!important;
+    padding: 10px; /* Настройка отступов */!important;
+    margin: 5px; /* Настройка внешних отступов */!important;
+}

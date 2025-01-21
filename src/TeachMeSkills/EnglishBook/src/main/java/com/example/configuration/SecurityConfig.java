@@ -12,24 +12,26 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @SneakyThrows
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity){
+    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
         return httpSecurity
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/","/home", "/reg", "/css/**", "/js/**", "/images/**").permitAll()
-                                .anyRequest().authenticated()
-                        )
+                        request.requestMatchers("/", "/library/**", "/home", "/reg", "/css/**", "/js/**", "/images/**")
+                                .permitAll()
+                                .anyRequest()
+                                .authenticated()
+                )
                 .formLogin(login ->
                         login.loginPage("/login").permitAll()
-                        )
+                )
                 .logout(logout ->
                         logout.permitAll()
-                        )
+                )
                 .build();
     }
 }
