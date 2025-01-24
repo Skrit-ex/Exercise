@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.dto.BookDto;
+
 import com.example.entity.Book;
 import com.example.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/library")
 public class LibraryController {
@@ -21,7 +24,9 @@ public class LibraryController {
 
     @GetMapping()
     public String library(Model model){
-        model.addAttribute("book", new BookDto());
+        List<Book> books = bookService.findAll();
+        System.out.println(books);
+        model.addAttribute("books", new BookDto());
         return "library";
     }
 

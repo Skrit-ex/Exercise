@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -24,11 +25,14 @@ public class BookService {
         return bookRepository.count()==0;
     }
 
+    public List<Book> findAll(){
+        return bookRepository.findAll();
+    }
+
     public void save(BookDto bookDto) {
         Book book = BookMapper.bookDtoToBook(bookDto);
         bookRepository.save(book);
     }
-
 
     public void addListOfBooks() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("books.txt");

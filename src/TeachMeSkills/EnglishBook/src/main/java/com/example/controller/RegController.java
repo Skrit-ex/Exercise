@@ -31,7 +31,7 @@ public class RegController {
         model.addAttribute("newLogin", new LoginDto());
         if(bookService.isDataEmpty()){
             bookService.addListOfBooks();
-            System.err.println("DataBase is empty, file will added");
+            System.err.println("BaseDate is empty, file will added");
             return "home";
         }else {
             System.err.println("DataFiles exist");
