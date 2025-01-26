@@ -25,8 +25,7 @@ public class LibraryController {
     @GetMapping()
     public String library(Model model){
         List<Book> books = bookService.findAll();
-        System.out.println(books);
-        model.addAttribute("books", new BookDto());
+        model.addAttribute("books", books);
         return "library";
     }
 
