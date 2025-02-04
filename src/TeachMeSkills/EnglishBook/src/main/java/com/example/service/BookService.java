@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 @Service
@@ -83,13 +85,21 @@ public class BookService {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         try (BufferedReader bufferedReader = createBufferedReader(inputStreamReader)) {
             String line;
+            Map<String, String> fullDescriptions = new HashMap<>();
             while ((line = bufferedReader.readLine()) != null) {
                 if (!line.isEmpty()) {
                     String[] data = line.split("\\|");
                     String nameBook = data[0];
                     String fullDescription = data[1];
-                    bookFullDescription = new Book(nameBook, fullDescription);
-                    bookRepository.save(bookFullDescription);
+                    fullDescriptions.put(nameBook,fullDescription);
+                }
+            }
+            List<Book> books = bookRepository.findAll();
+            for(Book book : books){
+                String fullDescription = fullDescriptions.get(book.getNameBook());
+                if(fullDescription !=null){
+                    book.setFullDescription(fullDescription);
+                    bookRepository.save(book);
                 }
             }
         }catch (FileNotFoundException e){
