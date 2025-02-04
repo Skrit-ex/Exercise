@@ -45,6 +45,6 @@ public class BookServiceTest {
         bookServiceSpy.addListOfBooks();
 
         // Verifying that the bookRepository.save method was called with the correct parameters
-        verify(bookRepository).save(new Book("Book1", "Author1", "Description1"));
+        verify(bookRepository).save(new Book("Book1", "Author1", "genre", "Description1"));
     }
 }

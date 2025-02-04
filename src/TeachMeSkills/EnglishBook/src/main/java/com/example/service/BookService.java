@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.List;
-import java.util.Objects;
 import java.util.logging.Logger;
 
 @Service
@@ -20,6 +19,7 @@ public class BookService {
 
     private final Logger log = Logger.getLogger(Book.class.getName());
     public Book bookInfo;
+    public Book bookFullDescription;
 
     public boolean isDataEmpty(){
         return bookRepository.count()==0;
@@ -33,6 +33,7 @@ public class BookService {
         Book book = BookMapper.bookDtoToBook(bookDto);
         bookRepository.save(book);
     }
+    public void saveFullDescription(Book)
 
     public void addListOfBooks() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("books.txt");
@@ -55,8 +56,9 @@ public class BookService {
                     if (data.length >= 3) {
                         String nameBook = data[0];
                         String nameAuthor = data[1];
-                        String description = data[2];
-                        bookInfo = new Book(nameBook, nameAuthor, description);
+                        String genre = data[2];
+                        String description = data[3];
+                        bookInfo = new Book(nameBook, nameAuthor, genre, description);
                         bookRepository.save(bookInfo);
                     }
                 }
@@ -72,26 +74,30 @@ public class BookService {
         return new BufferedReader(inputStreamReader);
     }
 
-
-    public String readAndSaveDescription(){
-        InputStreamReader inputStreamReader = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().
-                getResourceAsStream("description")));
-        try {
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String text = "";
-            String line = String.valueOf(0);
-            while ((line = bufferedReader.readLine()) != null){
-                if (!(line.trim().isEmpty())){
-                    text += line + " ";
-                    bookInfo = new Book();
-                    bookInfo.setDescription(text);
+    public void readAndSaveDescription(){
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("bookDescription.txt");
+        if(inputStream== null){
+            System.err.println("file not found");
+            return ;
+        }
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+        try (BufferedReader bufferedReader = createBufferedReader(inputStreamReader)) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (!line.isEmpty()) {
+                    String[] data = line.split("\\|");
+                    String nameBook = data[0];
+                    String fullDescription = data[1];
+                    bookFullDescription = new Book(nameBook, fullDescription);
+                    bookRepository.save(bookFullDescription);
                 }
             }
+        }catch (FileNotFoundException e){
+            System.err.println("File not found");
         }
         catch (IOException e){
-            throw new RuntimeException();
+            System.err.println(" Error reading file");
         }
-        return bookInfo.getDescription();
     }
 
     public InputStream getResourceAsStream(String resource) {

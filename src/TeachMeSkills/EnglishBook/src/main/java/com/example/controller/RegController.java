@@ -43,7 +43,7 @@ public class RegController {
     public String reg(Model model) {
         model.addAttribute("newRegUser", new RegUserDto());
         model.addAttribute("newLogin", new LoginDto());
-        return "reg";
+        return "home";
     }
 
     @PostMapping("/reg")
@@ -54,24 +54,27 @@ public class RegController {
         if (bindingResult.hasErrors()) return "reg";
 
         if (userService.save(regUserDto)) {
-            return "redirect:/reg";
+            return "home";
         }
         userService.save(regUserDto);
-        return "login";
+        return "home";
     }
 
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("newLogin", new LoginDto());
-        return "login";
+        model.addAttribute("newRegUser", new RegUserDto());
+        return "home";
     }
 
     @PostMapping("/login")
     public String login(@ModelAttribute("newLogin") @Validated LoginDto loginDto,
+                        @ModelAttribute("newRegUser") @Validated RegUserDto regUserDto,
                         BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "login";
+            System.err.println("error here login");
+            return "home";
         }
-        return "redirect:/";
+        return "home";
     }
 }

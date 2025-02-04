@@ -25,6 +25,9 @@ public class LibraryController {
     @GetMapping()
     public String library(Model model){
         List<Book> books = bookService.findAll();
+        if (books.isEmpty()) {
+            model.addAttribute("error", "No books available");
+        }
         model.addAttribute("books", books);
         return "library";
     }
@@ -34,6 +37,7 @@ public class LibraryController {
                           BindingResult bindingResult,
                           Model model){
         if(bindingResult.hasErrors()){
+            System.err.println("error here lib");
             return "home";
         }
         return "library";

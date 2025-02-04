@@ -21,7 +21,9 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
         return httpSecurity
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/", "/library/**", "/home", "/reg", "/css/**", "/js/**", "/images/**")
+                        request.requestMatchers("/", "/home", "/reg", "/css/**", "/js/**", "/images/**")
+                                .permitAll()
+                                .requestMatchers("/library")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()

@@ -21,11 +21,21 @@ public class Book {
     private Long id;
     private String nameBook;
     private String nameAuthor;
+
+    private String genre;
     private String description;
 
-    public Book(String nameBook, String nameAuthor, String description) {
+    private String fullDescription;
+
+    public Book(String nameBook, String nameAuthor,String genre, String description) {
         this.nameBook = nameBook;
         this.nameAuthor = nameAuthor;
+        this.genre = genre;
         this.description = description;
+    }
+
+    public Book(String nameBook, String fullDescription) {
+        this.nameBook = nameBook;
+        this.fullDescription = fullDescription;
     }
 }
