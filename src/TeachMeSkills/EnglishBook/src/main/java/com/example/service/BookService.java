@@ -1,41 +1,49 @@
 package com.example.service;
 
-import com.example.dto.BookDto;
 import com.example.entity.Book;
-import com.example.mapper.BookMapper;
+import com.example.entity.FullBookDescription;
 import com.example.repository.BookRepository;
+import com.example.repository.FullDescriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
-
+import java.util.Optional;
 @Service
 public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
 
-    private final Logger log = Logger.getLogger(Book.class.getName());
-    public Book bookInfo;
-    public Book bookFullDescription;
+    @Autowired
+    private FullDescriptionRepository descriptionRepository;
 
-    public boolean isDataEmpty(){
-        return bookRepository.count()==0;
+    //    private final Logger log = Logger.getLogger(Book.class.getName());
+    public Book bookInfo;
+    public FullBookDescription bookFullDescription;
+
+    public boolean isDataEmpty() {
+        return bookRepository.count() == 0;
     }
 
-    public List<Book> findAll(){
+    public boolean isDataDescriptionEmpty() {return descriptionRepository.count() == 0;}
+
+    public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
-    public void save(BookDto bookDto) {
-        Book book = BookMapper.bookDtoToBook(bookDto);
-        bookRepository.save(book);
+    public List<FullBookDescription> findAllDescription() {
+        return descriptionRepository.findAll();
     }
-    public void saveFullDescription(Book)
+
+    public Optional<Book> findByIdBook (Long id){
+        return bookRepository.findById(id);
+    }
+    public Optional<FullBookDescription> findByIdDescription (Long id){
+        return descriptionRepository.findById(id);
+    };
+
 
     public void addListOfBooks() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("books.txt");
@@ -50,7 +58,7 @@ public class BookService {
             int stringLine = 0;
             while ((line = bufferedReader.readLine()) != null) {
                 stringLine++;
-                if(stringLine<=3){
+                if (stringLine <= 3) {
                     continue;
                 }
                 if (!line.isEmpty()) {
@@ -76,36 +84,28 @@ public class BookService {
         return new BufferedReader(inputStreamReader);
     }
 
-    public void readAndSaveDescription(){
+    public void readAndSaveDescription() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("bookDescription.txt");
-        if(inputStream== null){
+        if (inputStream == null) {
             System.err.println("file not found");
-            return ;
+            return;
         }
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         try (BufferedReader bufferedReader = createBufferedReader(inputStreamReader)) {
             String line;
-            Map<String, String> fullDescriptions = new HashMap<>();
             while ((line = bufferedReader.readLine()) != null) {
                 if (!line.isEmpty()) {
                     String[] data = line.split("\\|");
                     String nameBook = data[0];
                     String fullDescription = data[1];
-                    fullDescriptions.put(nameBook,fullDescription);
+                    bookFullDescription = new FullBookDescription(nameBook, fullDescription);
+                    descriptionRepository.save(bookFullDescription);
                 }
             }
-            List<Book> books = bookRepository.findAll();
-            for(Book book : books){
-                String fullDescription = fullDescriptions.get(book.getNameBook());
-                if(fullDescription !=null){
-                    book.setFullDescription(fullDescription);
-                    bookRepository.save(book);
-                }
-            }
-        }catch (FileNotFoundException e){
+
+        } catch (FileNotFoundException e) {
             System.err.println("File not found");
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             System.err.println(" Error reading file");
         }
     }

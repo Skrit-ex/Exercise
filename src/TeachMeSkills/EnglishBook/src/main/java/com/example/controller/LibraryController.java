@@ -3,17 +3,16 @@ package com.example.controller;
 import com.example.dto.BookDto;
 
 import com.example.entity.Book;
+import com.example.entity.FullBookDescription;
 import com.example.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/library")
@@ -41,5 +40,27 @@ public class LibraryController {
             return "home";
         }
         return "library";
+    }
+
+    @GetMapping("/viewingBook/{id}")
+    public String viewingBook(@PathVariable Long id, Model model){
+        List<FullBookDescription> booksDescription = bookService.findAllDescription();
+        if(bookService.isDataDescriptionEmpty()){
+            System.err.println("Database was empty, the files will added");
+            bookService.readAndSaveDescription();
+        }else {
+            System.err.println("Database is full");
+        }
+
+        Optional<Book> bookId = bookService.findByIdBook(id);
+        Optional<FullBookDescription> descriptionId = bookService.findByIdDescription(id);
+        if(descriptionId.isPresent() && descriptionId.get().getId().equals(bookId.get().getId())){
+            model.addAttribute("bookFullDescription", descriptionId.get());
+            model.addAttribute("bookDescription", booksDescription);
+            }else {
+            System.err.println("There is error in equalsId");
+            return "viewingBook";
+        }
+        return "viewingBook";
     }
 }
