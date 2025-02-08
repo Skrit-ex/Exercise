@@ -4,22 +4,24 @@ import com.example.entity.Book;
 import com.example.entity.FullBookDescription;
 import com.example.repository.BookRepository;
 import com.example.repository.FullDescriptionRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
+@Slf4j
 public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
-
     @Autowired
-    private FullDescriptionRepository descriptionRepository;
+    private  FullDescriptionRepository descriptionRepository;
 
-    //    private final Logger log = Logger.getLogger(Book.class.getName());
     public Book bookInfo;
     public FullBookDescription bookFullDescription;
 
@@ -48,7 +50,7 @@ public class BookService {
     public void addListOfBooks() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("books.txt");
         if (inputStream == null) {
-            System.err.println("File not found here");
+            log.error("File not found here");
             return;
         }
 
@@ -74,9 +76,9 @@ public class BookService {
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("File not found");
+            log.error("File not found");
         } catch (IOException e) {
-            System.err.println("Error reading file");
+            log.error("Error reading file");
         }
     }
 
@@ -87,7 +89,7 @@ public class BookService {
     public void readAndSaveDescription() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("bookDescription.txt");
         if (inputStream == null) {
-            System.err.println("file not found");
+            log.error("file not found");
             return;
         }
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
@@ -104,10 +106,16 @@ public class BookService {
             }
 
         } catch (FileNotFoundException e) {
-            System.err.println("File not found");
+            log.error("File not found");
         } catch (IOException e) {
-            System.err.println(" Error reading file");
+            log.error(" Error reading file");
         }
+    }
+    public List<Book> sortingBook(String genre){
+        List<Book> books = bookRepository.findAll();
+        return  books.stream()
+                .filter(book -> book.getGenre().equalsIgnoreCase(genre))
+                .collect(Collectors.toList());
     }
 
     public InputStream getResourceAsStream(String resource) {
