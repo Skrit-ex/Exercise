@@ -66,9 +66,9 @@ public class BookService {
                 if (!line.isEmpty()) {
                     String[] data = line.split("\\|");
                     if (data.length >= 3) {
-                        String nameBook = data[0];
-                        String nameAuthor = data[1];
-                        String genre = data[2];
+                        String nameBook = data[0].trim();
+                        String nameAuthor = data[1].trim();
+                        String genre = data[2].trim();
                         String description = data[3];
                         bookInfo = new Book(nameBook, nameAuthor, genre, description);
                         bookRepository.save(bookInfo);
@@ -112,10 +112,21 @@ public class BookService {
         }
     }
     public List<Book> sortingBook(String genre){
-        List<Book> books = bookRepository.findAll();
-        return  books.stream()
-                .filter(book -> book.getGenre().equalsIgnoreCase(genre))
-                .collect(Collectors.toList());
+        String trimGenreBook = genre.trim();
+        log.info("Sorting genre -> " + trimGenreBook);
+        List<Book> allBook = bookRepository.findAll();
+        allBook.forEach(book -> System.err.println("Name -> " + book.getNameBook() + " genre -> " + book.getGenre()));
+        trimGenreBook ="Fantasy";
+        List<Book> genreBook = bookRepository.findByGenreIgnoreCase(trimGenreBook);
+        genreBook.forEach(book -> System.err.println("books found " + book.getNameBook()));
+
+//        List<Book> books = bookRepository.findAll();
+//        List<Book> sortedBook = books.stream()
+//                .filter(book -> book.getGenre().equalsIgnoreCase(genre))
+//                .collect(Collectors.toList());
+//        sortedBook.forEach(book -> System.out.println("Book" + book.getNameBook()));
+//        return sortedBook;
+        return genreBook;
     }
 
     public InputStream getResourceAsStream(String resource) {

@@ -27,7 +27,7 @@ public class LibraryController {
     private BookService bookService;
 
     @GetMapping()
-    public String library(Model model){
+    public String library(Model model) {
         List<Book> books = bookService.findAll();
         if (books.isEmpty()) {
             model.addAttribute("error", "No books available");
@@ -37,10 +37,10 @@ public class LibraryController {
     }
 
     @PostMapping()
-    public String library(@ModelAttribute("book")BookDto bookDto,
+    public String library(@ModelAttribute("book") BookDto bookDto,
                           BindingResult bindingResult,
-                          Model model){
-        if(bindingResult.hasErrors()){
+                          Model model) {
+        if (bindingResult.hasErrors()) {
             log.error("error here lib");
             return "home";
         }
@@ -48,31 +48,35 @@ public class LibraryController {
     }
 
     @GetMapping("/viewingBook/{id}")
-    public String viewingBook(@PathVariable Long id, Model model){
+    public String viewingBook(@PathVariable Long id, Model model) {
         List<FullBookDescription> booksDescription = bookService.findAllDescription();
-        if(bookService.isDataDescriptionEmpty()){
+        if (bookService.isDataDescriptionEmpty()) {
             log.error("Database was empty, the files will added");
             bookService.readAndSaveDescription();
-        }else {
+        } else {
             log.error("Database is full");
         }
-            bookService.findByIdBook(id).ifPresent(book -> {
-                bookService.findByIdDescription(id).ifPresent(fullBookDescription -> {
-                    if (book.getId().equals(fullBookDescription.getId())) {
-                        model.addAttribute("bookFullDescription", fullBookDescription);
-                        model.addAttribute("bookDescription", booksDescription);
-                    } else {
-                        log.error("There is an error in equalsId");
-                    }
-                });
+        bookService.findByIdBook(id).ifPresent(book -> {
+            bookService.findByIdDescription(id).ifPresent(fullBookDescription -> {
+                if (book.getId().equals(fullBookDescription.getId())) {
+                    model.addAttribute("bookFullDescription", fullBookDescription);
+                    model.addAttribute("bookDescription", booksDescription);
+                } else {
+                    log.error("There is an error in equalsId");
+                }
             });
+        });
         return "viewingBook";
     }
 
     @GetMapping("/sortingGenre/{genre}")
-    public String sortGenre(@PathVariable String genre,Model model){
-        List<Book> sortingGenre = bookService.sortingBook(genre);
-        model.addAttribute("genreBook", sortingGenre);
+    public String sortGenre(@PathVariable String genre, Model model) {
+        List<Book> genreBook = bookService.sortingBook(genre.trim());
+        if (genreBook.isEmpty()) {
+            log.error("No books found for genre" + genreBook);
+        }
+            model.addAttribute("genreBook", genreBook);
         return "sortingGenre";
     }
 }
+
