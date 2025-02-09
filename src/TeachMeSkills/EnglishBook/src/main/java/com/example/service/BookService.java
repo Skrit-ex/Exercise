@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @Service
 @Slf4j
@@ -50,7 +50,7 @@ public class BookService {
     public void addListOfBooks() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("books.txt");
         if (inputStream == null) {
-            log.error("File not found here");
+            log.error("File not found here (method void addListOfBooks)");
             return;
         }
 
@@ -76,9 +76,9 @@ public class BookService {
                 }
             }
         } catch (FileNotFoundException e) {
-            log.error("File not found");
+            log.error("File not found (method void addListOfBooks)");
         } catch (IOException e) {
-            log.error("Error reading file");
+            log.error("Error reading file (method void addListOfBooks)");
         }
     }
 
@@ -89,7 +89,7 @@ public class BookService {
     public void readAndSaveDescription() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("bookDescription.txt");
         if (inputStream == null) {
-            log.error("file not found");
+            log.error("file not found (method void readAndSaveDescription)");
             return;
         }
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
@@ -106,26 +106,21 @@ public class BookService {
             }
 
         } catch (FileNotFoundException e) {
-            log.error("File not found");
+            log.error("File not found (method void readAndSaveDescription)");
         } catch (IOException e) {
-            log.error(" Error reading file");
+            log.error(" Error reading file (method void readAndSaveDescription)");
         }
     }
     public List<Book> sortingBook(String genre){
         String trimGenreBook = genre.trim();
         log.info("Sorting genre -> " + trimGenreBook);
-        List<Book> allBook = bookRepository.findAll();
-        allBook.forEach(book -> System.err.println("Name -> " + book.getNameBook() + " genre -> " + book.getGenre()));
-        trimGenreBook ="Fantasy";
-        List<Book> genreBook = bookRepository.findByGenreIgnoreCase(trimGenreBook);
-        genreBook.forEach(book -> System.err.println("books found " + book.getNameBook()));
 
-//        List<Book> books = bookRepository.findAll();
-//        List<Book> sortedBook = books.stream()
+        List<Book> genreBook = bookRepository.findByGenreIgnoreCase(trimGenreBook);
+        genreBook.forEach(book -> log.info("books found " + book.getNameBook()));
+//        List<Book> sortedBook = genreBook.stream()
 //                .filter(book -> book.getGenre().equalsIgnoreCase(genre))
 //                .collect(Collectors.toList());
-//        sortedBook.forEach(book -> System.out.println("Book" + book.getNameBook()));
-//        return sortedBook;
+//        sortedBook.forEach(book -> System.err.println("Book" + book.getNameBook()));
         return genreBook;
     }
 
