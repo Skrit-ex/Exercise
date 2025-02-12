@@ -7,7 +7,7 @@ public class RegUserMapper {
 
     public static User regUserDtoToUser(RegUserDto regUserDto){
         User user = new User();
-        user.setUserName(regUserDto.getUsername());
+        user.setUsername(regUserDto.getUsername());
         user.setEmail(regUserDto.getEmail());
         user.setPassword(regUserDto.getPassword());
         return user;
