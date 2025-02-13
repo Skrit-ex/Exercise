@@ -18,7 +18,6 @@ import java.util.Optional;
 
 @Slf4j
 @Controller
-@RequestMapping("/")
 public class RegController {
 
     @Autowired

@@ -23,16 +23,15 @@
     <span class="close-icon"><ion-icon name="close-outline"></ion-icon></span>
     <div class="formbox Login active" id="loginForm">
         <h2>Login</h2>
-        <form th:action="@{/login}" th:object="${newLogin}" method="post">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <form th:action="@{/login}" th:object="${newUser}" method="post">
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                <input type="email" th:field="*{email}" required>
+                <input type="email"  name="username" id="username" required>
                 <label for="email">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                <input type="password" th:field="*{password}" required>
+                <input type="password"  name="password"  id="password" required>
                 <label for="password">Password</label>
             </div>
             <div th:if="${errorPassword}" class="error-message">

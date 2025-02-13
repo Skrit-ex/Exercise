@@ -24,6 +24,9 @@ public class ErrorHandlerInterceptor implements HandlerInterceptor {
         int status = response.getStatus();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+        if(modelAndView == null){
+            modelAndView= new ModelAndView();
+        }
         switch (status) {
             case 404 -> {
                 modelAndView.setViewName("/error/404");

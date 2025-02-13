@@ -10,13 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Slf4j
 @Controller
@@ -27,7 +29,8 @@ public class LibraryController {
     private BookService bookService;
 
     @GetMapping()
-    public String library(Model model) {
+    public String library(Model model, @AuthenticationPrincipal UserDetails username) {
+        System.err.println(username);
         List<Book> books = bookService.findAll();
         if (books.isEmpty()) {
             model.addAttribute("error", "No books available");
