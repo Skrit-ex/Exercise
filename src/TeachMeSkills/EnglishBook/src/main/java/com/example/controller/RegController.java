@@ -3,7 +3,6 @@ package com.example.controller;
 import com.example.dto.LoginDto;
 import com.example.dto.RegUserDto;
 import com.example.entity.User;
-import com.example.repository.BookRepository;
 import com.example.service.BookService;
 import com.example.service.UserService;
 import lombok.extern.slf4j.Slf4j;
